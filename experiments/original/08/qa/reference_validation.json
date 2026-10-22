@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "runs": 60,
+  "seeds": 30,
+  "budget_unit": "whole-edge motion validation calls, including every Connect substep",
+  "budget_each": 1500,
+  "uniform_sampling_both": true,
+  "main_path_min_certified_clearance_m": 0.0364953350356241,
+  "blocking_round": 1,
+  "arithmetic_demo": {
+    "from": [
+      -90.0,
+      -90.0
+    ],
+    "target": [
+      -72.0,
+      -66.0
+    ],
+    "steps": [
+      {
+        "from": [
+          -90.0,
+          -90.0
+        ],
+        "to": [
+          -84.0,
+          -82.0
+        ],
+        "distance_remaining_before": 30.0,
+        "status": "Advanced",
+        "validation": {
+          "sample_count": 17,
+          "sampled_min_clearance_m": 0.8295630140987,
+          "continuous_clearance_lower_bound_m": 0.8077463984487709,
+          "critical_q_degrees": [
+            -90.0,
+            -90.0
+          ],
+          "endpoint_clearance_m": 0.8295630140987,
+          "reason": "certified_clear"
+        }
+      },
+      {
+        "from": [
+          -84.0,
+          -82.0
+        ],
+        "to": [
+          -78.0,
+          -74.0
+        ],
+        "distance_remaining_before": 20.0,
+        "status": "Advanced",
+        "validation": {
+          "sample_count": 17,
+          "sampled_min_clearance_m": 0.8295630140987,
+          "continuous_clearance_lower_bound_m": 0.8077463984487709,
+          "critical_q_degrees": [
+            -84.0,
+            -82.0
+          ],
+          "endpoint_clearance_m": 0.8295630140987,
+          "reason": "certified_clear"
+        }
+      },
+      {
+        "from": [
+          -78.0,
+          -74.0
+        ],
+        "to": [
+          -72.0,
+          -66.0
+        ],
+        "distance_remaining_before": 10.0,
+        "status": "Reached",
+        "validation": {
+          "sample_count": 17,
+          "sampled_min_clearance_m": 0.8295630140987,
+          "continuous_clearance_lower_bound_m": 0.8077463984487709,
+          "critical_q_degrees": [
+            -78.0,
+            -74.0
+          ],
+          "endpoint_clearance_m": 0.8295630140987,
+          "reason": "certified_clear"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "single": {
+      "success": 26,
+      "trials": 30,
+      "median_motion_checks_all_trials": 1006.0,
+      "median_path_length_degrees_successes": 109.41316390378776,
+      "median_outer_rounds_all_trials": 1005.0
+    },
+    "connect": {
+      "success": 30,
+      "trials": 30,
+      "median_motion_checks_all_trials": 118.0,
+      "median_path_length_degrees_successes": 106.93060501940235,
+      "median_outer_rounds_all_trials": 78.5
+    }
+  },
+  "rendered_path": {
+    "samples": 133,
+    "all_original_waypoints_preserved": true,
+    "continuous_clearance_lower_bound_m": 0.0179996956175473
+  }
+}

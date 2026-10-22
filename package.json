@@ -1,0 +1,27 @@
+{
+  "name": "silicon-baby-steps",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "硅基学步：文章、视频、三维规划算法实验室",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 4173",
+    "start": "npm run dev",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "verify:media": "node scripts/verify-media.mjs"
+  },
+  "dependencies": {
+    "three": "0.186.1",
+    "marked": "18.1.1"
+  },
+  "devDependencies": {
+    "@types/three": "0.186.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

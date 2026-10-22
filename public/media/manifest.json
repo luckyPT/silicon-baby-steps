@@ -1,0 +1,112 @@
+{
+  "chapters": [
+    {
+      "id": "01",
+      "article": "articles/01.md",
+      "video": "media/01/video.mp4",
+      "cover": "media/01/cover.jpg",
+      "durationSeconds": 500.272,
+      "bytes": 22093748,
+      "sha256": "e00c102a21250bc1bbdbe57204b24224b6ed56c90f0c089b76a4c3bd3f18e336",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "02",
+      "article": "articles/02.md",
+      "video": "media/02/video.mp4",
+      "cover": "media/02/cover.jpg",
+      "durationSeconds": 484.466667,
+      "bytes": 21379128,
+      "sha256": "eec644423961fe05422f3f6d66eae70ed37e385bff1268bfb1cdbed597cadc01",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "03",
+      "article": "articles/03.md",
+      "video": "media/03/video.mp4",
+      "cover": "media/03/cover.jpg",
+      "durationSeconds": 378.874,
+      "bytes": 23553419,
+      "sha256": "708fd541cc05ac6eb74a2ffac773da60b27ac1c18f8abdd42187bcb34578a09d",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "04",
+      "article": "articles/04.md",
+      "video": "media/04/video.mp4",
+      "cover": "media/04/cover.jpg",
+      "durationSeconds": 406.606,
+      "bytes": 23951340,
+      "sha256": "ebada1c7f9ea8191c838accb5e4297a92cb94e4e6eca56deb26319f6268b5142",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "05",
+      "article": "articles/05.md",
+      "video": "media/05/video.mp4",
+      "cover": "media/05/cover.jpg",
+      "durationSeconds": 423.033333,
+      "bytes": 26125339,
+      "sha256": "69f4aed3834e516ec387ad8d9d588d54ecbdba910ebd507555b227326816cff6",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "06",
+      "article": "articles/06.md",
+      "video": "media/06/video.mp4",
+      "cover": "media/06/cover.jpg",
+      "durationSeconds": 446.236,
+      "bytes": 32373376,
+      "sha256": "ad916ae661b01b90ba44083316d243863d9bfc1cad0e0072506c00fa8600b0ac",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "07",
+      "article": "articles/07.md",
+      "video": "media/07/video.mp4",
+      "cover": "media/07/cover.jpg",
+      "durationSeconds": 438.266667,
+      "bytes": 28037422,
+      "sha256": "a6e314adaa14199ed33231d95aa929e9cab9414de1dfc204bc27d9ecb9d30f75",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "08",
+      "article": "articles/08.md",
+      "video": "media/08/video.mp4",
+      "cover": "media/08/cover.jpg",
+      "durationSeconds": 462.166667,
+      "bytes": 29424238,
+      "sha256": "2bd36748668fa3cd5a0d8b80a57bfc63119dd2d41045b74f9fb03da8faf2af39",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "09",
+      "article": "articles/09.md",
+      "video": "media/09/video.mp4",
+      "cover": "media/09/cover.jpg",
+      "durationSeconds": 473.166667,
+      "bytes": 29166866,
+      "sha256": "1dd3747c47084869f3602e25fdd178f85c249f09e507e1215c092970a604c5ee",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "content": "Full locally hosted MP4 files; not temporary links",
+  "updated": "2026-10-22",
+  "introduction": {
+    "video": "media/00/video.mp4",
+    "poster": "media/00/cover.jpg",
+    "bytes": 9886570,
+    "sha256": "4c304ad1415266edf5c7f5e44be2516c16ab9d36b653449964788a3a6d1347d7",
+    "durationSeconds": 63.488
+  }
+}
