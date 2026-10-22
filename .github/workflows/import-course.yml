@@ -1,0 +1,53 @@
+name: Import reviewed course source
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: import-reviewed-course
+  cancel-in-progress: false
+jobs:
+  import:
+    if: github.event_name == 'workflow_dispatch' || github.event.release.tag_name == 'course-source-20261022'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Only initialize an empty course
+        run: |
+          if [ -e package.json ]; then
+            echo 'Course is already imported. This initializer will not overwrite it.'
+            exit 1
+          fi
+      - name: Download and verify reviewed source archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release download course-source-20261022 --pattern silicon-course-source-20261022.tar.gz --dir "$RUNNER_TEMP"
+          echo 'e0a51688f22c197c95f6f7bbaeb5bd7a554a5b0f0b35999bbef83bcf8edc04f5  silicon-course-source-20261022.tar.gz' > "$RUNNER_TEMP/course.sha256"
+          cd "$RUNNER_TEMP"
+          sha256sum --check course.sha256
+      - name: Import course files and complete media
+        run: |
+          mkdir -p "$RUNNER_TEMP/course-source"
+          tar -xzf "$RUNNER_TEMP/silicon-course-source-20261022.tar.gz" --exclude='.github' -C "$RUNNER_TEMP/course-source"
+          cp -a "$RUNNER_TEMP/course-source/." .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run verify:media
+      - run: npm run build
+      - name: Commit verified course to main
+        run: |
+          git config user.name 'luckyPT'
+          git config user.email '20067960+luckyPT@users.noreply.github.com'
+          git add .
+          git commit -m 'Build course website with complete videos and interactive 3D planning labs'
+          git push origin HEAD:main
