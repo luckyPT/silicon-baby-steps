@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "progress_units": "dimensionless s; v in 1/s; a in 1/s^2",
+  "original_path_source": "Episode11 accepted_blend_alpha_0_25",
+  "path_source_sha256": "d1837bda10a631f971b0bd6c9ee37bd67058c809865d70928f6bcb101eda74ba",
+  "path_length_deg": 67.38970675663212,
+  "profiles": {
+    "full": {
+      "distance": 1.0,
+      "vmax": 0.25,
+      "amax": 0.125,
+      "vp": 0.25,
+      "ta": 2.0,
+      "tc": 2.0,
+      "T": 6.0,
+      "kind": "trapezoid",
+      "area": 0.999999999975,
+      "sampled_min_clearance_m": 0.01565069513353931,
+      "endpoint_q_deg": [
+        -29.999999999999996,
+        150.0
+      ],
+      "same_geometry": true,
+      "scalar_bounds_checked": true
+    },
+    "short_prefix": {
+      "distance": 0.25,
+      "vmax": 0.25,
+      "amax": 0.125,
+      "vp": 0.1767766952966369,
+      "ta": 1.4142135623730951,
+      "tc": 0,
+      "T": 2.8284271247461903,
+      "kind": "triangle",
+      "area": 0.25,
+      "sampled_min_clearance_m": 0.12203704510411773,
+      "endpoint_q_deg": [
+        -37.13950391885515,
+        105.25985811989148
+      ],
+      "same_geometry": true,
+      "scalar_bounds_checked": true
+    }
+  },
+  "scope": [
+    "Kinematic teaching time law, not a real controller run.",
+    "Uniform comparator has ideal velocity jumps; not executable under finite acceleration.",
+    "Joint velocity/acceleration, dynamics, tracking and liquid stability are NOT certified here.",
+    "Short case ends at 25% of the full route and is not a same-task speed comparison.",
+    "Original path is tangent-continuous at joins, not guaranteed C2; S-curve timing alone will not repair path curvature jumps."
+  ]
+}

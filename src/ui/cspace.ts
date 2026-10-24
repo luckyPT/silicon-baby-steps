@@ -51,6 +51,11 @@ export class ConfigurationMap {
       c.lineTo(this.size, (i * this.size) / 6);
       c.stroke();
     }
+    if(frame?.informedBound){
+      const a=frame.informedBound/2,start=this.env.start,goal=this.env.goal,d=Math.hypot(...goal.map((v,i)=>v-start[i])),b=Math.sqrt(Math.max(0,frame.informedBound**2-d*d))/2,angle=Math.atan2(goal[1]-start[1],goal[0]-start[0]);
+      c.beginPath();for(let i=0;i<=128;i++){const t=i/128*2*Math.PI,x=a*Math.cos(t),y=b*Math.sin(t),p=this.xy([(start[0]+goal[0])/2+x*Math.cos(angle)-y*Math.sin(angle),(start[1]+goal[1])/2+x*Math.sin(angle)+y*Math.cos(angle)]);if(i)c.lineTo(p[0],p[1]);else c.moveTo(p[0],p[1]);}
+      c.closePath();c.fillStyle="#ffb76616";c.fill();c.strokeStyle="#ffb766";c.lineWidth=1.5;c.stroke();
+    }
     const tree = (nodes: Point[], parents: number[], color: string) => {
       c.strokeStyle = color;
       c.lineWidth = 0.7;

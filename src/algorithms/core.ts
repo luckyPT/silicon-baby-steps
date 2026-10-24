@@ -66,6 +66,7 @@ export interface Frame {
   kind: "grid" | "sampling" | "dwa";
   stats: Stats;
   path: Point[];
+  informedBound?: number;
   nodes?: Point[];
   parents?: number[];
   costs?: number[];

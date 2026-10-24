@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "progress_units": "s dimensionless, v 1/s, a 1/s^2, j 1/s^3",
+  "same_path_as_episode12": true,
+  "path_source_sha256": "d1837bda10a631f971b0bd6c9ee37bd67058c809865d70928f6bcb101eda74ba",
+  "profiles": {
+    "trap": {
+      "T": 6.0,
+      "vmax": 0.25,
+      "amax": 0.125,
+      "name": "梯形速度",
+      "area": 0.999999999975,
+      "min_clearance_m": 0.01565069513353931,
+      "q_start_deg": [
+        -29.999999999999996,
+        90.0
+      ],
+      "q_end_deg": [
+        -29.999999999999996,
+        150.0
+      ]
+    },
+    "s": {
+      "T": 7.0,
+      "vmax": 0.25,
+      "amax": 0.125,
+      "jmax": 0.125,
+      "name": "S曲线",
+      "area": 1.0,
+      "min_clearance_m": 0.015650695131015885,
+      "q_start_deg": [
+        -29.999999999999996,
+        90.0
+      ],
+      "q_end_deg": [
+        -29.999999999999996,
+        150.0
+      ],
+      "jerk_bounded": true,
+      "position_velocity_acceleration_continuous": true,
+      "phase_duration_seconds": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase_jerks": [
+        0.125,
+        0.0,
+        -0.125,
+        0.0,
+        -0.125,
+        0.0,
+        0.125
+      ],
+      "phase_end_states": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.020833333333333332,
+          0.0625,
+          0.125
+        ],
+        [
+          0.14583333333333331,
+          0.1875,
+          0.125
+        ],
+        [
+          0.375,
+          0.25,
+          0.0
+        ],
+        [
+          0.625,
+          0.25,
+          0.0
+        ],
+        [
+          0.8541666666666666,
+          0.1875,
+          -0.125
+        ],
+        [
+          0.9791666666666665,
+          0.0625,
+          -0.125
+        ],
+        [
+          0.9999999999999999,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  },
+  "geometric_joins": [
+    {
+      "progress": 0.43753751732788376,
+      "tangent_jump_deg_per_progress": 7.944109290391274e-15,
+      "curvature_related_qss_jump": 149.41962341170066
+    },
+    {
+      "progress": 0.6712679212298995,
+      "tangent_jump_deg_per_progress": 1.0658141036401503e-13,
+      "curvature_related_qss_jump": 352.31186870272074
+    }
+  ],
+  "scope": [
+    "Only scalar path progress time scaling is jerk-limited.",
+    "The original path has curvature discontinuities; joint acceleration continuity is not certified.",
+    "No artificial vibration, liquid simulation or hardware stability claim.",
+    "S-curve jerk is piecewise constant with finite jumps, not continuous jerk.",
+    "6s versus 7s only for this exact set of parameters; no general fixed-time penalty claim."
+  ]
+}

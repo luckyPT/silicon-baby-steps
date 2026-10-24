@@ -98,6 +98,66 @@
       "sha256": "1dd3747c47084869f3602e25fdd178f85c249f09e507e1215c092970a604c5ee",
       "width": 1920,
       "height": 1080
+    },
+    {
+      "id": "10",
+      "article": "articles/10.md",
+      "video": "media/10/video.mp4",
+      "cover": "media/10/cover.jpg",
+      "durationSeconds": 409.733333,
+      "bytes": 22909841,
+      "sha256": "67d5e10f98cd50ad1cdbbac556e63127fdcc3b00fe0ca66fe9fdd7e351949b2c",
+      "width": 1920,
+      "height": 1080,
+      "frameRate": "30/1"
+    },
+    {
+      "id": "11",
+      "article": "articles/11.md",
+      "video": "media/11/video.mp4",
+      "cover": "media/11/cover.jpg",
+      "durationSeconds": 349.766667,
+      "bytes": 127969894,
+      "sha256": "017a7e694035dd00f580b90f31a4578f3b94e8e30adf891f44870f202732c76a",
+      "width": 1920,
+      "height": 1080,
+      "frameRate": "30/1"
+    },
+    {
+      "id": "12",
+      "article": "articles/12.md",
+      "video": "media/12/video.mp4",
+      "cover": "media/12/cover.jpg",
+      "durationSeconds": 258.166667,
+      "bytes": 85822535,
+      "sha256": "dd40fdb01d26c08174597fa105a157e28b78c1c03e08da5bede364ff9138c1b0",
+      "width": 1920,
+      "height": 1080,
+      "frameRate": "30/1"
+    },
+    {
+      "id": "13",
+      "article": "articles/13.md",
+      "video": "media/13/video.mp4",
+      "cover": "media/13/cover.jpg",
+      "durationSeconds": 227.533333,
+      "bytes": 57409625,
+      "sha256": "8f658fbee7682507a6bbea4be9517424ff7e6dab787ddbcbcd923f69402a9dad",
+      "width": 1920,
+      "height": 1080,
+      "frameRate": "30/1"
+    },
+    {
+      "id": "14",
+      "article": "articles/14.md",
+      "video": "media/14/video.mp4",
+      "cover": "media/14/cover.jpg",
+      "durationSeconds": 237.166667,
+      "bytes": 49242648,
+      "sha256": "7603b58a9881eb796d23c75863ffb79ae7f06cf3bf1767c723eb91ca361a5d69",
+      "width": 1920,
+      "height": 1080,
+      "frameRate": "30/1"
     }
   ],
   "content": "Full locally hosted MP4 files; not temporary links",
