@@ -114,6 +114,7 @@ export const lessons: Lesson[] = [
   {"id": "12", "title": "时间参数化：给路径排时刻表", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "梯形速度", "part": 3, "lab": "arm-course", "concepts": ["路径与轨迹", "梯形与三角形", "任务终点"], "duration": "4:18", "minutes": 8},
   {"id": "13", "title": "S曲线：让加速度也有过渡", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "S曲线与jerk", "part": 3, "lab": "arm-course", "concepts": ["七段积分", "jerk", "曲率接缝"], "duration": "3:48", "minutes": 8},
   {"id": "14", "title": "关节约束验收与统一时间伸缩", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "关节约束验收", "part": 3, "lab": "arm-course", "concepts": ["链式法则", "时间伸缩", "单侧极限"], "duration": "3:57", "minutes": 8},
+  {id:"15",title:"RRT已经会找路了，为什么还要学别的算法？",subtitle:"老板又递来四张需求卡，第四部分先打开静态规划地图。",algorithm:"静态规划导读",part:4,lab:"sampling",concepts:["局部决策","计算复用","轨迹优化","计算预算"],duration:"4:29",minutes:5},
 ];
 export const roadmap = [
   {
