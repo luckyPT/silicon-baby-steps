@@ -60,7 +60,16 @@
       16,
       17,
       18
-    ]
+    ],
+    "verified_platform_video_episodes": [
+      15,
+      16,
+      17
+    ],
+    "public_video_link_pending_episodes": [
+      18
+    ],
+    "video_pending_note": "video_pending_episodes仅指本站MP4未托管，不代表平台作品未发布。"
   },
   "repository": {
     "name": "luckyPT/silicon-baby-steps",
@@ -72,15 +81,15 @@
     "host_branch": "master",
     "workflow": ".github/workflows/pages.yml",
     "workflow_name": "Publish letsgogo.top",
-    "last_verified_content_commit": "51ca9474ea59d6e1ca269c6f5beb5d68979d48f5",
+    "last_verified_content_commit": "d10bb6f3123456d28107a6b136aaf8dc6dcc40dc",
     "content_commit_note": "This is the deployed article/website baseline, not necessarily the latest documentation commit.",
-    "deployment_run": 40101004506,
+    "deployment_run": 40204309869,
     "deployment_result": "success",
-    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/40101004506",
+    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/40204309869",
     "refresh_schedule_observed": "17 */6 * * * (UTC), in host workflow; manual dispatch available"
   },
   "validation": {
-    "course_ci_run": 40100933583,
+    "course_ci_run": 40201107992,
     "course_ci_result": "success",
     "algorithm_tests": 17,
     "media_chapters_verified": 14,
@@ -114,6 +123,18 @@
       "local_http_resources_checked": 114,
       "local_http_result": "all HTTP 200",
       "interactive_browser_qa": "not run locally: Chromium Unix socket restricted; elevated runtime initialization failed without reading or changing protected paths"
+    },
+    "platform_video_links": {
+      "verified_date": "2026-10-25",
+      "episodes": [
+        15,
+        16,
+        17
+      ],
+      "platform": "toutiao",
+      "evidence": "每页canonical、实际标题和作者碳硅共鸣逐一核对",
+      "inline_player": "not enabled; no verified official work-specific embed code",
+      "tests": 42
     }
   },
   "publishing_policy": {
@@ -122,18 +143,18 @@
     "keep_existing_platform_articles": true
   },
   "pending_work": [
-    "完成第15—18集分阶段课程源提交与主站部署，并在真实站点核验",
-    "补齐第15—18集网站完整视频；不把分段素材当可播放视频",
-    "平台发布状态仍见STAGE-2026-10-25.md，本次不执行社交平台投稿"
+    "部署并验收本轮已核实的平台观看入口",
+    "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL",
+    "第18集尚无已核实公开作品链接，保持待补；本次不发布到社交平台"
   ],
-  "next_action": "提交已验证的18集讲义/实验版本；保持14集视频原字节，记录新部署回执与线上检查。",
+  "next_action": "部署当前官方作品链接更新，检查15—17按钮与18待补状态；继续保留1—14本站播放器。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
     "resolution": "1920x1080",
     "fps": 30,
     "video_sha256": "c960d6b7aeab60c2b83e2a9dc63a8315f0a9b8d0d63f9787668ee5eefcbdf916",
-    "toutiao": "Publish clicked; final receipt unverified. Appreciation and AI disclosure checked.",
+    "toutiao": "2026-10-25已核对公开作品标题/作者/canonical，URL见src/content/platform-videos.ts",
     "douyin": "Video uploaded; cover and final publishing incomplete.",
     "source_branch": "production/episode15-20261024",
     "source_commit": "23451254dd824e12da2cf55969f2ab54f2173345",

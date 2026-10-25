@@ -2024,3 +2024,8 @@ footer > span {
     font-size: 15px;
   }
 }
+
+/* Official work-page links: no embedded player or remote requests by default. */
+.platform-video h2 { margin: 8px 0 12px; }
+.platform-video-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 12px; }
+.platform-video-note { font-size: 13px; opacity: .8; }

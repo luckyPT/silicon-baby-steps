@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {lessons} from '../src/content/catalog.ts';
+import {renderPlatformVideoSection} from '../src/ui/platform-video.ts';
 const manifest=JSON.parse(readFileSync(new URL('../public/media/manifest.json',import.meta.url),'utf8'));
 test('18 lectures match manifest; old full videos remain and new videos are explicitly pending',()=>{
  assert.deepEqual(lessons.map(x=>x.id),Array.from({length:18},(_,i)=>String(i+1).padStart(2,'0')));
@@ -17,7 +18,8 @@ test('pending videos have a separate UI branch, not broken playback controls',()
  const source=readFileSync(new URL('../src/main.ts',import.meta.url),'utf8');
  const section=source.slice(source.indexOf('const videoSection ='),source.indexOf('content.innerHTML = `${videoSection}'));
  const pendingBranch=section.split('    : `')[0];
- assert.match(pendingBranch,/videoStatus === "pending"/);assert.match(pendingBranch,/视频待补/);
+ assert.match(pendingBranch,/videoStatus === "pending"/);assert.match(pendingBranch,/renderPlatformVideoSection/);
+ assert.match(renderPlatformVideoSection("18"),/视频待补/);
  assert.ok(!pendingBranch.includes('<video'));assert.ok(!pendingBranch.includes('video.mp4'));
  assert.equal(source.split('<div class="topbar-right">').length,2,'host portal adapter remains compatible');
 });
