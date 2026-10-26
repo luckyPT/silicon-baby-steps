@@ -1,11 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {platformVideos, videosForLesson, validatePlatformVideo, platformLabels} from '../src/content/platform-videos.ts';
 import {renderPlatformVideoSection} from '../src/ui/platform-video.ts';
 import {lessons} from '../src/content/catalog.ts';
 test('verified public work pages belong to known lessons and exact official hosts',()=>{
   for(const [id,videos] of Object.entries(platformVideos)) {
     assert.ok(lessons.find(l=>l.id===id)); assert.ok(videos.length);
+    const article=readFileSync(new URL(`../public/articles/${id}.md`,import.meta.url),'utf8');
+    assert.doesNotMatch(article,/完整视频的网页同步待补|网站完整视频另行补齐/,`published episode ${id} must not retain obsolete video-pending copy`);
     for(const video of videos)assert.doesNotThrow(()=>validatePlatformVideo(video));
   }
 });
