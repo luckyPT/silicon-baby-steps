@@ -25,7 +25,7 @@
         14
       ]
     ],
-    "next_episode": 19,
+    "next_episode": 21,
     "next_topic_confirmed": true,
     "deliverables": [
       "文章",
@@ -195,5 +195,65 @@
         "full_media_aggregate": "not run in sparse checkout; exact-commit CI required"
       }
     }
+  },
+  "production_episode20": {
+    "topic": "FMT* / BIT*",
+    "complete": true,
+    "duration_s": 470.133333,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "full_decode": "passed",
+    "exact_narration_coverage": true,
+    "mouth_cues": 2723,
+    "character_pose_samples": 140,
+    "min_frame_margin_px": 12,
+    "tests": "43 npm tests passed; verify:media and build passed; Python experiment assertions passed",
+    "git_scope": "code, documents, JSON and text SVG only; no new video/audio/model binaries",
+    "publication": {
+      "episode": 20,
+      "title": "硅基学步20：先撒点，再排队，怎样越找越好？",
+      "date": "2026-10-26",
+      "timezone": "Asia/Shanghai",
+      "duration_s": 470.133333,
+      "video_bytes": 84528499,
+      "video_sha256": "4459238d5a681e269814bf025a6b4559e4ccb90681c8686ae275739574fcb8cc",
+      "publishing_authorized_after_qa": true,
+      "toutiao": {
+        "submitted": true,
+        "status_observed": "审核中",
+        "platform_display_time": "10-26 23:31",
+        "content_id": "7700999537648812544",
+        "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
+        "public_playback_verified": false
+      },
+      "douyin": {
+        "submitted": null,
+        "status_observed": "submission not confirmed; fresh management page requires login",
+        "publish_clicked_once": true,
+        "work_count_before": 509,
+        "management_url": "https://creator.douyin.com/creator-micro/content/manage",
+        "login_required": true,
+        "resume": "Restore sign-in, check whether episode20 exists before any resubmission; existing publication authorization remains valid."
+      },
+      "settings": {
+        "ai_disclosure_both": true,
+        "toutiao_cover": "16:9",
+        "douyin_covers": [
+          "4:3",
+          "3:4"
+        ],
+        "douyin_cover_detection": "passed",
+        "public": true,
+        "immediate": true,
+        "toutiao_appreciation": true,
+        "toutiao_generate_article": false,
+        "collection": null,
+        "no_independent_original_or_first_release_switch_observed": true
+      }
+    },
+    "next_episode": "21 AIT* / EIT* / MIT* planned; not started"
   }
 }
