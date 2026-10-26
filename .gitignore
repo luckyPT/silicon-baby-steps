@@ -16,3 +16,16 @@ public/media/**/.*
 /public/media/1[0-4]/video.mp4
 
 /course-media/**/.*
+
+# 2026-10-26: new commits contain code and documents, no new video payloads.
+*.mp4
+*.mov
+*.webm
+*.m4s
+*.m3u8
+*.mp3
+*.wav
+*.blend
+/course-stream/
+/course-media/1[5-9]/
+/course-media/[2-9][0-9]/
