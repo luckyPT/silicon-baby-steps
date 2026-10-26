@@ -189,7 +189,7 @@
       "video": null,
       "cover": "media/18/cover.jpg",
       "article": "articles/18.md",
-      "note": "讲义与实验可用；尚无已核实公开作品链接，保留视频待补。"
+      "note": "本站MP4未托管；已核实平台作品入口见 src/content/platform-videos.ts，课程页可直接跳转观看。"
     }
   ],
   "content": "Full locally hosted MP4 files; not temporary links",

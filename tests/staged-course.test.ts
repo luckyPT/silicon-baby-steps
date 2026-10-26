@@ -19,7 +19,8 @@ test('pending videos have a separate UI branch, not broken playback controls',()
  const section=source.slice(source.indexOf('const videoSection ='),source.indexOf('content.innerHTML = `${videoSection}'));
  const pendingBranch=section.split('    : `')[0];
  assert.match(pendingBranch,/videoStatus === "pending"/);assert.match(pendingBranch,/renderPlatformVideoSection/);
- assert.match(renderPlatformVideoSection("18"),/视频待补/);
+ assert.match(renderPlatformVideoSection("18"),/本节视频已发布/);
+ assert.match(renderPlatformVideoSection("19"),/视频待补/);
  assert.ok(!pendingBranch.includes('<video'));assert.ok(!pendingBranch.includes('video.mp4'));
  assert.equal(source.split('<div class="topbar-right">').length,2,'host portal adapter remains compatible');
 });

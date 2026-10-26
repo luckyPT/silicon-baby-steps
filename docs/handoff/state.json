@@ -1,5 +1,5 @@
 {
-  "updated_date": "2026-10-25",
+  "updated_date": "2026-10-26",
   "timezone": "Asia/Shanghai",
   "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
   "identity": {
@@ -54,7 +54,7 @@
       "plan": "docs/PART4.md"
     },
     "lecture_and_experiment_episodes": 18,
-    "completed_episodes_note": "完整视频/讲义/实验三者齐备的已发布基线；15—18讲义与实验分阶段补齐，视频明确待补。",
+    "completed_episodes_note": "历史本站完整MP4基线为14集；15—18讲义与实验已补齐，头条公开作品链接已逐集核验；本站不新增MP4。",
     "video_pending_episodes": [
       15,
       16,
@@ -64,11 +64,10 @@
     "verified_platform_video_episodes": [
       15,
       16,
-      17
-    ],
-    "public_video_link_pending_episodes": [
+      17,
       18
     ],
+    "public_video_link_pending_episodes": [],
     "video_pending_note": "video_pending_episodes仅指本站MP4未托管，不代表平台作品未发布。"
   },
   "repository": {
@@ -125,16 +124,17 @@
       "interactive_browser_qa": "not run locally: Chromium Unix socket restricted; elevated runtime initialization failed without reading or changing protected paths"
     },
     "platform_video_links": {
-      "verified_date": "2026-10-25",
+      "verified_date": "2026-10-26",
       "episodes": [
         15,
         16,
-        17
+        17,
+        18
       ],
       "platform": "toutiao",
-      "evidence": "每页canonical、实际标题和作者碳硅共鸣逐一核对",
+      "evidence": "15—17于2026-10-25逐页核对canonical、标题和作者；18于2026-10-26核对管理端已发布、公开页标题/作者/canonical及og:url，并重开规范URL核验。",
       "inline_player": "not enabled; no verified official work-specific embed code",
-      "tests": 42
+      "tests": 43
     }
   },
   "publishing_policy": {
@@ -143,11 +143,10 @@
     "keep_existing_platform_articles": true
   },
   "pending_work": [
-    "部署并验收本轮已核实的平台观看入口",
-    "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL",
-    "第18集尚无已核实公开作品链接，保持待补；本次不发布到社交平台"
+    "部署并验收第18集头条观看入口",
+    "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL"
   ],
-  "next_action": "部署当前官方作品链接更新，检查15—17按钮与18待补状态；继续保留1—14本站播放器。",
+  "next_action": "部署当前第18集官方作品链接更新，检查15—18头条按钮；继续保留1—14本站播放器。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -178,6 +177,23 @@
       "platform_publication": "not submitted",
       "code_commit": "375f1ad2de1c92afebf804bb4540fedcaa907b5f"
     },
-    "website": "18 lecture chapters and lessons15–17 platform links verified online; episode19 is not yet a website chapter."
+    "website": "18 lecture chapters and lessons15–17 platform links verified online; episode19 is not yet a website chapter.",
+    "episode18_platform_link": {
+      "platform": "toutiao",
+      "url": "https://www.toutiao.com/video/7700843119977218579/",
+      "title": "硅基学步18：整条轨迹怎样一起改？",
+      "author": "碳硅共鸣",
+      "duration_display": "11:05",
+      "verified_date": "2026-10-26",
+      "publication_status": "published",
+      "site_deployment": "pending verification",
+      "new_binary_media_added": false,
+      "local_validation": {
+        "tests": "43 passed",
+        "typescript": "passed",
+        "application_build": "passed, base /planning/",
+        "full_media_aggregate": "not run in sparse checkout; exact-commit CI required"
+      }
+    }
   }
 }
