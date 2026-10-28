@@ -1,5 +1,5 @@
 {
-  "updated_date": "2026-10-28",
+  "updated_date": "2026-10-29",
   "timezone": "Asia/Shanghai",
   "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
   "identity": {
@@ -25,7 +25,7 @@
         14
       ]
     ],
-    "next_episode": 22,
+    "next_episode": 23,
     "next_topic_confirmed": false,
     "deliverables": [
       "文章",
@@ -48,7 +48,8 @@
         18,
         19,
         20,
-        21
+        21,
+        22
       ],
       "scope": "静态环境规划与优化；动态环境另设专题",
       "plan": "docs/PART4.md",
@@ -70,7 +71,7 @@
     ],
     "public_video_link_pending_episodes": [],
     "video_pending_note": "video_pending_episodes仅指本站MP4未托管，不代表平台作品未发布。",
-    "latest_produced_episode": 21
+    "latest_produced_episode": 22
   },
   "repository": {
     "name": "luckyPT/silicon-baby-steps",
@@ -147,9 +148,9 @@
   "pending_work": [
     "部署并验收第18集头条观看入口",
     "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL",
-    "第21集两平台已受理审核中，后续仅核对审核结果/公众播放，不重复投稿"
+    "第22集两平台已受理；后续仅按需核对审核结果/公众播放，不重复投稿"
   ],
-  "next_action": "第21集制作与投稿已完成；如用户要求则核对审核结果。第五部分/第22集题材尚未确认，不自动开始。",
+  "next_action": "第22集GCS制作与投稿已完成。第23集/第五部分题材未确认，不自动开始。原有网站部署待办保留。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -305,23 +306,25 @@
       "publishing_authorized_after_qa": true,
       "toutiao": {
         "submitted": true,
-        "status_observed": "审核中",
+        "status_observed": "已发布",
         "platform_display_time": "10-28 23:26",
         "duration_display": "07:42",
         "content_id": "7701740477032268315",
         "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
         "work_link_observed": "https://www.toutiao.com/i7701740477032268315?enter_from=mp_group_management",
-        "public_playback_verified": false
+        "public_playback_verified": false,
+        "status_verified_date": "2026-10-29"
       },
       "douyin": {
         "submitted": true,
-        "status_observed": "审核中",
+        "status_observed": "已发布",
         "platform_display_time": "2026年10月28日 23:27",
         "duration_display": "07:43",
         "work_count_before": 510,
         "work_count_after": 511,
         "management_url": "https://creator.douyin.com/creator-micro/content/manage?enter_from=publish",
-        "public_playback_verified": false
+        "public_playback_verified": false,
+        "status_verified_date": "2026-10-29"
       },
       "settings": {
         "ai_disclosure_both": true,
@@ -338,10 +341,105 @@
         "collection": null,
         "no_independent_original_or_first_release_switch_observed": true
       },
-      "resume": "Both platforms accepted episode21; only check moderation/public playback if requested, never resubmit."
+      "resume": "第21集两平台管理页于2026-10-29均显示已发布，不重复投稿；公众播放未核验。"
     },
     "git_scope": "code/docs/JSON/text SVG only",
     "website": "No catalog/UI change or deployment this turn",
     "part4_closed": true
+  },
+  "production_episode22": {
+    "topic": "GCS / 凸集图规划",
+    "complete": true,
+    "duration_s": 428.466667,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "full_decode": "passed",
+    "narration": {
+      "characters": 2002,
+      "captions": 207,
+      "mouth_cues": 2410,
+      "coverage": "exact",
+      "first_word_s": 0.214625,
+      "intro_s": 5
+    },
+    "character_validation": {
+      "original_mesh": true,
+      "transparent_corners": true,
+      "articulated_parts": [
+        "head",
+        "body",
+        "shoulder",
+        "elbow",
+        "hand"
+      ],
+      "mouth_source": "Rhubarb phonetic on actual narration",
+      "all_140_poses_inside_frame": true
+    },
+    "pose_framing": {
+      "samples": 140,
+      "min_margin_px": 11,
+      "all_passed": true
+    },
+    "experimental_assertions": "passed: actual Drake/Clarabel, analytic two-branch optimum, independent exact segment-box checks, fractional relaxation, coverage and robot-body failures/recoveries",
+    "public_code_commit": "3d776be529edbacb2248ebb2fc540ad2a1bc63ec",
+    "publication": {
+      "episode": 22,
+      "title": "硅基学步22：GCS怎样一起选路和优化？",
+      "date": "2026-10-29",
+      "timezone": "Asia/Shanghai",
+      "duration_s": 428.466667,
+      "video_bytes": 59192363,
+      "video_sha256": "e2663c5790bfcd10c5b2c7d6ac480238b67629906e69fd7921ce730165707b80",
+      "publishing_authorized_after_qa": true,
+      "toutiao": {
+        "submitted": true,
+        "request_clicked": true,
+        "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
+        "public_playback_verified": false,
+        "status_observed": "审核中",
+        "platform_display_time": "10-29 07:27",
+        "duration_display": "07:08",
+        "content_id": "7701864388675879424",
+        "work_link_observed": "https://www.toutiao.com/i7701864388675879424?enter_from=mp_group_management",
+        "work_count_before": 247,
+        "work_count_after": 248
+      },
+      "douyin": {
+        "submitted": true,
+        "request_clicked": true,
+        "work_count_before": 511,
+        "management_url": "https://creator.douyin.com/creator-micro/content/manage",
+        "public_playback_verified": false,
+        "status_observed": "审核中",
+        "platform_display_time": "2026年10月29日 07:27",
+        "duration_display": "07:08",
+        "work_count_after": null,
+        "counter_note": "New episode22 row present; displayed total remained cached at 511, not used as receipt evidence"
+      },
+      "settings": {
+        "ai_disclosure_both": true,
+        "toutiao_cover": "16:9",
+        "douyin_covers": [
+          "4:3",
+          "3:4"
+        ],
+        "douyin_cover_detection": "passed",
+        "cover_algorithm_prominent": "GCS｜凸集图规划",
+        "public": true,
+        "immediate": true,
+        "toutiao_appreciation": true,
+        "toutiao_generate_article": false,
+        "collection": null,
+        "no_independent_original_or_first_release_switch_observed": true
+      },
+      "resume": "Both platforms accepted episode22; only check moderation/public playback if requested, never resubmit."
+    },
+    "git_scope": "code/docs/JSON/text SVG only",
+    "website": "No catalog/UI change or deployment this turn",
+    "cover_rule": "Algorithm name prominent: GCS｜凸集图规划; question-style subtitle retained",
+    "part4_extended_through": 22
   }
 }

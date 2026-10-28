@@ -1,0 +1,52 @@
+{
+  "episode": 22,
+  "title": "硅基学步22：GCS怎样一起选路和优化？",
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "duration_s": 428.466667,
+  "video_bytes": 59192363,
+  "video_sha256": "e2663c5790bfcd10c5b2c7d6ac480238b67629906e69fd7921ce730165707b80",
+  "publishing_authorized_after_qa": true,
+  "toutiao": {
+    "submitted": true,
+    "request_clicked": true,
+    "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
+    "public_playback_verified": false,
+    "status_observed": "审核中",
+    "platform_display_time": "10-29 07:27",
+    "duration_display": "07:08",
+    "content_id": "7701864388675879424",
+    "work_link_observed": "https://www.toutiao.com/i7701864388675879424?enter_from=mp_group_management",
+    "work_count_before": 247,
+    "work_count_after": 248
+  },
+  "douyin": {
+    "submitted": true,
+    "request_clicked": true,
+    "work_count_before": 511,
+    "management_url": "https://creator.douyin.com/creator-micro/content/manage",
+    "public_playback_verified": false,
+    "status_observed": "审核中",
+    "platform_display_time": "2026年10月29日 07:27",
+    "duration_display": "07:08",
+    "work_count_after": null,
+    "counter_note": "New episode22 row present; displayed total remained cached at 511, not used as receipt evidence"
+  },
+  "settings": {
+    "ai_disclosure_both": true,
+    "toutiao_cover": "16:9",
+    "douyin_covers": [
+      "4:3",
+      "3:4"
+    ],
+    "douyin_cover_detection": "passed",
+    "cover_algorithm_prominent": "GCS｜凸集图规划",
+    "public": true,
+    "immediate": true,
+    "toutiao_appreciation": true,
+    "toutiao_generate_article": false,
+    "collection": null,
+    "no_independent_original_or_first_release_switch_observed": true
+  },
+  "resume": "Both platforms accepted episode22; only check moderation/public playback if requested, never resubmit."
+}
