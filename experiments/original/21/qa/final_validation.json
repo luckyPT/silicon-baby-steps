@@ -1,0 +1,57 @@
+{
+  "episode": 21,
+  "review_only": false,
+  "published": false,
+  "duration_s": 462.7,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 13881,
+  "audio_channels": 2,
+  "sample_rate": 48000,
+  "full_decode": "passed",
+  "mean_db": -21.6,
+  "peak_db": -4.1,
+  "sha256": "3773315a67cbf6e7f5c9194dca8412b66f43f9ab92c2fbacfcb1416261f83cf8",
+  "bytes": 87963820,
+  "narration": {
+    "characters": 2127,
+    "captions": 218,
+    "mouth_cues": 2684,
+    "coverage": "exact",
+    "first_word_s": 0.214625,
+    "intro_s": 5,
+    "normalization": "001 caption equals spoken 零零一"
+  },
+  "boundaries": [
+    "Self-authored finite-graph heuristic, effort ledger and MIT sampling components; not full AIT/EIT/MIT implementations",
+    "Static 2D point robot and exact segment-circle checking; 3D display only",
+    "Same seed fixed/adaptive share graph; comparisons report collision checks separately from reverse edge visits",
+    "Adaptive heuristic uses full reverse Dijkstra, not LPA; EIT demonstration is synthetic; MIT thresholds controlled manually",
+    "Finite sample success does not prove continuous optimum",
+    "No physical robot execution"
+  ],
+  "git_policy": "Only new code/documents, no video/audio/segments/model binaries",
+  "narration_authorization": "Current user explicitly permits online TTS and requests automatic publication after completion",
+  "character_validation": {
+    "original_mesh": true,
+    "transparent_framebuffer": true,
+    "articulated_parts": true,
+    "sampled_poses": 140,
+    "min_margin": 12
+  },
+  "pose_framing": {
+    "samples": 140,
+    "min_frame_margin_px": 12,
+    "transparent_corners": true
+  },
+  "visual_review": {
+    "final_mp4_frames": 9,
+    "intro_label_corrected": true,
+    "character_transparency": true,
+    "formulas_and_covers": "passed",
+    "observed": "intro, AIT hand/run, effort ledger, MIT hand, failure, recovery, map, close"
+  }
+}

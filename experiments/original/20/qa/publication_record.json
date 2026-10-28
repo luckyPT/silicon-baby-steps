@@ -9,7 +9,7 @@
   "publishing_authorized_after_qa": true,
   "toutiao": {
     "submitted": true,
-    "status_observed": "审核中",
+    "status_observed": "已发布",
     "platform_display_time": "10-26 23:31",
     "content_id": "7700999537648812544",
     "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
@@ -17,7 +17,7 @@
   },
   "douyin": {
     "submitted": true,
-    "status_observed": "审核中",
+    "status_observed": "已发布",
     "platform_display_time": "2026年10月28日 08:28",
     "duration_display": "07:50",
     "management_url": "https://creator.douyin.com/creator-micro/content/manage?enter_from=publish",
@@ -44,5 +44,6 @@
     "collection": null,
     "no_independent_original_or_first_release_switch_observed": true
   },
-  "last_verified_date": "2026-10-28"
+  "last_verified_date": "2026-10-28",
+  "status_evidence": "Both signed-in management pages visibly showed 已发布 before episode21 upload; public playback not rechecked."
 }

@@ -25,8 +25,8 @@
         14
       ]
     ],
-    "next_episode": 21,
-    "next_topic_confirmed": true,
+    "next_episode": 22,
+    "next_topic_confirmed": false,
     "deliverables": [
       "文章",
       "完整视频",
@@ -51,7 +51,8 @@
         21
       ],
       "scope": "静态环境规划与优化；动态环境另设专题",
-      "plan": "docs/PART4.md"
+      "plan": "docs/PART4.md",
+      "production_complete": true
     },
     "lecture_and_experiment_episodes": 18,
     "completed_episodes_note": "历史本站完整MP4基线为14集；15—18讲义与实验已补齐，头条公开作品链接已逐集核验；本站不新增MP4。",
@@ -68,7 +69,8 @@
       18
     ],
     "public_video_link_pending_episodes": [],
-    "video_pending_note": "video_pending_episodes仅指本站MP4未托管，不代表平台作品未发布。"
+    "video_pending_note": "video_pending_episodes仅指本站MP4未托管，不代表平台作品未发布。",
+    "latest_produced_episode": 21
   },
   "repository": {
     "name": "luckyPT/silicon-baby-steps",
@@ -144,9 +146,10 @@
   },
   "pending_work": [
     "部署并验收第18集头条观看入口",
-    "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL"
+    "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL",
+    "第21集两平台已受理审核中，后续仅核对审核结果/公众播放，不重复投稿"
   ],
-  "next_action": "部署当前第18集官方作品链接更新，检查15—18头条按钮；继续保留1—14本站播放器。",
+  "next_action": "第21集制作与投稿已完成；如用户要求则核对审核结果。第五部分/第22集题材尚未确认，不自动开始。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -223,7 +226,7 @@
       "publishing_authorized_after_qa": true,
       "toutiao": {
         "submitted": true,
-        "status_observed": "审核中",
+        "status_observed": "已发布",
         "platform_display_time": "10-26 23:31",
         "content_id": "7700999537648812544",
         "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
@@ -231,7 +234,7 @@
       },
       "douyin": {
         "submitted": true,
-        "status_observed": "审核中",
+        "status_observed": "已发布",
         "platform_display_time": "2026年10月28日 08:28",
         "duration_display": "07:50",
         "management_url": "https://creator.douyin.com/creator-micro/content/manage?enter_from=publish",
@@ -258,8 +261,87 @@
         "collection": null,
         "no_independent_original_or_first_release_switch_observed": true
       },
-      "last_verified_date": "2026-10-28"
+      "last_verified_date": "2026-10-28",
+      "status_evidence": "Both signed-in management pages visibly showed 已发布 before episode21 upload; public playback not rechecked."
     },
     "next_episode": "21 AIT* / EIT* / MIT* planned; not started"
+  },
+  "production_episode21": {
+    "topic": "AIT* / EIT* / MIT*",
+    "complete": true,
+    "duration_s": 462.7,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "full_decode": "passed",
+    "narration": {
+      "characters": 2127,
+      "captions": 218,
+      "mouth_cues": 2684,
+      "coverage": "exact",
+      "first_word_s": 0.214625,
+      "intro_s": 5,
+      "normalization": "001 caption equals spoken 零零一"
+    },
+    "character_validation": {
+      "original_mesh": true,
+      "transparent_framebuffer": true,
+      "articulated_parts": true,
+      "sampled_poses": 140,
+      "min_margin": 12
+    },
+    "experimental_assertions": "passed: three seeds, graph oracle, every reverse repair admissible, analytic segment checks, failure/recovery and sparse-miss counterexample",
+    "public_code_commit": "becb84d05d75a735b5decbd23dca37bc85917b5d",
+    "publication": {
+      "episode": 21,
+      "title": "硅基学步21：路太多，先算哪条才不白忙？",
+      "date": "2026-10-28",
+      "timezone": "Asia/Shanghai",
+      "duration_s": 462.7,
+      "video_bytes": 87963820,
+      "video_sha256": "3773315a67cbf6e7f5c9194dca8412b66f43f9ab92c2fbacfcb1416261f83cf8",
+      "publishing_authorized_after_qa": true,
+      "toutiao": {
+        "submitted": true,
+        "status_observed": "审核中",
+        "platform_display_time": "10-28 23:26",
+        "duration_display": "07:42",
+        "content_id": "7701740477032268315",
+        "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
+        "work_link_observed": "https://www.toutiao.com/i7701740477032268315?enter_from=mp_group_management",
+        "public_playback_verified": false
+      },
+      "douyin": {
+        "submitted": true,
+        "status_observed": "审核中",
+        "platform_display_time": "2026年10月28日 23:27",
+        "duration_display": "07:43",
+        "work_count_before": 510,
+        "work_count_after": 511,
+        "management_url": "https://creator.douyin.com/creator-micro/content/manage?enter_from=publish",
+        "public_playback_verified": false
+      },
+      "settings": {
+        "ai_disclosure_both": true,
+        "toutiao_cover": "16:9",
+        "douyin_covers": [
+          "4:3",
+          "3:4"
+        ],
+        "douyin_cover_detection": "passed",
+        "public": true,
+        "immediate": true,
+        "toutiao_appreciation": true,
+        "toutiao_generate_article": false,
+        "collection": null,
+        "no_independent_original_or_first_release_switch_observed": true
+      },
+      "resume": "Both platforms accepted episode21; only check moderation/public playback if requested, never resubmit."
+    },
+    "git_scope": "code/docs/JSON/text SVG only",
+    "website": "No catalog/UI change or deployment this turn",
+    "part4_closed": true
   }
 }
