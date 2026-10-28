@@ -1,0 +1,485 @@
+{
+  "episode": 22,
+  "implementation": "Actual Drake GraphOfConvexSets with Clarabel; custom 2D entry/exit region model",
+  "drake_version": "1.58.0",
+  "scope": "Static point robot, length-only polygonal path; no trajectory timing, dynamics or physical robot",
+  "analytic": {
+    "upper": 5.47213595499958,
+    "lower": 6.0
+  },
+  "portal_center_baseline": {
+    "path": [
+      [
+        0,
+        0
+      ],
+      [
+        1.8,
+        1.5
+      ],
+      [
+        3.2,
+        1.5
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    "length": 6.086149805543993
+  },
+  "outside_cover_feasible": {
+    "path": [
+      [
+        0,
+        0
+      ],
+      [
+        2.18,
+        0.62
+      ],
+      [
+        2.82,
+        0.62
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    "length": 5.17290194025858,
+    "margin": 0.02
+  },
+  "coverage_failure": {
+    "seed": 1,
+    "boxes": {
+      "L": [
+        -0.5,
+        -2.0,
+        2.0,
+        2.0
+      ],
+      "R": [
+        3.0,
+        -2.0,
+        5.5,
+        2.0
+      ]
+    },
+    "edges": [
+      "SL",
+      "RT"
+    ],
+    "relaxation": {
+      "success": false,
+      "status": "SolutionResult.kInfeasibleConstraints",
+      "solver": ""
+    },
+    "elapsed_s": 0.000519061999511905
+  },
+  "body_recovery": {
+    "radius": 0.5,
+    "conservative_inflated_box": [
+      1.7000000000000002,
+      -1.1,
+      3.3,
+      1.1
+    ],
+    "old_point_path_fails_inflated_box": true,
+    "result": {
+      "seed": 1,
+      "boxes": {
+        "L": [
+          -0.5,
+          -2.4,
+          1.6,
+          2.4
+        ],
+        "U": [
+          1.4,
+          1.2,
+          3.6,
+          2.4
+        ],
+        "D": [
+          1.4,
+          -2.4,
+          3.6,
+          -1.6
+        ],
+        "R": [
+          3.4,
+          -2.4,
+          5.5,
+          2.4
+        ]
+      },
+      "edges": [
+        "SL",
+        "LU",
+        "UR",
+        "LD",
+        "DR",
+        "RT"
+      ],
+      "relaxation": {
+        "success": true,
+        "status": "SolutionResult.kSolutionFound",
+        "solver": "Clarabel",
+        "cost": 4.999999999349157,
+        "flows": {
+          "SL": 0.9999999999999892,
+          "LU": 0.5268229014209073,
+          "UR": 0.5268229014209094,
+          "LD": 0.4731770985790796,
+          "DR": 0.47317709857908175,
+          "RT": 0.9999999999999928
+        }
+      },
+      "elapsed_s": 0.005737895000493154,
+      "rounded": {
+        "success": true,
+        "status": "SolutionResult.kSolutionFound",
+        "solver": "Clarabel",
+        "cost": 5.800000000070812,
+        "flows": {
+          "SL": 1.0,
+          "LU": 1.0,
+          "UR": 1.0,
+          "LD": 0.0,
+          "DR": 0.0,
+          "RT": 1.0
+        },
+        "path": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.5999999986836222,
+            1.1999999999541087
+          ],
+          [
+            3.4000000013163776,
+            1.19999999995406
+          ],
+          [
+            4.999999999999926,
+            -9.674591545063522e-14
+          ]
+        ],
+        "regions": [
+          "S",
+          "L",
+          "U",
+          "R",
+          "T"
+        ],
+        "pieces": [
+          {
+            "region": "L",
+            "entry": [
+              7.249991045217777e-14,
+              -9.674595286721597e-14
+            ],
+            "exit": [
+              1.5999999986836222,
+              1.1999999999541087
+            ]
+          },
+          {
+            "region": "U",
+            "entry": [
+              1.5999999986836222,
+              1.19999999995406
+            ],
+            "exit": [
+              3.4000000013163776,
+              1.19999999995406
+            ]
+          },
+          {
+            "region": "R",
+            "entry": [
+              3.4000000013163776,
+              1.1999999999541087
+            ],
+            "exit": [
+              4.999999999999926,
+              -9.674591545063522e-14
+            ]
+          }
+        ],
+        "continuity_residual": 1.2089671795280205e-13,
+        "length": 5.800000000471451,
+        "all_segments_analytically_collision_free": true
+      },
+      "relative_bound_gap": 0.1600000001651579,
+      "restrictions": {
+        "upper": {
+          "success": true,
+          "status": "SolutionResult.kSolutionFound",
+          "solver": "Clarabel",
+          "cost": 5.800000000070812,
+          "flows": {
+            "SL": 1.0,
+            "LU": 1.0,
+            "UR": 1.0,
+            "LD": 0.0,
+            "DR": 0.0,
+            "RT": 1.0
+          },
+          "path": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.5999999986836222,
+              1.1999999999541087
+            ],
+            [
+              3.4000000013163776,
+              1.19999999995406
+            ],
+            [
+              4.999999999999926,
+              -9.674591545063522e-14
+            ]
+          ],
+          "regions": [
+            "S",
+            "L",
+            "U",
+            "R",
+            "T"
+          ],
+          "pieces": [
+            {
+              "region": "L",
+              "entry": [
+                7.249991045217777e-14,
+                -9.674595286721597e-14
+              ],
+              "exit": [
+                1.5999999986836222,
+                1.1999999999541087
+              ]
+            },
+            {
+              "region": "U",
+              "entry": [
+                1.5999999986836222,
+                1.19999999995406
+              ],
+              "exit": [
+                3.4000000013163776,
+                1.19999999995406
+              ]
+            },
+            {
+              "region": "R",
+              "entry": [
+                3.4000000013163776,
+                1.1999999999541087
+              ],
+              "exit": [
+                4.999999999999926,
+                -9.674591545063522e-14
+              ]
+            }
+          ],
+          "continuity_residual": 1.2089671795280205e-13,
+          "length": 5.800000000471451,
+          "all_segments_analytically_collision_free": true
+        },
+        "lower": {
+          "success": true,
+          "status": "SolutionResult.kSolutionFound",
+          "solver": "Clarabel",
+          "cost": 6.325483400379402,
+          "flows": {
+            "SL": 1.0,
+            "LU": 0.0,
+            "UR": 0.0,
+            "LD": 1.0,
+            "DR": 1.0,
+            "RT": 1.0
+          },
+          "path": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.5999999959901228,
+              -1.5999999999573762
+            ],
+            [
+              3.400000004009878,
+              -1.5999999999573138
+            ],
+            [
+              4.9999999999998765,
+              1.242819165165053e-13
+            ]
+          ],
+          "regions": [
+            "S",
+            "L",
+            "D",
+            "R",
+            "T"
+          ],
+          "pieces": [
+            {
+              "region": "L",
+              "entry": [
+                1.2348239723721796e-13,
+                1.2428192323038935e-13
+              ],
+              "exit": [
+                1.5999999959901228,
+                -1.5999999999573762
+              ]
+            },
+            {
+              "region": "D",
+              "entry": [
+                1.599999995990122,
+                -1.5999999999573138
+              ],
+              "exit": [
+                3.400000004009878,
+                -1.5999999999573138
+              ]
+            },
+            {
+              "region": "R",
+              "entry": [
+                3.4000000040098777,
+                -1.5999999999573762
+              ],
+              "exit": [
+                4.9999999999998765,
+                1.242819165165053e-13
+              ]
+            }
+          ],
+          "continuity_residual": 1.7519674331817498e-13,
+          "length": 6.325483401882513,
+          "all_segments_analytically_collision_free": true
+        }
+      }
+    }
+  },
+  "claims": [
+    "Three seeds vary rounding only; they are not three independent environments",
+    "All graph paths enumerated for this two-route DAG; no general enumeration scalability claim",
+    "Relaxed result is fractional; not an executable path",
+    "Costs and bounds are numerical within tolerances, not exact formal certificates",
+    "No runtime ranking against other planners"
+  ],
+  "runs": [
+    {
+      "seed": 1,
+      "lower_bound": 4.999999998196375,
+      "fractional_flows": {
+        "SL": 0.9999999999999756,
+        "LU": 0.538772692076113,
+        "UR": 0.5387726920761182,
+        "LD": 0.46122730792385674,
+        "DR": 0.4612273079238618,
+        "RT": 0.999999999999983
+      },
+      "rounded_length": 5.47213595499645,
+      "relative_bound_gap": 0.09442719135143605,
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.9999999999687859,
+          0.9999999999890561
+        ],
+        [
+          3.0000000000312146,
+          0.9999999999892081
+        ],
+        [
+          5.000000000000153,
+          3.042792075030807e-13
+        ]
+      ],
+      "continuity_residual": 3.402400753963098e-13
+    },
+    {
+      "seed": 7,
+      "lower_bound": 4.999999998196375,
+      "fractional_flows": {
+        "SL": 0.9999999999999756,
+        "LU": 0.538772692076113,
+        "UR": 0.5387726920761182,
+        "LD": 0.46122730792385674,
+        "DR": 0.4612273079238618,
+        "RT": 0.999999999999983
+      },
+      "rounded_length": 5.47213595499645,
+      "relative_bound_gap": 0.09442719135143605,
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.9999999999687859,
+          0.9999999999890561
+        ],
+        [
+          3.0000000000312146,
+          0.9999999999892081
+        ],
+        [
+          5.000000000000153,
+          3.042792075030807e-13
+        ]
+      ],
+      "continuity_residual": 3.402400753963098e-13
+    },
+    {
+      "seed": 17,
+      "lower_bound": 4.999999998196375,
+      "fractional_flows": {
+        "SL": 0.9999999999999756,
+        "LU": 0.538772692076113,
+        "UR": 0.5387726920761182,
+        "LD": 0.46122730792385674,
+        "DR": 0.4612273079238618,
+        "RT": 0.999999999999983
+      },
+      "rounded_length": 5.47213595499645,
+      "relative_bound_gap": 0.09442719135143605,
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.9999999999687859,
+          0.9999999999890561
+        ],
+        [
+          3.0000000000312146,
+          0.9999999999892081
+        ],
+        [
+          5.000000000000153,
+          3.042792075030807e-13
+        ]
+      ],
+      "continuity_residual": 3.402400753963098e-13
+    }
+  ],
+  "all_assertions": "passed"
+}
