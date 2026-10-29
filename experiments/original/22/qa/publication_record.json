@@ -12,13 +12,14 @@
     "request_clicked": true,
     "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
     "public_playback_verified": false,
-    "status_observed": "审核中",
+    "status_observed": "已发布",
     "platform_display_time": "10-29 07:27",
     "duration_display": "07:08",
     "content_id": "7701864388675879424",
     "work_link_observed": "https://www.toutiao.com/i7701864388675879424?enter_from=mp_group_management",
     "work_count_before": 247,
-    "work_count_after": 248
+    "work_count_after": 248,
+    "status_verified_date": "2026-10-29"
   },
   "douyin": {
     "submitted": true,
@@ -26,11 +27,12 @@
     "work_count_before": 511,
     "management_url": "https://creator.douyin.com/creator-micro/content/manage",
     "public_playback_verified": false,
-    "status_observed": "审核中",
+    "status_observed": "已发布",
     "platform_display_time": "2026年10月29日 07:27",
     "duration_display": "07:08",
     "work_count_after": null,
-    "counter_note": "New episode22 row present; displayed total remained cached at 511, not used as receipt evidence"
+    "counter_note": "New episode22 row present; displayed total remained cached at 511, not used as receipt evidence",
+    "status_verified_date": "2026-10-29"
   },
   "settings": {
     "ai_disclosure_both": true,
@@ -48,5 +50,6 @@
     "collection": null,
     "no_independent_original_or_first_release_switch_observed": true
   },
-  "resume": "Both platforms accepted episode22; only check moderation/public playback if requested, never resubmit."
+  "resume": "Both management pages show episode22 published during episode23 task; do not resubmit. Public playback not checked.",
+  "last_verified_date": "2026-10-29"
 }

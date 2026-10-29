@@ -1,0 +1,214 @@
+{
+  "hello": {
+    "form": [
+      "\\text{reuse}+\\text{repair}"
+    ],
+    "notes": [
+      "第23集 · 环境变化与搜索复用",
+      "LPA*：Lifelong Planning A*",
+      "原人物、三维教学与实际搜索日志"
+    ]
+  },
+  "bridge": {
+    "form": [
+      "\\text{A*}\\to\\text{LPA*}"
+    ],
+    "notes": [
+      "经典增量启发式搜索",
+      "本集固定起点与终点",
+      "改变图代价，再求当前图最短路"
+    ]
+  },
+  "setup": {
+    "form": [
+      "c(u,v)\\geq1",
+      "h(v)=|x_v-x_T|+|y_v-y_T|"
+    ],
+    "notes": [
+      "固定起终点，地图快照逐次更新",
+      "四邻接，不走对角线",
+      "曼哈顿启发在所有代价版本中保持一致"
+    ]
+  },
+  "baseline": {
+    "form": [
+      "C_{initial}=20",
+      "N_{LPA*}=N_{A*}=21"
+    ],
+    "notes": [
+      "实际初始搜索：21次对21次",
+      "扩展事件不是唯一格子数",
+      "不是论文或工程库性能复现"
+    ]
+  },
+  "gvalue": {
+    "form": [
+      "g(v):\\ \\text{stored estimate}"
+    ],
+    "notes": [
+      "g是算法保存的估计",
+      "地图变化后可能失效",
+      "不是机器人累计行驶距离"
+    ]
+  },
+  "rhs": {
+    "form": [
+      "rhs(S)=0",
+      "rhs(v)=\\min_{u\\in Pred(v)}[g(u)+c(u,v)]"
+    ],
+    "notes": [
+      "前驱到当前节点，方向不能写反",
+      "rhs根据当前边代价重算",
+      "本实验是无向栅格，前驱与邻居相同"
+    ]
+  },
+  "consistent": {
+    "form": [
+      "g(v)=rhs(v)",
+      "g(v)\\neq rhs(v)\\Rightarrow v\\in U"
+    ],
+    "notes": [
+      "局部一致，不是全局验收结论",
+      "队列维护所有当前不一致节点",
+      "只按优先级处理与当前查询相关的部分"
+    ]
+  },
+  "hand": {
+    "form": [
+      "rhs_{old}(V)=\\min(2+1,3+2)=3",
+      "rhs_{new}(V)=\\min(2+5,3+2)=5"
+    ],
+    "notes": [
+      "独立手算，不是栅格地图的数据",
+      "边涨价：g=3，rhs=5",
+      "旧的低代价可能依赖已经失效的边"
+    ]
+  },
+  "increase": {
+    "form": [
+      "g(v)<rhs(v)\\Rightarrow g(v)\\leftarrow\\infty",
+      "\\text{update }\\{v\\}\\cup Succ(v)"
+    ],
+    "notes": [
+      "先撤销过时的乐观估计",
+      "再更新自身与后继",
+      "保留基础LPA*两种处理分支"
+    ]
+  },
+  "decrease": {
+    "form": [
+      "g(v)>rhs(v)\\Rightarrow g(v)\\leftarrow rhs(v)",
+      "g(S)=\\infty,\\quad rhs(S)=0"
+    ],
+    "notes": [
+      "降价与重新开放也能触发修复",
+      "接受报价后更新后继",
+      "g、rhs、队列跨查询保留"
+    ]
+  },
+  "key": {
+    "form": [
+      "m(v)=\\min(g(v),rhs(v))",
+      "K(v)=[m(v)+h(v),\\ m(v)]"
+    ],
+    "notes": [
+      "字典序：先第一项，再第二项",
+      "不是把两个关键字再加成一个数",
+      "启发一致性依赖当前图代价条件"
+    ]
+  },
+  "stop": {
+    "form": [
+      "g(T)=rhs(T)",
+      "TopKey(U)\\geq K(T)"
+    ],
+    "notes": [
+      "两个停止条件同时满足",
+      "队列非空不等于尚未找到最短路",
+      "所有数值在本有限正权图内解释"
+    ]
+  },
+  "closure": {
+    "form": [
+      "C_{closed}=24",
+      "N_{repair}=92,\\quad N_{restart}=105"
+    ],
+    "notes": [
+      "真实日志：封格后相关边设为无穷大",
+      "地图先完整更新，再修复rhs",
+      "旧路线不得继续当成可执行路线"
+    ]
+  },
+  "reopen": {
+    "form": [
+      "C_{reopen}=20",
+      "N_{repair}=4,\\quad N_{restart}=21"
+    ],
+    "notes": [
+      "复用来自之前查询留下的搜索信息",
+      "代价升高与降低都实际运行",
+      "同一更新序列，不能只截取最省事的一次"
+    ]
+  },
+  "cost": {
+    "form": [
+      "N_{pop}\\neq T_{wall}",
+      "T=T_{diff}+T_{rhs}+T_{queue}+T_{search}"
+    ],
+    "notes": [
+      "扩展、邻接扫描、队列操作分别记账",
+      "地图变化检测成本不在搜索计数内",
+      "没有跨实现、跨硬件速度排名"
+    ]
+  },
+  "counter": {
+    "form": [
+      "N_{repair}=77>65=N_{restart}"
+    ],
+    "notes": [
+      "实际反例，保留此前更新历史",
+      "少量改动也可能引发广泛传播",
+      "不保证每次都比重新搜索省工作"
+    ]
+  },
+  "failure": {
+    "form": [
+      "g(T)=rhs(T)=\\infty\\Rightarrow\\text{no path}"
+    ],
+    "notes": [
+      "在当前有限栅格图上无路",
+      "不是未知现实世界无路的证明",
+      "开门后重新计算，不复用失效路径"
+    ]
+  },
+  "verify": {
+    "form": [
+      "C_{LPA*}=C_{A*}=C_{oracle}"
+    ],
+    "notes": [
+      "三个种子是三条独立随机更新序列",
+      "90次随机更新 + 主演示8阶段",
+      "栅格图正确性不代替车身、控制与真机验收"
+    ]
+  },
+  "boundary": {
+    "form": [
+      "\\text{graph updates}\\neq\\text{timed avoidance}"
+    ],
+    "notes": [
+      "本集不做移动起点D* Lite",
+      "没有未来障碍占用、时间窗口或实时预算保证",
+      "几何回放不代表机器人执行"
+    ]
+  },
+  "close": {
+    "form": [
+      "\\text{store}\\to\\text{compare}\\to\\text{repair}"
+    ],
+    "notes": [
+      "LPA* / 终身规划A* · 第23集",
+      "实际搜索日志、讲义与代码保留",
+      "画面与配音含AI辅助制作"
+    ]
+  }
+}
