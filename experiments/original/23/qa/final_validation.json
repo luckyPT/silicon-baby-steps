@@ -1,0 +1,74 @@
+{
+  "episode": 23,
+  "review_only": false,
+  "publication_note": "Technical media QA only. Platform receipts accompany the separately delivered source project.",
+  "duration_s": 452.566667,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 13577,
+  "audio_channels": 2,
+  "sample_rate": 48000,
+  "full_decode": "passed",
+  "mean_db": -21.7,
+  "peak_db": -4.2,
+  "sha256": "5ba8617fa91ce96f08c9330752c5a0902fffb57f0011ee39e22e3c6129cf204d",
+  "bytes": 83567281,
+  "narration": {
+    "characters": 2097,
+    "captions": 216,
+    "mouth_cues": 2711,
+    "coverage": "exact",
+    "first_word_s": 0.214625,
+    "intro_s": 5
+  },
+  "boundaries": [
+    "Self-authored basic LPA* for an undirected four-neighbor graph, positive costs at least one, fixed endpoints",
+    "Graph changes are installed between stationary queries; no moving-start D* Lite, timed avoidance, perception or robot execution",
+    "Same graph, consistent Manhattan heuristic and smaller-g tie rule for restarted A*",
+    "Valid queue-pop expansion events include repeated invalidate/accept events; work types and queue operations reported separately",
+    "Eight main phases and 90 random updates agree with independent reverse Dijkstra; finite tests are not universal validation",
+    "Actual near-start counterexample: LPA* 77 expansions versus restarted A* 65; no universal work reduction or wall-clock speed claim"
+  ],
+  "git_policy": "Only new code/documents, no video/audio/segments/model binaries",
+  "narration_authorization": "Current user explicitly permits online TTS and requests automatic publication after completion",
+  "character_validation": {
+    "original_mesh": true,
+    "transparent_corners": true,
+    "articulated_parts": [
+      "head",
+      "body",
+      "shoulder",
+      "elbow",
+      "hand"
+    ],
+    "mouth_source": "Rhubarb phonetic on actual narration",
+    "all_140_poses_inside_frame": true
+  },
+  "pose_framing": {
+    "samples": 140,
+    "min_margin_px": 12,
+    "all_passed": true
+  },
+  "visual_review": {
+    "final_mp4_frames": 12,
+    "passed": true,
+    "observed": [
+      "particle intro",
+      "full character intro",
+      "rhs equation",
+      "independent hand example",
+      "invalidate propagation",
+      "priority key",
+      "stop conditions",
+      "actual closure",
+      "actual reopening",
+      "near-start counterexample",
+      "unreachable wall",
+      "close"
+    ],
+    "algorithm_name_prominent_on_all_three_covers": true
+  }
+}

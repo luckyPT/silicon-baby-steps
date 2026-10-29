@@ -1,0 +1,65 @@
+{
+  "episode": 23,
+  "topic": "LPA* / 终身规划A*",
+  "part": 5,
+  "production_complete": true,
+  "duration_s": 452.566667,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 13577,
+  "full_decode": "passed",
+  "bytes": 83567281,
+  "sha256": "5ba8617fa91ce96f08c9330752c5a0902fffb57f0011ee39e22e3c6129cf204d",
+  "narration": {
+    "characters": 2097,
+    "captions": 216,
+    "mouth_cues": 2711,
+    "coverage": "exact",
+    "first_word_s": 0.214625,
+    "intro_s": 5
+  },
+  "character_validation": {
+    "original_mesh": true,
+    "transparent_corners": true,
+    "articulated_parts": [
+      "head",
+      "body",
+      "shoulder",
+      "elbow",
+      "hand"
+    ],
+    "mouth_source": "Rhubarb phonetic on actual narration",
+    "all_140_poses_inside_frame": true
+  },
+  "pose_framing": {
+    "samples": 140,
+    "min_margin_px": 12,
+    "all_passed": true
+  },
+  "visual_review": {
+    "final_mp4_frames": 12,
+    "passed": true,
+    "observed": [
+      "particle intro",
+      "full character intro",
+      "rhs equation",
+      "independent hand example",
+      "invalidate propagation",
+      "priority key",
+      "stop conditions",
+      "actual closure",
+      "actual reopening",
+      "near-start counterexample",
+      "unreachable wall",
+      "close"
+    ],
+    "algorithm_name_prominent_on_all_three_covers": true
+  },
+  "experimental_assertions": "Eight main phases and 90 random updates agree with fresh A* and independent reverse Dijkstra; actual near-start counterexample retained",
+  "public_code_commit": "1e7ec2ec4812122004c4edb6e211a17378d0433f",
+  "next_episode": 24,
+  "next_topic_confirmed": false
+}
