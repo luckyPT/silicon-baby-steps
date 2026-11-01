@@ -160,5 +160,24 @@
     "source_commit": "23451254dd824e12da2cf55969f2ab54f2173345",
     "checkpoint": "docs/handoff/EPISODE15-RECOVERY.json",
     "video_and_archive_library_save": "not completed"
+  },
+  "update_2026_10_26": {
+    "git_policy": "Only new code and documents; no new video/audio/segments/model payloads.",
+    "episode19": {
+      "topic": "TrajOpt / GPMP2",
+      "experiment": "recomputed; exact segment/curve and gradient checks passed",
+      "video": "complete narrated review, not published",
+      "duration_s": 593.5,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "fps": 30,
+      "full_decode": "passed",
+      "narration_coverage": "exact",
+      "platform_publication": "not submitted",
+      "code_commit": "375f1ad2de1c92afebf804bb4540fedcaa907b5f"
+    },
+    "website": "18 lecture chapters and lessons15–17 platform links verified online; episode19 is not yet a website chapter."
   }
 }
