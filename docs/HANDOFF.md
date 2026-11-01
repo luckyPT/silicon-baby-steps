@@ -23,7 +23,7 @@
 
 检查命令：`npm test`、`npm run verify:media`、`npm run build -- --base=/planning/`。本轮45项测试通过；第23—26集原始实验已复算，分别通过90次LPA*、150次D* Lite、270次AD*加100次ARA*、90次RRTX零阈值查询核对。完整方法条件以各讲义为准；事件数不等于速度，不宣称硬实时或真机。
 
-提交与上线必须分别核验，最新结果写 `docs/handoff/state.json`；尚未结束的部署不能写成成功。其他操作约定见 [OPERATIONS.md](handoff/OPERATIONS.md)。
+本次已核验课程内容提交 `3a5150d`、课程CI `41269615502`通过，主站提交 `e602487`、部署 `41269725231`成功。线上目录26集，56个新增静态文件与源字节相同，第26集4张图和双平台按钮正常，RRTX无路/预算中断/修复阶段切换通过；旧00/01/14 MP4地址均404。提交与上线仍须分别核验，最新结果写 `docs/handoff/state.json`。其他操作约定见 [OPERATIONS.md](handoff/OPERATIONS.md)。
 
 ## 制作与内容规范
 

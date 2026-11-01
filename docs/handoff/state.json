@@ -110,74 +110,51 @@
     "host_branch": "master",
     "workflow": ".github/workflows/pages.yml",
     "workflow_name": "Publish letsgogo.top",
-    "last_verified_content_commit": "d10bb6f3123456d28107a6b136aaf8dc6dcc40dc",
+    "last_verified_content_commit": "3a5150d99968fc69b61a831beaeca5840bfb60e4",
     "content_commit_note": "This is the deployed article/website baseline, not necessarily the latest documentation commit.",
-    "deployment_run": 40204309869,
+    "deployment_run": 41269725231,
     "deployment_result": "success",
-    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/40204309869",
-    "refresh_schedule_observed": "17 */6 * * * (UTC), in host workflow; manual dispatch available"
+    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/41269725231",
+    "refresh_schedule_observed": "17 */6 * * * (UTC), in host workflow; manual dispatch available",
+    "host_commit": "e602487f9950fe1b1c9514b1919675def00a3714"
   },
   "validation": {
-    "course_ci_run": 40201107992,
+    "course_ci_run": 41269615502,
     "course_ci_result": "success",
-    "algorithm_tests": 17,
-    "media_chapters_verified": 14,
-    "inline_pngs_live_decoded_and_hash_matched": 21,
-    "browser_checks": [
-      "14-chapter directory",
-      "episode 14 full 1080p video playback",
-      "episode 14 3D comparison playback and stretch parameter",
-      "episode 14 inline figures and captions"
+    "algorithm_and_migration_tests": 45,
+    "media_chapters_verified": 26,
+    "video_platforms": [
+      "toutiao",
+      "douyin"
     ],
-    "browser_renderer_observed": "SVGRenderer fallback for the same 3D scene; cloud WebGL unavailable",
+    "external_links_per_episode": 2,
+    "new_static_assets_live_hash_matched": 56,
+    "old_mp4_head_checks": {
+      "media/00/video.mp4": 404,
+      "media/01/video.mp4": 404,
+      "media/14/video.mp4": 404
+    },
+    "browser_checks": [
+      "live directory shows 26 lessons",
+      "episode26 article and two platform buttons",
+      "episode26 all four inline SVGs loaded",
+      "RRTX no_path keeps an empty route",
+      "budget_partial shows 104 queued nodes, one valid pop, no route, incomplete",
+      "closure shows 602 nodes, cost8.638516, 287 valid pops"
+    ],
     "not_retested": [
       "Docker daemon execution",
       "Windows startup scripts",
-      "current platform moderation outcomes"
-    ],
-    "staged_release": {
-      "algorithm_and_staging_tests": 38,
-      "test_result": "passed",
-      "typescript": "passed",
-      "build_base": "/planning/",
-      "build": "passed",
-      "media_lecture_chapters": 18,
-      "full_video_chapters": 14,
-      "explicit_pending_video_chapters": [
-        15,
-        16,
-        17,
-        18
-      ],
-      "local_http_resources_checked": 114,
-      "local_http_result": "all HTTP 200",
-      "interactive_browser_qa": "not run locally: Chromium Unix socket restricted; elevated runtime initialization failed without reading or changing protected paths"
-    },
-    "platform_video_links": {
-      "verified_date": "2026-10-26",
-      "episodes": [
-        15,
-        16,
-        17,
-        18
-      ],
-      "platform": "toutiao",
-      "evidence": "15—17于2026-10-25逐页核对canonical、标题和作者；18于2026-10-26核对管理端已发布、公开页标题/作者/canonical及og:url，并重开规范URL核验。",
-      "inline_player": "not enabled; no verified official work-specific embed code",
-      "tests": 43
-    }
+      "physical robot execution"
+    ]
   },
   "publishing_policy": {
     "new_toutiao_companion_articles": false,
     "keep_git_articles": true,
     "keep_existing_platform_articles": true
   },
-  "pending_work": [
-    "部署并验收第18集头条观看入口",
-    "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL",
-    "第22集两平台已受理；后续仅按需核对审核结果/公众播放，不重复投稿"
-  ],
-  "next_action": "第22集GCS制作与投稿已完成。第23集/第五部分题材未确认，不自动开始。原有网站部署待办保留。",
+  "pending_work": [],
+  "next_action": "本次Git与网站同步、视频外链迁移已完成；不重复投稿。下一集27时空A*仅为计划，未因本次任务开始制作。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -497,6 +474,85 @@
       "build": "passed /planning/ base",
       "python": "23 LPA* 90 updates, 24 D* Lite 150 updates, 25 AD*270 + ARA*100, 26 RRTX90 exact updates passed"
     },
-    "deployment": "pending commit and host workflow verification"
+    "deployment": "success; online directory, chapter26 article/figures/platform buttons and experiment controls verified",
+    "content_commit": "3a5150d99968fc69b61a831beaeca5840bfb60e4",
+    "portal_commit": "e602487f9950fe1b1c9514b1919675def00a3714",
+    "deployment_run": 41269725231,
+    "removed_video_payload_files": 46,
+    "removed_video_payload_bytes": 589345989,
+    "site_course_dist_mib_approx": 26,
+    "live_static_assets_hash_matched": 56,
+    "old_mp4_endpoints_observed_404": true
+  },
+  "previous_site_validation_before_2026_11_01": {
+    "site": {
+      "url": "https://letsgogo.top/planning/",
+      "host_repository": "luckyPT/luckyPT",
+      "host_branch": "master",
+      "workflow": ".github/workflows/pages.yml",
+      "workflow_name": "Publish letsgogo.top",
+      "last_verified_content_commit": "d10bb6f3123456d28107a6b136aaf8dc6dcc40dc",
+      "content_commit_note": "This is the deployed article/website baseline, not necessarily the latest documentation commit.",
+      "deployment_run": 40204309869,
+      "deployment_result": "success",
+      "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/40204309869",
+      "refresh_schedule_observed": "17 */6 * * * (UTC), in host workflow; manual dispatch available"
+    },
+    "validation": {
+      "course_ci_run": 40201107992,
+      "course_ci_result": "success",
+      "algorithm_tests": 17,
+      "media_chapters_verified": 14,
+      "inline_pngs_live_decoded_and_hash_matched": 21,
+      "browser_checks": [
+        "14-chapter directory",
+        "episode 14 full 1080p video playback",
+        "episode 14 3D comparison playback and stretch parameter",
+        "episode 14 inline figures and captions"
+      ],
+      "browser_renderer_observed": "SVGRenderer fallback for the same 3D scene; cloud WebGL unavailable",
+      "not_retested": [
+        "Docker daemon execution",
+        "Windows startup scripts",
+        "current platform moderation outcomes"
+      ],
+      "staged_release": {
+        "algorithm_and_staging_tests": 38,
+        "test_result": "passed",
+        "typescript": "passed",
+        "build_base": "/planning/",
+        "build": "passed",
+        "media_lecture_chapters": 18,
+        "full_video_chapters": 14,
+        "explicit_pending_video_chapters": [
+          15,
+          16,
+          17,
+          18
+        ],
+        "local_http_resources_checked": 114,
+        "local_http_result": "all HTTP 200",
+        "interactive_browser_qa": "not run locally: Chromium Unix socket restricted; elevated runtime initialization failed without reading or changing protected paths"
+      },
+      "platform_video_links": {
+        "verified_date": "2026-10-26",
+        "episodes": [
+          15,
+          16,
+          17,
+          18
+        ],
+        "platform": "toutiao",
+        "evidence": "15—17于2026-10-25逐页核对canonical、标题和作者；18于2026-10-26核对管理端已发布、公开页标题/作者/canonical及og:url，并重开规范URL核验。",
+        "inline_player": "not enabled; no verified official work-specific embed code",
+        "tests": 43
+      }
+    },
+    "pending_work": [
+      "部署并验收第18集头条观看入口",
+      "如取得并核实抖音/西瓜具体作品地址，再补充对应平台按钮；不猜测URL",
+      "第22集两平台已受理；后续仅按需核对审核结果/公众播放，不重复投稿"
+    ],
+    "next_action": "第22集GCS制作与投稿已完成。第23集/第五部分题材未确认，不自动开始。原有网站部署待办保留。"
   }
 }
