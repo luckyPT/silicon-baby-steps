@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="338.4pt" viewBox="0 0 792 338.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-29T08:45:14.457791</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 338.4 
+L 792 338.4 
+L 792 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 91.83503 108.961541 
+Q 200.698179 142.624891 307.425064 175.627653 
+" clip-path="url(#p17605effcc)" style="fill: none; stroke: #318b8c; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 301.609956 170.06128 
+L 307.425064 175.627653 
+L 299.4829 176.939916 
+" clip-path="url(#p17605effcc)" style="fill: none; stroke: #318b8c; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 91.814747 252.955699 
+Q 200.701356 215.244621 307.475029 178.265324 
+" clip-path="url(#p17605effcc)" style="fill: none; stroke: #318b8c; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 299.493364 177.21985 
+L 307.475029 178.265324 
+L 301.849651 184.023372 
+" clip-path="url(#p17605effcc)" style="fill: none; stroke: #318b8c; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="md3efa4ebfe" d="M 0 18.027756 
+C 4.781017 18.027756 9.366859 16.128238 12.747549 12.747549 
+C 16.128238 9.366859 18.027756 4.781017 18.027756 0 
+C 18.027756 -4.781017 16.128238 -9.366859 12.747549 -12.747549 
+C 9.366859 -16.128238 4.781017 -18.027756 0 -18.027756 
+C -4.781017 -18.027756 -9.366859 -16.128238 -12.747549 -12.747549 
+C -16.128238 -9.366859 -18.027756 -4.781017 -18.027756 0 
+C -18.027756 4.781017 -16.128238 9.366859 -12.747549 12.747549 
+C -9.366859 16.128238 -4.781017 18.027756 0 18.027756 
+z
+" style="stroke: #317f80"/>
+    </defs>
+    <g clip-path="url(#p17605effcc)">
+     <use xlink:href="#md3efa4ebfe" x="89.925" y="108.370909" style="fill: #d7eeeb; stroke: #317f80"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <g clip-path="url(#p17605effcc)">
+     <use xlink:href="#md3efa4ebfe" x="89.925" y="253.610182" style="fill: #d7eeeb; stroke: #317f80"/>
+    </g>
+   </g>
+   <g id="PathCollection_3">
+    <g clip-path="url(#p17605effcc)">
+     <use xlink:href="#md3efa4ebfe" x="311.475" y="176.88" style="fill: #d7eeeb; stroke: #317f80"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="191.205" y="116.592" transform="rotate(-0 191.205 116.592)">边代价 1 → 5</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="191.205" y="239.908364" transform="rotate(-0 191.205 239.908364)">边代价 2</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="89.925" y="111.205284" transform="rotate(-0 89.925 111.205284)">甲</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="89.925" y="256.444557" transform="rotate(-0 89.925 256.444557)">乙</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="311.475" y="179.714375" transform="rotate(-0 311.475 179.714375)">V</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 13px; font-family: 'Noto Sans CJK SC'; text-anchor: start" x="64.605" y="67.265455" transform="rotate(-0 64.605 67.265455)">甲的g=2；乙的g=3</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="169.05" y="300.196364" transform="rotate(-0 169.05 300.196364)">涨价后 rhs(V)=min(2+5,3+2)=5</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="200.7" y="20.16" transform="rotate(-0 200.7 20.16)">独立手算图，与栅格实验计数分开</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="text_9">
+    <text style="font-size: 15px; font-family: 'Noto Sans CJK SC'; text-anchor: start; fill: #b65344" x="416.592" y="92.4768" transform="rotate(-0 416.592 92.4768)">涨价：g=3 &lt; rhs=5</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 13px; font-family: 'Noto Sans CJK SC'; text-anchor: start" x="416.592" y="137.6928" transform="rotate(-0 416.592 137.6928)">先令g=∞，再更新自身和后继</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 15px; font-family: 'Noto Sans CJK SC'; text-anchor: start; fill: #148d78" x="416.592" y="197.9808" transform="rotate(-0 416.592 197.9808)">降价：g=5 &gt; rhs=3</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 13px; font-family: 'Noto Sans CJK SC'; text-anchor: start" x="416.592" y="243.1968" transform="rotate(-0 416.592 243.1968)">接受g=rhs=3，再更新后继</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK SC'" transform="translate(416.592 298.8275)">若h(V)=4，两种情况的键都为[7,3]</text>
+    <text style="font-size: 11px; font-family: 'Noto Sans CJK SC'" transform="translate(416.592 312.528)">键决定排序，g与rhs的关系决定处理方向</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 12px; font-family: 'Noto Sans CJK SC'; text-anchor: middle" x="591.3" y="20.16" transform="rotate(-0 591.3 20.16)">旧账与新报价决定两种修复方向</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p17605effcc">
+   <rect x="10.8" y="26.16" width="379.8" height="301.44"/>
+  </clipPath>
+ </defs>
+</svg>
