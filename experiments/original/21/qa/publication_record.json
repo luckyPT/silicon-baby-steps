@@ -9,23 +9,25 @@
   "publishing_authorized_after_qa": true,
   "toutiao": {
     "submitted": true,
-    "status_observed": "审核中",
+    "status_observed": "已发布",
     "platform_display_time": "10-28 23:26",
     "duration_display": "07:42",
     "content_id": "7701740477032268315",
     "management_url": "https://mp.toutiao.com/profile_v4/xigua/content-manage-v2",
     "work_link_observed": "https://www.toutiao.com/i7701740477032268315?enter_from=mp_group_management",
-    "public_playback_verified": false
+    "public_playback_verified": false,
+    "status_verified_date": "2026-10-29"
   },
   "douyin": {
     "submitted": true,
-    "status_observed": "审核中",
+    "status_observed": "已发布",
     "platform_display_time": "2026年10月28日 23:27",
     "duration_display": "07:43",
     "work_count_before": 510,
     "work_count_after": 511,
     "management_url": "https://creator.douyin.com/creator-micro/content/manage?enter_from=publish",
-    "public_playback_verified": false
+    "public_playback_verified": false,
+    "status_verified_date": "2026-10-29"
   },
   "settings": {
     "ai_disclosure_both": true,
@@ -42,5 +44,6 @@
     "collection": null,
     "no_independent_original_or_first_release_switch_observed": true
   },
-  "resume": "Both platforms accepted episode21; only check moderation/public playback if requested, never resubmit."
+  "resume": "Both management pages now show episode21 published; do not resubmit. Public playback not checked.",
+  "last_verified_date": "2026-10-29"
 }

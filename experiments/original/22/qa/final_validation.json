@@ -1,0 +1,76 @@
+{
+  "episode": 22,
+  "review_only": false,
+  "published": false,
+  "publication_note": "Pre-submission media QA snapshot; publication_record.json is authoritative for later platform status",
+  "duration_s": 428.466667,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 12854,
+  "audio_channels": 2,
+  "sample_rate": 48000,
+  "full_decode": "passed",
+  "mean_db": -21.7,
+  "peak_db": -4.2,
+  "sha256": "e2663c5790bfcd10c5b2c7d6ac480238b67629906e69fd7921ce730165707b80",
+  "bytes": 59192363,
+  "narration": {
+    "characters": 2002,
+    "captions": 207,
+    "mouth_cues": 2410,
+    "coverage": "exact",
+    "first_word_s": 0.214625,
+    "intro_s": 5
+  },
+  "boundaries": [
+    "Actual Drake GraphOfConvexSets with Clarabel, order-one region entry/exit length model",
+    "Static 2D point robot with independent exact segment-box collision checks; 3D display only",
+    "Convex relaxation is fractional and not tight: lower bound 5.0, rounded feasible path 5.472135955",
+    "Global optimum proved only within supplied two-branch corridor model by enumerating restrictions and analytic checks",
+    "Safe cover construction is supplied; a shorter feasible path exists outside the cover",
+    "Robot-body recovery uses conservative square obstacle inflation and newly supplied safe regions",
+    "Three rounding seeds on the same map, not three environments; no runtime ranking, timing law, dynamics, or physical robot execution"
+  ],
+  "git_policy": "Only new code/documents, no video/audio/segments/model binaries",
+  "narration_authorization": "Current user explicitly permits online TTS and requests automatic publication after completion",
+  "character_validation": {
+    "original_mesh": true,
+    "transparent_corners": true,
+    "articulated_parts": [
+      "head",
+      "body",
+      "shoulder",
+      "elbow",
+      "hand"
+    ],
+    "mouth_source": "Rhubarb phonetic on actual narration",
+    "all_140_poses_inside_frame": true
+  },
+  "pose_framing": {
+    "samples": 140,
+    "min_margin_px": 11,
+    "all_passed": true
+  },
+  "visual_review": {
+    "final_mp4_frames": 12,
+    "passed": true,
+    "observed": [
+      "particle intro",
+      "full character intro",
+      "GCS graph",
+      "analytic hand calculation",
+      "portal baseline",
+      "fractional relaxation",
+      "rounded path",
+      "outside-cover path",
+      "missing-cover failure",
+      "robot body failure",
+      "inflated-region recovery",
+      "close"
+    ],
+    "algorithm_name_prominent_on_all_three_covers": true
+  }
+}
