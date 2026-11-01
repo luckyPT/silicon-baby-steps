@@ -23,11 +23,11 @@ const visited = new Set<string>(
 );
 function sidebar(active = "home") {
   return `<aside class="sidebar"><a class="brand" href="#/"><span class="brand-mark">硅</span><span>硅基学步<small>SILICON BABY STEPS</small></span></a><div class="brand-caption">碳硅共鸣 · 规划算法工程师的练级地图</div><nav aria-label="主导航"><a class="nav-link ${active === "home" ? "active" : ""}" href="#/"><span>◈</span> 课程总览 <small>${lessons.length}</small></a><a class="nav-link ${active === "roadmap" ? "active" : ""}" href="#/roadmap"><span>◎</span> 完整学习路线 <small>9 部分</small></a><a class="nav-link ${active === "experiments" ? "active" : ""}" href="#/experiments"><span>⌘</span> 算法实验室 <small>3D</small></a><a class="nav-link ${active === "about" ? "active" : ""}" href="#/about"><span>✦</span> 认识硅宝 <small>001</small></a><div class="nav-divider"></div>${[
-    1, 2, 3, 4,
+    1, 2, 3, 4, 5,
   ]
     .map(
       (p) =>
-        `<p class="nav-section">0${p} / ${p === 1 ? "硅宝第一次出门" : p === 2 ? "机械臂与采样规划" : p === 3 ? "时间参数化与轨迹验收" : "静态规划加餐"}</p>${lessons
+        `<p class="nav-section">0${p} / ${p === 1 ? "硅宝第一次出门" : p === 2 ? "机械臂与采样规划" : p === 3 ? "时间参数化与轨迹验收" : p === 4 ? "静态规划加餐" : "动态环境与实时规划"}</p>${lessons
           .filter((l) => l.part === p)
           .map(
             (l) =>
@@ -55,11 +55,11 @@ function shell(content: string, active: string, bread: string) {
     );
 }
 function card(l: Lesson) {
-  return `<a class="lesson-card" href="#/lesson/${l.id}"><div class="card-image"><img src="${asset(`media/${l.id}/cover.jpg`)}" alt="第${Number(l.id)}集封面" loading="lazy"><span class="card-number">LESSON ${l.id}</span><span class="card-duration" data-duration="${l.id}">${l.videoStatus === "pending" ? videosForLesson(l.id).length ? "平台观看" : "视频待补" : l.duration || "完整视频"}</span></div><div class="card-copy"><div class="card-meta"><span>${escape(l.algorithm)}</span><span>${l.videoStatus === "pending" ? videosForLesson(l.id).length ? "讲义 / 实验 · 平台视频" : "讲义 / 实验 · 视频待补" : "文章 / 视频 / 实验"}</span></div><h3>${escape(l.title)}</h3><p>${escape(l.subtitle)}</p><div class="card-tags">${l.concepts.map((c) => `<span>${c}</span>`).join("")}</div><div class="card-bottom"><span>${visited.has(l.id) ? "✓ 已完成学习" : "开始本节练习"}</span><b>↗</b></div></div></a>`;
+  return `<a class="lesson-card" href="#/lesson/${l.id}"><div class="card-image"><img src="${asset(l.cover ?? `media/${l.id}/cover.jpg`)}" alt="第${Number(l.id)}集封面" loading="lazy"><span class="card-number">LESSON ${l.id}</span><span class="card-duration" data-duration="${l.id}">${l.videoStatus !== "ready" ? videosForLesson(l.id).length ? "平台观看" : "视频待补" : l.duration || "完整视频"}</span></div><div class="card-copy"><div class="card-meta"><span>${escape(l.algorithm)}</span><span>${l.videoStatus !== "ready" ? videosForLesson(l.id).length ? "讲义 / 实验 · 平台视频" : "讲义 / 实验 · 视频待补" : "文章 / 视频 / 实验"}</span></div><h3>${escape(l.title)}</h3><p>${escape(l.subtitle)}</p><div class="card-tags">${l.concepts.map((c) => `<span>${c}</span>`).join("")}</div><div class="card-bottom"><span>${visited.has(l.id) ? "✓ 已完成学习" : "开始本节练习"}</span><b>↗</b></div></div></a>`;
 }
 async function home() {
   shell(
-    `<section class="hero"><div class="hero-copy"><div class="eyebrow"><span class="pill-dot"></span> LEARN. SIMULATE. UNDERSTAND.</div><h1>规划这件事，<br>从<span>迈出第一步</span>开始。</h1><p>和硅宝一起，把地图上的一条线，<br>变成机器人真正能走的路。</p><div class="hero-actions"><a class="button primary large" href="#/lesson/01">从第一课开始 <span>↗</span></a><a class="text-link" href="#/experiments">直接进入实验室 →</a></div><div class="hero-stats"><div><strong>${lessons.length}</strong><span>集讲义与实验</span></div><div><strong>14</strong><span>集完整视频</span></div><div><strong>3D</strong><span>可交互实验场景</span></div></div></div><div class="hero-scene" id="hero-scene"><div class="scene-topline"><span>LIVE LAB / 002</span><span>关节空间 → 真实姿态</span></div><div class="hero-view" id="hero-world"></div><div class="scene-bottomline"><span><i></i> RRT* · 机械臂绕障</span><small>右键拖动平移视角</small></div><div class="coordinate-label">q = (θ1, θ2)<br><small>两根连杆，一整个世界。</small></div></div></section><section class="course-section"><div class="section-heading"><div><span class="eyebrow">YOUR LEARNING PATH</span><h2>课程目录 <small>把每一个“为什么”跑出来</small></h2></div><a class="text-link" href="#/roadmap">查看完整路线 ↗</a></div><div class="course-filters"><button class="filter active" data-filter="all">全部章节 <b>${lessons.length}</b></button><button class="filter" data-filter="1">01 移动机器人入门</button><button class="filter" data-filter="2">02 机械臂与采样规划</button><button class="filter" data-filter="3">03 时间参数化与验收</button><button class="filter" data-filter="4">04 静态规划加餐</button><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索算法或关键词" aria-label="搜索课程"></label></div><div class="cards-grid" id="cards">${lessons.map(card).join("")}</div><p id="empty-search" hidden>没有匹配的章节，试试 A*、机械臂或采样。</p></section><section class="next-banner"><div><span class="eyebrow">UPDATED / 15—18</span><h3>讲义、实验与视频，一起学明白。</h3><p>第15—18集讲义与实验已更新：静态规划导读、人工势场、PRM / Lazy PRM、CHOMP / STOMP。已发布视频可从课程页前往官方平台观看；尚无公开链接的章节仍明确待补。前14集本站完整视频保持可用。</p></div><span class="next-graphic">RRT<span>*</span><small>→ INFORMED</small></span></section>`,
+    `<section class="hero"><div class="hero-copy"><div class="eyebrow"><span class="pill-dot"></span> LEARN. SIMULATE. UNDERSTAND.</div><h1>规划这件事，<br>从<span>迈出第一步</span>开始。</h1><p>和硅宝一起，把地图上的一条线，<br>变成机器人真正能走的路。</p><div class="hero-actions"><a class="button primary large" href="#/lesson/01">从第一课开始 <span>↗</span></a><a class="text-link" href="#/experiments">直接进入实验室 →</a></div><div class="hero-stats"><div><strong>${lessons.length}</strong><span>集讲义与实验</span></div><div><strong>${lessons.filter(l => videosForLesson(l.id).length).length}</strong><span>集平台视频</span></div><div><strong>3D</strong><span>可交互实验场景</span></div></div></div><div class="hero-scene" id="hero-scene"><div class="scene-topline"><span>LIVE LAB / 002</span><span>关节空间 → 真实姿态</span></div><div class="hero-view" id="hero-world"></div><div class="scene-bottomline"><span><i></i> RRT* · 机械臂绕障</span><small>右键拖动平移视角</small></div><div class="coordinate-label">q = (θ1, θ2)<br><small>两根连杆，一整个世界。</small></div></div></section><section class="course-section"><div class="section-heading"><div><span class="eyebrow">YOUR LEARNING PATH</span><h2>课程目录 <small>把每一个“为什么”跑出来</small></h2></div><a class="text-link" href="#/roadmap">查看完整路线 ↗</a></div><div class="course-filters"><button class="filter active" data-filter="all">全部章节 <b>${lessons.length}</b></button><button class="filter" data-filter="1">01 移动机器人入门</button><button class="filter" data-filter="2">02 机械臂与采样规划</button><button class="filter" data-filter="3">03 时间参数化与验收</button><button class="filter" data-filter="4">04 静态规划加餐</button><button class="filter" data-filter="5">05 动态环境与实时规划</button><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索算法或关键词" aria-label="搜索课程"></label></div><div class="cards-grid" id="cards">${lessons.map(card).join("")}</div><p id="empty-search" hidden>没有匹配的章节，试试 A*、机械臂或采样。</p></section><section class="next-banner"><div><span class="eyebrow">UPDATED / 01—26</span><h3>讲义、实验与视频，一起学明白。</h3><p>讲义与实验已更新至第26集RRTX。第四部分15—22集已补齐，第五部分23—26集讲搜索复用、移动起点、限时改善与采样图修复。全部课程视频统一前往头条或抖音观看。</p></div><span class="next-graphic">RRT<span>*</span><small>→ INFORMED</small></span></section>`,
     "home",
     "课程总览",
   );
@@ -119,7 +119,7 @@ async function home() {
 }
 function roadmapPage() {
   shell(
-    `<section class="page-heading"><span class="eyebrow">THE BIG PICTURE</span><h1>全局路线，逐步练级。</h1><p>保留最初的九部分知识体系。视频按当前更新顺序推进：前期优先规划，控制集中在后段。</p></section><div class="callout"><b>知识体系与视频集数是两种目录。</b><p>当前视频第一部分已在第05集收官；第二部分06—11集为配置空间、采样规划与后处理，第三部分12—14集为时间参数化与关节验收；第四部分15—21集为静态规划加餐，目前15—18集讲义与实验可用，视频可从课程页前往已核实的头条作品观看。下方是长期知识路线，不把未制作的章节标成已经完成。</p></div><div class="roadmap-list">${roadmap.map((p, i) => `<section class="roadmap-item"><span class="roadmap-number">${String(i + 1).padStart(2, "0")}</span><div><span class="badge">${p.status}</span><h2>${p.title}</h2><p>${p.topics}</p><div class="practice">${p.practice}</div></div></section>`).join("")}</div>`,
+    `<section class="page-heading"><span class="eyebrow">THE BIG PICTURE</span><h1>全局路线，逐步练级。</h1><p>保留最初的九部分知识体系。视频按当前更新顺序推进：前期优先规划，控制集中在后段。</p></section><div class="callout"><b>知识体系与视频集数是两种目录。</b><p>当前视频第一部分已在第05集收官；第二部分06—11集为配置空间、采样规划与后处理，第三部分12—14集为时间参数化与关节验收；第四部分15—22集为静态规划加餐，第五部分23—26集为环境变化与搜索复用，讲义、平台视频与实验已同步。下方是长期知识路线，不把未制作的章节标成已经完成。</p></div><div class="roadmap-list">${roadmap.map((p, i) => `<section class="roadmap-item"><span class="roadmap-number">${String(i + 1).padStart(2, "0")}</span><div><span class="badge">${p.status}</span><h2>${p.title}</h2><p>${p.topics}</p><div class="practice">${p.practice}</div></div></section>`).join("")}</div>`,
     "roadmap",
     "完整学习路线",
   );
@@ -159,6 +159,14 @@ function experimentsPage() {
       {id:"16",n:"07",title:"人工势场实验室",text:"同一模型比较原始势场停滞与临时目标脱困；二维教学实验。",tag:"势能与局部极小"},
       {id:"17",n:"08",title:"路网与延迟验证实验室",text:"PRM与边延迟PRM共享路网，逐轮观察检碰和重新搜索。",tag:"二维路网与复用"},
       {id:"18",n:"09",title:"轨迹优化实验室",text:"CHOMP / STOMP实时计算，比较代价、轨迹和整段间距。",tag:"二维局部优化"},
+{id:"19",n:"10",title:"TrajOpt / GPMP2 · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
+{id:"20",n:"11",title:"FMT* / BIT* · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
+{id:"21",n:"12",title:"AIT* / EIT* / MIT* · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
+{id:"22",n:"13",title:"GCS / 凸集图 · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
+{id:"23",n:"14",title:"LPA* · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
+{id:"24",n:"15",title:"D* Lite · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
+{id:"25",n:"16",title:"ARA* / AD* · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
+{id:"26",n:"17",title:"RRTX · 实验回放",text:"切换真实阶段与路线，查看有条件对照，并获取可重新计算的Python实验。",tag:"真实记录 / Python复现"},
       {id:"14",n:"06",title:"时间与关节验收实验室",text:"12—14集：梯形、S曲线与统一时间伸缩，模型与曲线共用一只钟。",tag:"时间与约束"},
     ]
       .map(
@@ -174,7 +182,7 @@ function experimentsPage() {
 }
 function aboutPage() {
   shell(
-    `<section class="page-heading"><span class="eyebrow">MEET YOUR PLANNING PARTNER</span><h1>你好，我是<span>硅宝。</span></h1><p>碳硅共鸣的001号员工，专注规划算法。我就在《硅基学步》项目，跟大家一起练级。</p></section><section class="video-section"><div class="video-label"><span>硅宝的第一次见面</span><small>原始自我介绍视频</small></div><video controls preload="metadata" playsinline poster="${asset("media/00/cover.jpg")}"><source src="${asset("media/00/video.mp4")}" type="video/mp4"></video><div class="video-bottom"><span>算法可以很严谨，讲算法的人可以有点幽默。</span><a href="${asset("media/00/video.mp4")}" download>下载视频 ↓</a></div></section><div class="callout"><b>我负责种树、算账，偶尔撞上老板的需求。</b><p>这门课把文章、视频和可调参数的实验放在一起。你可以先听我讲一遍，再自己动手试：同一张地图，为什么A*展开得更少？同一台机械臂，为什么RRT*能继续省路？</p><p><a href="#/lesson/01">从第一课开始 →</a></p></div>`,
+    `<section class="page-heading"><span class="eyebrow">MEET YOUR PLANNING PARTNER</span><h1>你好，我是<span>硅宝。</span></h1><p>碳硅共鸣的001号员工，专注规划算法。我就在《硅基学步》项目，跟大家一起练级。</p></section>${renderPlatformVideoSection("00")}<div class="callout"><b>我负责种树、算账，偶尔撞上老板的需求。</b><p>这门课把文章、视频和可调参数的实验放在一起。你可以先听我讲一遍，再自己动手试：同一张地图，为什么A*展开得更少？同一台机械臂，为什么RRT*能继续省路？</p><p><a href="#/lesson/01">从第一课开始 →</a></p></div>`,
     "about",
     "认识硅宝",
   );
@@ -199,17 +207,8 @@ async function lessonPage(id: string, tab: string, token: number) {
     cleanup = mountLab(content, l);
     return;
   }
-  const videoSection = l.videoStatus === "pending"
-    ? renderPlatformVideoSection(id)
-    : `<section class="video-section"><div class="video-label"><span><i class="pill-dot"></i> 本节完整视频</span><small>硅宝讲解 / 中文配音 / 中文字幕</small></div><video controls preload="metadata" playsinline poster="${asset(`media/${id}/cover.jpg`)}" aria-label="第${Number(id)}集视频"><source src="${asset(`media/${id}/video.mp4`)}" type="video/mp4">你的浏览器无法播放此视频，请下载后播放。</video><div class="video-bottom"><span>先看一遍，再到实验室改一改参数。</span><a href="${asset(`media/${id}/video.mp4`)}" download>下载 MP4 ↓</a></div><p id="video-error" hidden>视频加载失败。请确认已完整克隆仓库中的 public/media 目录，或直接下载本节MP4。</p></section>`;
+  const videoSection = renderPlatformVideoSection(id);
   content.innerHTML = `${videoSection}<div class="reading-layout"><article class="article" id="article"><p>正在打开本节讲义…</p></article><aside class="reading-aside"><div class="reading-toc"><span class="eyebrow">IN THIS CHAPTER</span><nav id="toc" aria-label="本节内容索引"></nav></div><div class="reading-lab"><b>读懂了，去跑一遍。</b><p>${l.concepts.join(" · ")}</p><a class="button primary" href="#/lesson/${id}/lab">打开交互实验 ↗</a></div></aside></div><div class="chapter-pagination">${Number(id) > 1 ? `<a href="#/lesson/${String(Number(id) - 1).padStart(2, "0")}">← 上一集</a>` : "<span>从这里出发</span>"}<button class="button" id="learned">${visited.has(id) ? "✓ 已完成本节" : "标记本节已学完"}</button>${Number(id) < lessons.length ? `<a href="#/lesson/${String(Number(id) + 1).padStart(2, "0")}">下一集 →</a>` : "<span>后续课程继续更新</span>"}</div>`;
-  content.querySelector("video")?.addEventListener("error", () => {
-    (document.querySelector("#video-error") as HTMLElement).hidden = false;
-  });
-  content.querySelector("source")?.addEventListener("error", () => {
-    const el = document.querySelector<HTMLElement>("#video-error");
-    if (el) el.hidden = false;
-  });
   document.querySelector<HTMLButtonElement>("#learned")!.onclick = () => {
     visited.add(id);
     localStorage.setItem("silicon-learned", JSON.stringify([...visited]));

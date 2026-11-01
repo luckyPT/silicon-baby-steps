@@ -1,6 +1,6 @@
 # 视频实验原始算法
 
-这里保存第07—14集使用过的 Python 算法实现与几何检碰模块，和浏览器的 TypeScript 交互实现分开保存。网站文章与视频保留原先的实验口径；网站实验可以调整参数，不冒充视频中的逐帧回放。
+这里保存第07—26集使用过的 Python 算法实现与几何检碰模块，和浏览器的 TypeScript 交互实现分开保存。网站文章与视频保留原先的实验口径；网站实验可以调整参数，不冒充视频中的逐帧回放。
 
 ```bash
 python3 -m venv .venv
@@ -21,7 +21,7 @@ Windows 激活命令为 `.venv\Scripts\Activate.ps1`。第08集运行 `rrt_conne
 
 第01—06集的可运行实验已在 `src/algorithms/` 中实现：`grid.ts`、`trajectory.ts`、`dwa.ts` 和 `environments.ts`。文章发布原文位于 `docs/articles-original/`。
 
-视频的大量逐帧PNG、配音缓存与Blender渲染工具不属于算法实验依赖，没有放进网站源码；完整成片已存放在 `public/media/`。
+视频的大量逐帧PNG、配音缓存与Blender渲染工具不属于算法实验依赖，没有放进网站源码；完整成片在头条与抖音，具体作品链接见 `src/content/platform-links.json`；仓库不保存视频。
 
 
 ## 第10—14集复算
@@ -39,3 +39,8 @@ python scripts/render-course-figures.py
 ```
 
 第10集生成六次固定检碰预算运行；其余四集依次使用同一条种子7路径和几何证书，验证后处理、梯形、S曲线与关节幅值。`qa`保留失败候选和通过项，不能只替换输入继续沿用旧结论。浏览器与Python的随机数、预算与插值精度不同，不冒充逐帧一致的执行。
+
+
+## 第19—26集复现与网页记录
+
+各目录 `requirements.txt` 与 `experiment.py` 是对应集的可运行实验；第25集还需同目录的 `grid.py`。进入对应目录安装依赖、执行实验，结果写入 `qa/experiment.json`。网页是精简结果回放，原求解器在Python运行。第23—26集重算后，从仓库根运行 `python scripts/export-recorded-labs.py` 刷新网页记录。

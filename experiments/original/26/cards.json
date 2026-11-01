@@ -1,0 +1,204 @@
+{
+  "hello": {
+    "form": [
+      "\\mathrm{RRT}^{X}:\\ \\mathrm{reuse+repair}"
+    ],
+    "notes": [
+      "第26集 · 动态环境下的实时规划",
+      "RRTX｜采样图增量修复",
+      "公式手算 · 真实实验 · 失败恢复"
+    ]
+  },
+  "bridge": {
+    "form": [
+      "\\mathrm{sampling}+\\mathrm{incremental\\ repair}"
+    ],
+    "notes": [
+      "承接LPA*、D* Lite、ARA*→AD*",
+      "从连续空间取样，再连接局部轨迹",
+      "本集二维位置教学，不模拟机械臂"
+    ]
+  },
+  "graph": {
+    "form": [
+      "T\\subseteq G=(V,E)"
+    ],
+    "notes": [
+      "细线：保留的有效邻接边",
+      "青线：通向目标的父边",
+      "金线：当前查询路线"
+    ]
+  },
+  "root": {
+    "form": [
+      "g(v):\\ \\mathrm{cost\\ estimate\\ to\\ goal}"
+    ],
+    "notes": [
+      "目标T是树根",
+      "箭头方向：节点→父节点→目标",
+      "本实验查询起点固定，未模拟行驶"
+    ]
+  },
+  "sample": {
+    "form": [
+      "r_n=\\min(\\delta,\\sqrt{\\gamma\\log n/(\\pi n)})"
+    ],
+    "notes": [
+      "固定种子7；含一次单独起点接入",
+      "线段连接；四方形机器人半宽0.12m",
+      "失败的采样尝试不计入保留节点"
+    ]
+  },
+  "lmc": {
+    "form": [
+      "lmc(v)\\leftarrow\\min_{u\\in N^+(v)}[c(v,u)+lmc(u)]"
+    ],
+    "notes": [
+      "结合有效邻接和防父子循环条件",
+      "目标lmc为0，未知报价为无穷",
+      "g是维护值，路径长度还要独立复算"
+    ]
+  },
+  "hand": {
+    "form": [
+      "1+5=6,\\quad2+3=5",
+      "g=7,\\ lmc=5,\\ K=[5,7]"
+    ],
+    "notes": [
+      "关键字：[min(g,lmc),g]",
+      "按字典序取更小关键字",
+      "报价、队列与父边一起更新"
+    ]
+  },
+  "epsilon": {
+    "form": [
+      "g(v)-lmc(v)>\\varepsilon",
+      "\\varepsilon=0.03\\ \\mathrm{m}"
+    ],
+    "notes": [
+      "传播阈值，不是路线倍率",
+      "不声称整条路径误差≤0.03m",
+      "本例最终代价与图最优分别核对"
+    ]
+  },
+  "cascade": {
+    "form": [
+      "lmc(u)>c(u,v)+lmc(v)"
+    ],
+    "notes": [
+      "先比较报价，再重连、入队",
+      "青色亮点：真实接受报价事件",
+      "播放时长不等于算法耗时"
+    ]
+  },
+  "closure": {
+    "form": [
+      "\\mathrm{broken\\ parent}\\Rightarrow\\mathrm{descendant\\ closure}"
+    ],
+    "notes": [
+      "实际箱子位置由旧路线过门点决定",
+      "橙红：新增障碍；红点：受影响后代",
+      "节点保留，失效代价与父边被撤销"
+    ]
+  },
+  "orphan": {
+    "form": [
+      "g(v),lmc(v)\\leftarrow\\infty"
+    ],
+    "notes": [
+      "180个受影响节点仍被保留",
+      "重新连接依赖现有可用邻接",
+      "有限图没有绕路连接时仍可能失败"
+    ]
+  },
+  "repair": {
+    "form": [
+      "C=8.6385,\\quad C^*_G=8.6300\\ \\mathrm{m}"
+    ],
+    "notes": [
+      "修复有效出队287次",
+      "扫描与过期堆项另外计数",
+      "图最优不等于连续空间全局最优"
+    ]
+  },
+  "budget": {
+    "form": [
+      "\\mathrm{budget}=1,\\quad |Q|=104"
+    ],
+    "notes": [
+      "真实部分状态，不展示完整结果冒充初解",
+      "旧路线独立复检失败",
+      "不是毫秒截止或真机制动策略"
+    ]
+  },
+  "reopen": {
+    "form": [
+      "c=\\infty\\to\\mathrm{rechecked\\ finite\\ cost}"
+    ],
+    "notes": [
+      "恢复边必须重新通过当前地图检碰",
+      "仍保留602个节点",
+      "本例重开后独立图最优也为8.6149m"
+    ]
+  },
+  "failure": {
+    "form": [
+      "C=\\infty\\Rightarrow\\mathrm{no\\ path}"
+    ],
+    "notes": [
+      "整门封闭：图查询确认无路",
+      "开门后复检与修复恢复路径",
+      "离散图无路结论与预算未完成分开"
+    ]
+  },
+  "refine": {
+    "form": [
+      "n=920,\\quad C=8.6149,\\quad C_G^*=8.6077"
+    ],
+    "notes": [
+      "保留真实未继续改善的结果",
+      "不把有限样本当连续空间最优",
+      "不作三种算法通用速度排名"
+    ]
+  },
+  "verify": {
+    "form": [
+      "3\\times30=90\\ \\mathrm{map\\ updates}"
+    ],
+    "notes": [
+      "端点、父链无环、逐段检碰、长度复算",
+      "零阈值对照用于验收核心实现",
+      "有限测试不替代完整理论证明"
+    ]
+  },
+  "scope": {
+    "form": [
+      "\\mathrm{core\\ demo}\\neq\\mathrm{full\\ performance\\ reproduction}"
+    ],
+    "notes": [
+      "按论文核心修复机制自写",
+      "省略双邻居裁剪与当前位置截断",
+      "不声称本代码实现完整渐近证明"
+    ]
+  },
+  "boundary": {
+    "form": [
+      "\\mathrm{current\\ feasibility}\\neq\\mathrm{future\\ safety}"
+    ],
+    "notes": [
+      "二维直线局部连接；障碍几何膨胀",
+      "没有未来运动预测和连续时间避碰",
+      "下一集：时空A*把时间加入状态"
+    ]
+  },
+  "close": {
+    "form": [
+      "\\mathrm{retain\\ graph}\\to\\mathrm{repair\\ tree}"
+    ],
+    "notes": [
+      "RRTX｜采样图增量修复",
+      "真实日志与结构化讲义随工程保留",
+      "下一集：时空A*，把时间放进状态"
+    ]
+  }
+}

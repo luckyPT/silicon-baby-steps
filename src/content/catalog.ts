@@ -6,13 +6,14 @@ export interface Lesson {
   part: number;
   duration: string;
   minutes: number;
-  videoStatus?: "ready" | "pending";
+  videoStatus?: "ready" | "pending" | "external";
+  cover?: string;
   concepts: string[];
-  lab: "grid" | "trajectory" | "dwa" | "system" | "config" | "sampling" | "arm-course" | "potential-field" | "roadmap" | "optimization";
+  lab: "grid" | "trajectory" | "dwa" | "system" | "config" | "sampling" | "arm-course" | "potential-field" | "roadmap" | "optimization" | "recorded";
 }
 export const lessons: Lesson[] = [
   {
-    id: "01",
+    id: "01", videoStatus: "external",
     title: "Dijkstra：先别撞上椅子",
     subtitle: "老板只提了一个需求：到桌子那边去。",
     algorithm: "Dijkstra",
@@ -23,7 +24,7 @@ export const lessons: Lesson[] = [
     lab: "grid",
   },
   {
-    id: "02",
+    id: "02", videoStatus: "external",
     title: "A*：给搜索加一点方向感",
     subtitle: "Dijkstra很认真，但老板不想等他巡完全公司。",
     algorithm: "A*",
@@ -34,7 +35,7 @@ export const lessons: Lesson[] = [
     lab: "grid",
   },
   {
-    id: "03",
+    id: "03", videoStatus: "external",
     title: "路找到了，车就能走吗？",
     subtitle: "路径、轨迹和车身约束，别让数学替保险公司上班。",
     algorithm: "路径与轨迹",
@@ -45,7 +46,7 @@ export const lessons: Lesson[] = [
     lab: "trajectory",
   },
   {
-    id: "04",
+    id: "04", videoStatus: "external",
     title: "DWA：椅子会动，怎么办？",
     subtitle: "世界不会等你的全局地图更新完再开门。",
     algorithm: "DWA",
@@ -56,7 +57,7 @@ export const lessons: Lesson[] = [
     lab: "dwa",
   },
   {
-    id: "05",
+    id: "05", videoStatus: "external",
     title: "第一部分收官：让算法组队上班",
     subtitle: "A*认路，局部规划看眼前，系统负责交接与验收。",
     algorithm: "全局 × 局部",
@@ -67,7 +68,7 @@ export const lessons: Lesson[] = [
     lab: "system",
   },
   {
-    id: "06",
+    id: "06", videoStatus: "external",
     title: "机械臂的地图，为什么画在关节角度里？",
     subtitle: "手到了，不代表胳膊没撞墙。",
     algorithm: "配置空间",
@@ -78,7 +79,7 @@ export const lessons: Lesson[] = [
     lab: "config",
   },
   {
-    id: "07",
+    id: "07", videoStatus: "external",
     title: "RRT：老板让我找路，我先种了棵树",
     subtitle: "高维空间里，不必先给每一寸地方铺满网格。",
     algorithm: "RRT",
@@ -89,7 +90,7 @@ export const lessons: Lesson[] = [
     lab: "sampling",
   },
   {
-    id: "08",
+    id: "08", videoStatus: "external",
     title: "RRT-Connect：两棵树，怎样接上头？",
     subtitle: "一边从起点，一边从目标，朝同一个点连续靠近。",
     algorithm: "RRT-Connect",
@@ -100,7 +101,7 @@ export const lessons: Lesson[] = [
     lab: "sampling",
   },
   {
-    id: "09",
+    id: "09", videoStatus: "external",
     title: "RRT*：路找到了，能不能少绕一点？",
     subtitle: "这一次，不光要会种树，还得会算差旅费。",
     algorithm: "RRT*",
@@ -110,15 +111,23 @@ export const lessons: Lesson[] = [
     concepts: ["选择父节点", "重新连接", "后代成本更新"],
     lab: "sampling",
   },
-  {"id": "10", "title": "Informed RRT*：把采样花在有希望的地方", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "Informed RRT*", "part": 2, "lab": "sampling", "concepts": ["成本下界", "椭圆采样", "同条件对比"], "duration": "6:50", "minutes": 8},
-  {"id": "11", "title": "路径后处理：删点、圆角与碰撞复检", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "路径后处理", "part": 2, "lab": "arm-course", "concepts": ["快捷连接", "Bezier圆角", "整段复检"], "duration": "5:50", "minutes": 8},
-  {"id": "12", "title": "时间参数化：给路径排时刻表", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "梯形速度", "part": 3, "lab": "arm-course", "concepts": ["路径与轨迹", "梯形与三角形", "任务终点"], "duration": "4:18", "minutes": 8},
-  {"id": "13", "title": "S曲线：让加速度也有过渡", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "S曲线与jerk", "part": 3, "lab": "arm-course", "concepts": ["七段积分", "jerk", "曲率接缝"], "duration": "3:48", "minutes": 8},
-  {"id": "14", "title": "关节约束验收与统一时间伸缩", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "关节约束验收", "part": 3, "lab": "arm-course", "concepts": ["链式法则", "时间伸缩", "单侧极限"], "duration": "3:57", "minutes": 8},
-  {id:"15",title:"RRT已经会找路了，为什么还要学别的算法？",subtitle:"老板又递来四张需求卡，第四部分先打开静态规划地图。",algorithm:"静态规划导读",part:4,lab:"sampling",concepts:["局部决策","计算复用","轨迹优化","计算预算"],duration:"",minutes:5,videoStatus:"pending"},
-  {id:"16",title:"人工势场：目标拉我，障碍推我，怎么还走不动？",subtitle:"合力接近零，不代表任务已经完成。",algorithm:"人工势场",part:4,lab:"potential-field",concepts:["势能与梯度","局部停滞","临时子目标"],duration:"",minutes:10,videoStatus:"pending"},
-  {id:"17",title:"PRM / Lazy PRM：路网先修，碰撞晚点查？",subtitle:"同一张路网、同一组查询，比较检碰投入与重复搜索。",algorithm:"PRM / Lazy PRM",part:4,lab:"roadmap",concepts:["多查询复用","延迟边验证","同图最短路"],duration:"",minutes:10,videoStatus:"pending"},
-  {id:"18",title:"CHOMP / STOMP：把整条轨迹一起改好",subtitle:"梯度和随机扰动，是两种不同的局部优化工具。",algorithm:"CHOMP / STOMP",part:4,lab:"optimization",concepts:["轨迹代价","协变梯度","关联扰动"],duration:"",minutes:12,videoStatus:"pending"},
+  {"id": "10", "videoStatus": "external", "title": "Informed RRT*：把采样花在有希望的地方", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "Informed RRT*", "part": 2, "lab": "sampling", "concepts": ["成本下界", "椭圆采样", "同条件对比"], "duration": "6:50", "minutes": 8},
+  {"id": "11", "videoStatus": "external", "title": "路径后处理：删点、圆角与碰撞复检", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "路径后处理", "part": 2, "lab": "arm-course", "concepts": ["快捷连接", "Bezier圆角", "整段复检"], "duration": "5:50", "minutes": 8},
+  {"id": "12", "videoStatus": "external", "title": "时间参数化：给路径排时刻表", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "梯形速度", "part": 3, "lab": "arm-course", "concepts": ["路径与轨迹", "梯形与三角形", "任务终点"], "duration": "4:18", "minutes": 8},
+  {"id": "13", "videoStatus": "external", "title": "S曲线：让加速度也有过渡", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "S曲线与jerk", "part": 3, "lab": "arm-course", "concepts": ["七段积分", "jerk", "曲率接缝"], "duration": "3:48", "minutes": 8},
+  {"id": "14", "videoStatus": "external", "title": "关节约束验收与统一时间伸缩", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "关节约束验收", "part": 3, "lab": "arm-course", "concepts": ["链式法则", "时间伸缩", "单侧极限"], "duration": "3:57", "minutes": 8},
+  {id:"15",title:"RRT已经会找路了，为什么还要学别的算法？",subtitle:"老板又递来四张需求卡，第四部分先打开静态规划地图。",algorithm:"静态规划导读",part:4,lab:"sampling",concepts:["局部决策","计算复用","轨迹优化","计算预算"],duration:"",minutes:5,videoStatus:"external"},
+  {id:"16",title:"人工势场：目标拉我，障碍推我，怎么还走不动？",subtitle:"合力接近零，不代表任务已经完成。",algorithm:"人工势场",part:4,lab:"potential-field",concepts:["势能与梯度","局部停滞","临时子目标"],duration:"",minutes:10,videoStatus:"external"},
+  {id:"17",title:"PRM / Lazy PRM：路网先修，碰撞晚点查？",subtitle:"同一张路网、同一组查询，比较检碰投入与重复搜索。",algorithm:"PRM / Lazy PRM",part:4,lab:"roadmap",concepts:["多查询复用","延迟边验证","同图最短路"],duration:"",minutes:10,videoStatus:"external"},
+  {id:"18",title:"CHOMP / STOMP：把整条轨迹一起改好",subtitle:"梯度和随机扰动，是两种不同的局部优化工具。",algorithm:"CHOMP / STOMP",part:4,lab:"optimization",concepts:["轨迹代价","协变梯度","关联扰动"],duration:"",minutes:12,videoStatus:"external"},
+{"id": "19", "title": "TrajOpt / GPMP2：路径变顺了，怎么还会撞？", "subtitle": "优化节点，不代表整段轨迹已经安全。", "algorithm": "TrajOpt / GPMP2", "part": 4, "lab": "recorded", "concepts": ["信赖域", "GP先验", "整段复检"], "duration": "9:54", "minutes": 8, "videoStatus": "external", "cover": "media/19/cover.svg"},
+{"id": "20", "title": "FMT* / BIT*：先撒点，再排队", "subtitle": "批量采样与搜索队列，怎样继续改好路线？", "algorithm": "FMT* / BIT*", "part": 4, "lab": "recorded", "concepts": ["代价波前", "批次加密", "懒检碰"], "duration": "7:50", "minutes": 8, "videoStatus": "external", "cover": "media/20/cover.svg"},
+{"id": "21", "title": "AIT* / EIT* / MIT*：先算哪条才不白忙？", "subtitle": "路线代价与验证工作，是两本不同的账。", "algorithm": "AIT* / EIT* / MIT*", "part": 4, "lab": "recorded", "concepts": ["反向启发", "工作量估计", "失败恢复"], "duration": "7:42", "minutes": 8, "videoStatus": "external", "cover": "media/21/cover.svg"},
+{"id": "22", "title": "GCS：一起选择走廊与优化交接点", "subtitle": "凸集合里的几何优化，怎样与图搜索协作？", "algorithm": "GCS / 凸集图", "part": 4, "lab": "recorded", "concepts": ["凸区域", "松弛舍入", "覆盖边界"], "duration": "7:08", "minutes": 8, "videoStatus": "external", "cover": "media/22/cover.svg"},
+{"id": "23", "title": "LPA*：封路以后，还要从头算吗？", "subtitle": "保留旧搜索结果，让不一致节点重新报价。", "algorithm": "LPA*", "part": 5, "lab": "recorded", "concepts": ["g与rhs", "增量修复", "无路恢复"], "duration": "7:32", "minutes": 8, "videoStatus": "external", "cover": "media/23/cover.svg"},
+{"id": "24", "title": "D* Lite：走到一半，前面封路怎么办？", "subtitle": "目标不动，当前位置在动，旧队列还能用。", "algorithm": "D* Lite", "part": 5, "lab": "recorded", "concepts": ["反向搜索", "km", "有限视野"], "duration": "7:26", "minutes": 8, "videoStatus": "external", "cover": "media/24/cover.svg"},
+{"id": "25", "title": "ARA* → AD*：怎样边找边改？", "subtitle": "先完成有质量界限的路线，再逐步改善与修复。", "algorithm": "ARA* / AD*", "part": 5, "lab": "recorded", "concepts": ["加权启发", "OPEN与INCONS", "预算中断"], "duration": "7:11", "minutes": 8, "videoStatus": "external", "cover": "media/25/cover.svg"},
+{"id": "26", "title": "RRTX：封路后整棵树要重长吗？", "subtitle": "保留采样点，撤销失效依赖，再沿已有邻接重连。", "algorithm": "RRTX", "part": 5, "lab": "recorded", "concepts": ["采样图复用", "g与lmc", "重连级联"], "duration": "6:48", "minutes": 8, "videoStatus": "external", "cover": "media/26/cover.svg"},
 ];
 export const roadmap = [
   {

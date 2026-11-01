@@ -1,4 +1,4 @@
-"""Import previously authored publication archives and locally materialized videos.
+"""Import previously authored publication archives (text and figures only).
 Usage: python3 scripts/import-course.py /path/to/course_materials
 No platform credentials or Library identifiers are required or stored.
 """
@@ -58,6 +58,4 @@ for num in range(1,10):
  out.extend(['## 亲手做一组对照','','[打开本节交互实验室](#/lesson/'+id+'/lab)。所有算法在浏览器中实际运行；三维区域支持左键旋转、右键平移与滚轮缩放。','','实验参数和预算口径以实验界面说明为准。机械臂的真实姿态在三维世界展示，搜索变量仍是两个关节角；三维空间场景则以(x,y,z)为状态。',''])
  (B/f'public/articles/{id}.md').write_text('\n'.join(out))
  fitted=ImageOps.contain(cover,(1920,1080),Image.Resampling.LANCZOS);canvas=Image.new('RGB',(1920,1080),'#071525');canvas.paste(fitted,((1920-fitted.width)//2,(1080-fitted.height)//2));canvas.save(dest/'cover.jpg',quality=92)
- video=(B.parent/'sibao_lesson09/sibao_lesson09_review.mp4')if num==9 else next(source.rglob(f'sibao_lesson{id}_review.mp4'));shutil.copy2(video,dest/'video.mp4')
- info=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(dest/'video.mp4')]));v=next(x for x in info['streams']if x['codec_type']=='video');duration=float(info['format']['duration']);manifest.append({'id':id,'article':f'articles/{id}.md','video':f'media/{id}/video.mp4','cover':f'media/{id}/cover.jpg','durationSeconds':duration,'bytes':video.stat().st_size,'sha256':hashlib.sha256(video.read_bytes()).hexdigest(),'width':v['width'],'height':v['height']});print(id,round(duration,2),video.stat().st_size)
-(B/'public/media/manifest.json').write_text(json.dumps({'chapters':manifest,'content':'Full locally hosted MP4 files; not temporary links','updated':'2026-10-22'},ensure_ascii=False,indent=2))
+ print(id, 'article and cover imported; platform video mapping unchanged')

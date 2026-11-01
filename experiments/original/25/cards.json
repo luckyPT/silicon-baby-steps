@@ -1,0 +1,215 @@
+{
+  "hello": {
+    "form": [
+      "\\text{first solution}\\to\\text{improve}"
+    ],
+    "notes": [
+      "第25集 · 动态环境下的实时规划",
+      "ARA* → AD*｜随时改进规划",
+      "公式手算 · 真实日志 · 无路恢复"
+    ]
+  },
+  "bridge": {
+    "form": [
+      "C\\leq\\epsilon C^*",
+      "\\epsilon\\geq1"
+    ],
+    "notes": [
+      "先有可用解，再逐步收紧界限",
+      "首条解也需要计算时间",
+      "有界次优不是任意差的路线"
+    ]
+  },
+  "weighted": {
+    "form": [
+      "f_{\\epsilon}(u)=g(u)+\\epsilon h(S,u)"
+    ],
+    "notes": [
+      "本集反向搜索，起终点固定",
+      "一致启发与正边代价等条件需满足",
+      "不承诺加权必然更省计算"
+    ]
+  },
+  "bound": {
+    "form": [
+      "C^*=26,\\quad\\epsilon=3",
+      "C\\leq78,\\quad C_{actual}=36"
+    ],
+    "notes": [
+      "界限是上限，不是实际代价预测",
+      "最优26来自事后独立Dijkstra",
+      "保证针对本集离散图模型"
+    ]
+  },
+  "ara": {
+    "form": [
+      "3\\to2.5\\to2\\to1.5\\to1"
+    ],
+    "notes": [
+      "ARA*：Anytime Repairing A*",
+      "基础改善过程使用同一张图",
+      "本文实现按2005论文反向伪代码"
+    ]
+  },
+  "incons": {
+    "form": [
+      "OPEN\\leftarrow OPEN\\cup INCONS",
+      "CLOSED\\leftarrow\\varnothing"
+    ],
+    "notes": [
+      "INCONS不是发现障碍的列表",
+      "已经处理过，但又找到更低代价",
+      "下一轮合并、重排、清空本轮标记"
+    ]
+  },
+  "actual": {
+    "form": [
+      "C:36\\to34\\to34\\to30\\to26",
+      "N_{new}:32,5,0,16,57"
+    ],
+    "notes": [
+      "固定同一张23×15软代价栅格",
+      "第一轮结束INCONS有2个节点",
+      "数字是事件次数，不是毫秒"
+    ]
+  },
+  "plateau": {
+    "form": [
+      "\\epsilon:2.5\\to2,\\quad C=34",
+      "\\sum N=110"
+    ],
+    "notes": [
+      "界限收紧与路径改变是两件事",
+      "同图内保留之前已验证的更好解",
+      "不把累计扩展包装成通用提速"
+    ]
+  },
+  "budget": {
+    "form": [
+      "\\text{interrupted}\\neq\\text{completed bound}"
+    ],
+    "notes": [
+      "5次扩展预算：首条解尚未完成",
+      "1次扩展的改善可能中断",
+      "旧解沿用旧界限，不冒领新界限"
+    ]
+  },
+  "dynamic": {
+    "form": [
+      "\\text{ARA*}+\\text{incremental repair}\\to\\text{AD*}"
+    ],
+    "notes": [
+      "地图版本变化后重查旧路线",
+      "旧的质量界限不能原封不动搬过来",
+      "AD*兼顾逐步改善与图变化修复"
+    ]
+  },
+  "adstate": {
+    "form": [
+      "rhs(u)=\\min_v[c(u,v)+g(v)]",
+      "g(u)\\neq rhs(u)"
+    ],
+    "notes": [
+      "g/rhs负责图变化后的修复",
+      "OPEN/CLOSED/INCONS支持分轮改善",
+      "按ICAPS 2005基础版自写，非官方库"
+    ]
+  },
+  "adkey": {
+    "form": [
+      "g>rhs:\\ K=[rhs+\\epsilon h,\\ rhs]",
+      "g\\leq rhs:\\ K=[g+h,\\ g]"
+    ],
+    "notes": [
+      "两项关键字按字典序比较",
+      "低估失效的传播使用未膨胀启发",
+      "不是给D* Lite所有关键字统一加权"
+    ]
+  },
+  "hand": {
+    "form": [
+      "g=10,rhs=6:\\ K=[6+2\\times4,6]=[14,6]",
+      "g=6,rhs=10:\\ K=[6+4,6]=[10,6]"
+    ],
+    "notes": [
+      "独立手算，不冒充栅格具体状态",
+      "g<rhs：先撤销，再更新依赖者",
+      "与上一集不一致修复概念衔接"
+    ]
+  },
+  "closure": {
+    "form": [
+      "C_{old}=26\\ \\text{invalid}",
+      "C_{repair}=34\\to28,\\quad C^*_{new}=28"
+    ],
+    "notes": [
+      "实际封格：(11,4)",
+      "修复轮54次有效扩展，再改善45次",
+      "原图最优26不能充当新图最优"
+    ]
+  },
+  "reopen": {
+    "form": [
+      "C:28\\to26",
+      "\\epsilon:2\\to1"
+    ],
+    "notes": [
+      "重开后的旧路线仍可走",
+      "初轮0次扩展；后续31次",
+      "同图的逐轮改进与跨图代价变化分开"
+    ]
+  },
+  "failure": {
+    "form": [
+      "C=\\infty\\Rightarrow\\text{stop}",
+      "\\text{reopen gate}\\Rightarrow C=26"
+    ],
+    "notes": [
+      "无路与预算未完成分开报告",
+      "开门后重新修复并独立检验",
+      "位置图，不含连续时间和制动"
+    ]
+  },
+  "stale": {
+    "form": [
+      "\\text{new map}+\\text{invalid old path}",
+      "\\text{unfinished repair}\\Rightarrow\\text{no release}"
+    ],
+    "notes": [
+      "重新验证路径归属的地图版本",
+      "有旧解不等于有当前可执行解",
+      "本实验只停止离散移动，不模拟制动"
+    ]
+  },
+  "verify": {
+    "form": [
+      "3\\times30\\times3=270",
+      "C\\leq\\epsilon C^*,\\quad\\epsilon=1\\Rightarrow C=C^*"
+    ],
+    "notes": [
+      "90次图变化、270次分阶段查询",
+      "另20张图×5轮ARA*=100次",
+      "有限测试通过，不替代理论证明"
+    ]
+  },
+  "boundary": {
+    "form": [
+      "\\text{quality bound}\\neq\\text{hard deadline}"
+    ],
+    "notes": [
+      "初解不保证任意短预算都能找到",
+      "ARA*与AD*扩展计数口径有差别",
+      "不做跨算法速度排名或硬实时承诺"
+    ]
+  },
+  "close": {
+    "form": [
+      "\\text{anytime}+\\text{incremental}"
+    ],
+    "notes": [
+      "ARA* → AD*：限时求解与持续改进",
+      "下一集：RRTX｜采样图快速修复",
+      "讲义与自写实验同步保留"
+    ]
+  }
+}

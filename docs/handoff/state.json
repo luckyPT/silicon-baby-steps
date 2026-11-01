@@ -1,5 +1,5 @@
 {
-  "updated_date": "2026-10-29",
+  "updated_date": "2026-11-01",
   "timezone": "Asia/Shanghai",
   "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
   "identity": {
@@ -9,7 +9,7 @@
     "series": "硅基学步"
   },
   "course": {
-    "completed_episodes": 14,
+    "completed_episodes": 26,
     "introduction_exists": true,
     "closed_video_parts": [
       [
@@ -25,8 +25,8 @@
         14
       ]
     ],
-    "next_episode": 23,
-    "next_topic_confirmed": false,
+    "next_episode": 27,
+    "next_topic_confirmed": true,
     "deliverables": [
       "文章",
       "完整视频",
@@ -55,23 +55,50 @@
       "plan": "docs/PART4.md",
       "production_complete": true
     },
-    "lecture_and_experiment_episodes": 18,
-    "completed_episodes_note": "历史本站完整MP4基线为14集；15—18讲义与实验已补齐，头条公开作品链接已逐集核验；本站不新增MP4。",
-    "video_pending_episodes": [
-      15,
-      16,
-      17,
-      18
-    ],
+    "lecture_and_experiment_episodes": 26,
+    "completed_episodes_note": "26集讲义、实验和双平台作品链接；视频统一外链，不托管MP4。",
+    "video_pending_episodes": [],
     "verified_platform_video_episodes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
       15,
       16,
       17,
-      18
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
     ],
     "public_video_link_pending_episodes": [],
-    "video_pending_note": "video_pending_episodes仅指本站MP4未托管，不代表平台作品未发布。",
-    "latest_produced_episode": 22
+    "video_pending_note": "当前26集均已取得头条及抖音具体作品链接。",
+    "latest_produced_episode": 26,
+    "part5": {
+      "episodes": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "production_complete_through": 26,
+      "next_topic": "时空A*，未制作"
+    }
   },
   "repository": {
     "name": "luckyPT/silicon-baby-steps",
@@ -441,5 +468,35 @@
     "website": "No catalog/UI change or deployment this turn",
     "cover_rule": "Algorithm name prominent: GCS｜凸集图规划; question-style subtitle retained",
     "part4_extended_through": 22
+  },
+  "sync_2026_11_01": {
+    "baseline_course_commit": "ae3dce069507411bfc2af3995f45085bc8d89ddd",
+    "article_catalog_before": 18,
+    "source_experiments_before": 24,
+    "article_catalog_after": 26,
+    "new_python_sources": [
+      25,
+      26
+    ],
+    "new_recorded_labs": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "platform_link_verification": "26 Toutiao work links from signed-in management title matching; 26 Douyin public profile work links matched title/account; intro Douyin work link",
+    "video_migration": "All MP4 and byte chunks removed from current tree and deployed output; historical Git objects preserved",
+    "history_rewritten": false,
+    "local_validation": {
+      "tests": "45 passed",
+      "media": "26 chapters, all figures and two platform links each",
+      "build": "passed /planning/ base",
+      "python": "23 LPA* 90 updates, 24 D* Lite 150 updates, 25 AD*270 + ARA*100, 26 RRTX90 exact updates passed"
+    },
+    "deployment": "pending commit and host workflow verification"
   }
 }

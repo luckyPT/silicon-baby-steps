@@ -1,0 +1,33 @@
+{
+  "algorithm": "RRTX core teaching variant",
+  "source": "Otte and Frazzoli IJRR manuscript Algorithms 4,5,8,9,11,12",
+  "undirected_geometric_edges": true,
+  "retain_all_old_neighbors": true,
+  "full_queue_drain": true,
+  "original_running_neighbor_culling": false,
+  "vbot_priority_termination": false,
+  "spatial_neighbor_index": false,
+  "gamma": 480,
+  "delta_m": 1.4,
+  "main_epsilon_m": 0.03,
+  "no_global_path_error_bound_claim": true,
+  "no_original_complexity_or_AO_proof_claim_for_this_variant": true,
+  "static_phase_nodes": [
+    114,
+    282,
+    602,
+    602,
+    602,
+    602,
+    602,
+    920
+  ],
+  "bounds": [
+    "RRTX core teaching variant; retain all original local edges; full queue drain; linear scans",
+    "2D square halfwidth .12m with conservative axis-inflated boxes; straight holonomic local edges",
+    "Original/running neighbor culling and vbot-limited stopping not implemented; no paper complexity or asymptotic proof inherited",
+    "Current map snapshots only; no future trajectory prediction, braking dynamics or real robot"
+  ],
+  "visual_semantics": "Completed phase graph snapshots with true pop-event order; dense adjacency thinned for visibility; interrupted scene is actual partial state",
+  "queries_across_sample_seeds": 90
+}

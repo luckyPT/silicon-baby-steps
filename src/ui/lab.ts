@@ -1,3 +1,4 @@
+import { mountRecordedLab } from './recorded-lab.ts';
 import { mountPotentialFieldLab } from "./potential-field-lab.ts";
 import { mountRoadmapLab } from "./roadmap-lab.ts";
 import { mountOptimizationLab } from "./optimization-lab.ts";
@@ -58,6 +59,7 @@ interface Session {
   history: { x: number; y: number }[];
 }
 export function mountLab(root: HTMLElement, lesson: Lesson) {
+  if (lesson.lab === "recorded") return mountRecordedLab(root,lesson);
   if (lesson.lab === "potential-field") return mountPotentialFieldLab(root);
   if (lesson.lab === "roadmap") return mountRoadmapLab(root);
   if (lesson.lab === "optimization") return mountOptimizationLab(root);

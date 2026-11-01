@@ -2029,3 +2029,17 @@ footer > span {
 .platform-video h2 { margin: 8px 0 12px; }
 .platform-video-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 12px; }
 .platform-video-note { font-size: 13px; opacity: .8; }
+
+.record-controls { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin:24px 0; }
+.record-controls label { display:flex; align-items:center; gap:12px; }
+.record-controls select { max-width:100%; padding:12px; color:#dce5ef; background:#102a39; border:1px solid #355061; border-radius:8px; }
+.record-plot { padding:24px; background:#081d2b; color:#dceaf2; border:1px solid #244353; border-radius:16px; }
+.record-plot svg { display:block; width:100%; max-height:550px; }
+.record-plot p { color:#9cb5c5; font-size:14px; }
+.record-no-path { font-weight:700; color:#ffd08a!important; }
+.record-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:12px; margin:22px 0; }
+.record-metrics>div { padding:18px; border:1px solid #29434e; border-radius:12px; }
+.record-metrics span { display:block; font-size:13px; margin-bottom:8px; }
+.record-metrics strong { font-size:22px; overflow-wrap:anywhere; }
+.record-comparison { margin:36px 0; }.record-table { overflow:auto; }.record-table table { border-collapse:collapse; width:100%; }.record-table th,.record-table td { border-bottom:1px solid #29434e; padding:12px; text-align:left; white-space:nowrap; }
+@media(max-width:600px){.record-controls label {width:100%;}.record-controls select {flex:1;min-width:0;}.record-plot {padding:12px;}.record-metrics strong {font-size:18px;}}

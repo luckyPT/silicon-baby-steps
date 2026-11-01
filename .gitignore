@@ -29,3 +29,8 @@ public/media/**/.*
 /course-stream/
 /course-media/1[5-9]/
 /course-media/[2-9][0-9]/
+
+# All course videos now live on Toutiao / Douyin.
+/course-media/
+*.part[0-9]*
+*.mkv

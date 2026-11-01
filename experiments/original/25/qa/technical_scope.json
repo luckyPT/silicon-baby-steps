@@ -1,0 +1,19 @@
+{
+  "episode": 25,
+  "implementation": "Self-authored backwards ARA* and basic AD* following ICAPS 2005 Figures 3-5",
+  "map_selection": "Demonstration seed34 selected to show multiple incumbent improvements and nonempty INCONS, not a performance benchmark sample",
+  "fixed_endpoints": true,
+  "controlled_completed_phases": 14,
+  "ad_graph_updates": 90,
+  "ad_completed_queries": 270,
+  "extra_ara_maps": 20,
+  "extra_ara_queries": 100,
+  "epsilon_one_matches_optimal": true,
+  "partial_queries_not_released": true,
+  "interrupted_searches_resume_correctly": true,
+  "ad_key_hand_cases_verified": true,
+  "grid_positive_cost_min": 1,
+  "prediction": false,
+  "hard_realtime": false,
+  "robot_execution": false
+}

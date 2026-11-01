@@ -1,0 +1,142 @@
+{
+  "episode": 25,
+  "seed": 34,
+  "phases": [
+    {
+      "name": "ara_3",
+      "algorithm": "ARA*",
+      "epsilon": 3,
+      "cost": 36,
+      "optimal": 26,
+      "expansions": 32,
+      "incons": 2
+    },
+    {
+      "name": "ara_2.5",
+      "algorithm": "ARA*",
+      "epsilon": 2.5,
+      "cost": 34,
+      "optimal": 26,
+      "expansions": 5,
+      "incons": 0
+    },
+    {
+      "name": "ara_2",
+      "algorithm": "ARA*",
+      "epsilon": 2,
+      "cost": 34,
+      "optimal": 26,
+      "expansions": 0,
+      "incons": 0
+    },
+    {
+      "name": "ara_1.5",
+      "algorithm": "ARA*",
+      "epsilon": 1.5,
+      "cost": 30,
+      "optimal": 26,
+      "expansions": 16,
+      "incons": 0
+    },
+    {
+      "name": "ara_1",
+      "algorithm": "ARA*",
+      "epsilon": 1,
+      "cost": 26,
+      "optimal": 26,
+      "expansions": 57,
+      "incons": 0
+    },
+    {
+      "name": "ad_first",
+      "algorithm": "AD*",
+      "epsilon": 3,
+      "cost": 34,
+      "optimal": 26,
+      "expansions": 37,
+      "incons": 2
+    },
+    {
+      "name": "ad_optimal",
+      "algorithm": "AD*",
+      "epsilon": 1,
+      "cost": 26,
+      "optimal": 26,
+      "expansions": 66,
+      "incons": 0
+    },
+    {
+      "name": "ad_closure",
+      "algorithm": "AD*",
+      "epsilon": 2.5,
+      "cost": 34,
+      "optimal": 28,
+      "expansions": 54,
+      "incons": 2
+    },
+    {
+      "name": "ad_repair_optimal",
+      "algorithm": "AD*",
+      "epsilon": 1,
+      "cost": 28,
+      "optimal": 28,
+      "expansions": 45,
+      "incons": 0
+    },
+    {
+      "name": "ad_reopen",
+      "algorithm": "AD*",
+      "epsilon": 2,
+      "cost": 28,
+      "optimal": 26,
+      "expansions": 0,
+      "incons": 0
+    },
+    {
+      "name": "ad_reopen_optimal",
+      "algorithm": "AD*",
+      "epsilon": 1,
+      "cost": 26,
+      "optimal": 26,
+      "expansions": 31,
+      "incons": 0
+    },
+    {
+      "name": "ad_no_path",
+      "algorithm": "AD*",
+      "epsilon": 2,
+      "cost": null,
+      "optimal": null,
+      "expansions": 109,
+      "incons": 0
+    },
+    {
+      "name": "ad_gate",
+      "algorithm": "AD*",
+      "epsilon": 2.5,
+      "cost": 26,
+      "optimal": 26,
+      "expansions": 15,
+      "incons": 0
+    },
+    {
+      "name": "ad_gate_optimal",
+      "algorithm": "AD*",
+      "epsilon": 1,
+      "cost": 26,
+      "optimal": 26,
+      "expansions": 17,
+      "incons": 0
+    }
+  ],
+  "mixed_updates": 90,
+  "mixed_queries": 270,
+  "additional_ara_queries": 100,
+  "budgets": {
+    "first_completed": false,
+    "improvement_completed": false,
+    "repair_completed": false,
+    "changed_map_old_path_invalid": true
+  },
+  "all_checks": "passed"
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "name": "sample120",
+    "nodes": 114,
+    "cost": 9.088053414345486,
+    "oracle": 9.088053414345486,
+    "metrics": {
+      "pops": 280,
+      "scans": 3705,
+      "rewires": 213,
+      "edge_checks": 575,
+      "orphans": 0,
+      "stale": 25
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  },
+  {
+    "name": "sample300",
+    "nodes": 282,
+    "cost": 8.630134972944353,
+    "oracle": 8.630134972944353,
+    "metrics": {
+      "pops": 501,
+      "scans": 20227,
+      "rewires": 562,
+      "edge_checks": 3221,
+      "orphans": 0,
+      "stale": 60
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  },
+  {
+    "name": "sample650",
+    "nodes": 602,
+    "cost": 8.619350238790602,
+    "oracle": 8.614936876408503,
+    "metrics": {
+      "pops": 443,
+      "scans": 46067,
+      "rewires": 753,
+      "edge_checks": 12461,
+      "orphans": 0,
+      "stale": 12
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  },
+  {
+    "name": "closure",
+    "nodes": 602,
+    "cost": 8.638516175123506,
+    "oracle": 8.629998173512128,
+    "metrics": {
+      "pops": 287,
+      "scans": 31738,
+      "rewires": 531,
+      "edge_checks": 16123,
+      "orphans": 180,
+      "stale": 376
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  },
+  {
+    "name": "reopen",
+    "nodes": 602,
+    "cost": 8.614936876408503,
+    "oracle": 8.614936876408503,
+    "metrics": {
+      "pops": 147,
+      "scans": 20896,
+      "rewires": 360,
+      "edge_checks": 16123,
+      "orphans": 0,
+      "stale": 198
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  },
+  {
+    "name": "no_path",
+    "nodes": 602,
+    "cost": null,
+    "oracle": null,
+    "metrics": {
+      "pops": 57,
+      "scans": 6452,
+      "rewires": 2,
+      "edge_checks": 16123,
+      "orphans": 305,
+      "stale": 3
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  },
+  {
+    "name": "recovery",
+    "nodes": 602,
+    "cost": 8.614936876408503,
+    "oracle": 8.614936876408503,
+    "metrics": {
+      "pops": 305,
+      "scans": 40551,
+      "rewires": 742,
+      "edge_checks": 16123,
+      "orphans": 0,
+      "stale": 441
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  },
+  {
+    "name": "sample1000",
+    "nodes": 920,
+    "cost": 8.614936876408503,
+    "oracle": 8.607718505670306,
+    "metrics": {
+      "pops": 347,
+      "scans": 51441,
+      "rewires": 574,
+      "edge_checks": 16312,
+      "orphans": 0,
+      "stale": 4
+    },
+    "queue": 0,
+    "epsilon": 0.03
+  }
+]
