@@ -16,13 +16,18 @@
     "public_playback_verified": false
   },
   "douyin": {
-    "submitted": null,
-    "status_observed": "submission not confirmed; fresh management page requires login",
-    "publish_clicked_once": true,
+    "submitted": true,
+    "status_observed": "审核中",
+    "platform_display_time": "2026年10月28日 08:28",
+    "duration_display": "07:50",
+    "management_url": "https://creator.douyin.com/creator-micro/content/manage?enter_from=publish",
+    "login_required": false,
+    "duplicate_check": "Signed-in management latest was episode19 before upload; episode20 absent.",
+    "public_playback_verified": false,
+    "receipt": "Redirected to management; episode20 title, duration and moderation status visibly present.",
     "work_count_before": 509,
-    "management_url": "https://creator.douyin.com/creator-micro/content/manage",
-    "login_required": true,
-    "resume": "Restore sign-in, check whether episode20 exists before any resubmission; existing publication authorization remains valid."
+    "work_count_after": "not reloaded; header cached at509",
+    "resume": "Only verify moderation or public playback if requested; do not resubmit."
   },
   "settings": {
     "ai_disclosure_both": true,
@@ -38,5 +43,6 @@
     "toutiao_generate_article": false,
     "collection": null,
     "no_independent_original_or_first_release_switch_observed": true
-  }
+  },
+  "last_verified_date": "2026-10-28"
 }
