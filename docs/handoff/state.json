@@ -2,17 +2,62 @@
   "updated_date": "2026-10-24",
   "timezone": "Asia/Shanghai",
   "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
-  "identity": {"name": "硅宝", "account_brand": "碳硅共鸣", "role": "001号员工，规划控制算法", "series": "硅基学步"},
+  "identity": {
+    "name": "硅宝",
+    "account_brand": "碳硅共鸣",
+    "role": "001号员工，规划控制算法",
+    "series": "硅基学步"
+  },
   "course": {
     "completed_episodes": 14,
     "introduction_exists": true,
-    "closed_video_parts": [[1, 5], [6, 11], [12, 14]],
+    "closed_video_parts": [
+      [
+        1,
+        5
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        12,
+        14
+      ]
+    ],
     "next_episode": 15,
-    "next_topic_confirmed": false,
-    "deliverables": ["文章", "完整视频", "可运行实验", "对比"],
-    "inline_article_figures": {"10": 4, "11": 4, "12": 4, "13": 4, "14": 5}
+    "next_topic_confirmed": true,
+    "deliverables": [
+      "文章",
+      "完整视频",
+      "可运行实验",
+      "对比"
+    ],
+    "inline_article_figures": {
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 5
+    },
+    "part4": {
+      "episodes": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "scope": "静态环境规划与优化；动态环境另设专题",
+      "plan": "docs/PART4.md"
+    }
   },
-  "repository": {"name": "luckyPT/silicon-baby-steps", "branch": "main"},
+  "repository": {
+    "name": "luckyPT/silicon-baby-steps",
+    "branch": "main"
+  },
   "site": {
     "url": "https://letsgogo.top/planning/",
     "host_repository": "luckyPT/luckyPT",
@@ -32,11 +77,43 @@
     "algorithm_tests": 17,
     "media_chapters_verified": 14,
     "inline_pngs_live_decoded_and_hash_matched": 21,
-    "browser_checks": ["14-chapter directory", "episode 14 full 1080p video playback", "episode 14 3D comparison playback and stretch parameter", "episode 14 inline figures and captions"],
+    "browser_checks": [
+      "14-chapter directory",
+      "episode 14 full 1080p video playback",
+      "episode 14 3D comparison playback and stretch parameter",
+      "episode 14 inline figures and captions"
+    ],
     "browser_renderer_observed": "SVGRenderer fallback for the same 3D scene; cloud WebGL unavailable",
-    "not_retested": ["Docker daemon execution", "Windows startup scripts", "current platform moderation outcomes"]
+    "not_retested": [
+      "Docker daemon execution",
+      "Windows startup scripts",
+      "current platform moderation outcomes"
+    ]
   },
-  "publishing_policy": {"new_toutiao_companion_articles": false, "keep_git_articles": true, "keep_existing_platform_articles": true},
-  "pending_work": [],
-  "next_action": "Follow the next user request. Do not restart old uploads or create episode 15 from this checkpoint alone."
+  "publishing_policy": {
+    "new_toutiao_companion_articles": false,
+    "keep_git_articles": true,
+    "keep_existing_platform_articles": true
+  },
+  "pending_work": [
+    "恢复执行/浏览器环境后先核实头条第15集是否已提交，避免重复投稿",
+    "完成抖音第15集横竖封面、自主声明和发布并核验回执",
+    "恢复已通过QA的完整MP4，上传现有9个无损分段及媒体清单，勿先重做视频",
+    "将恢复分支完整课程更新合入main，完成15章媒体验证与主站部署",
+    "保存第15集制作工程与成片到Library，并更新私人交接"
+  ],
+  "next_action": "Read episode15 checkpoint. User already authorized publishing. Resume from actual platform and source state; do not duplicate Toutiao upload or treat rendering as public release.",
+  "episode15": {
+    "rendered_and_decode_verified": true,
+    "duration_seconds": 268.533333,
+    "resolution": "1920x1080",
+    "fps": 30,
+    "video_sha256": "c960d6b7aeab60c2b83e2a9dc63a8315f0a9b8d0d63f9787668ee5eefcbdf916",
+    "toutiao": "Publish clicked; final receipt unverified. Appreciation and AI disclosure checked.",
+    "douyin": "Video uploaded; cover and final publishing incomplete.",
+    "source_branch": "production/episode15-20261024",
+    "source_commit": "23451254dd824e12da2cf55969f2ab54f2173345",
+    "checkpoint": "docs/handoff/EPISODE15-RECOVERY.json",
+    "video_and_archive_library_save": "not completed"
+  }
 }

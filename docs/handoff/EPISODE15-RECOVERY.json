@@ -1,0 +1,234 @@
+{
+  "episode": 15,
+  "title": "RRT已经会找路了，为什么还要学别的算法？",
+  "approvedPart4": [
+    {
+      "episode": 15,
+      "topic": "静态规划导读"
+    },
+    {
+      "episode": 16,
+      "topic": "人工势场"
+    },
+    {
+      "episode": 17,
+      "topic": "PRM / Lazy PRM"
+    },
+    {
+      "episode": 18,
+      "topic": "CHOMP / STOMP"
+    },
+    {
+      "episode": 19,
+      "topic": "TrajOpt / GPMP2"
+    },
+    {
+      "episode": 20,
+      "topic": "FMT* / BIT*"
+    },
+    {
+      "episode": 21,
+      "topic": "AIT* / EIT* / MIT*"
+    }
+  ],
+  "video": {
+    "rendered": true,
+    "durationSeconds": 268.533333,
+    "bytes": 91978330,
+    "sha256": "c960d6b7aeab60c2b83e2a9dc63a8315f0a9b8d0d63f9787668ee5eefcbdf916",
+    "resolution": "1920x1080",
+    "fps": 30,
+    "audioChannels": 2,
+    "sampleRate": 48000,
+    "voice": "zh-CN-YunxiNeural +12% +8Hz",
+    "captions": 137,
+    "segments": 22,
+    "wholeDecode": "passed",
+    "allNarrationCharactersVerified": true,
+    "localRelativePath": "production/sibao_lesson15/sibao_lesson15.mp4",
+    "losslessPartsPrepared": 9,
+    "partsUploadedToGit": false
+  },
+  "assets": {
+    "articleChineseFigures": 5,
+    "coverLayouts": [
+      "16:9",
+      "4:3",
+      "3:4"
+    ],
+    "coverMain": "RRT还不够？",
+    "coverSubtitle": "规划算法全景",
+    "comparisonRuns": 12,
+    "testsPassed": 17,
+    "websiteBuild": "passed",
+    "full15ChapterMediaVerification": "started; final result unavailable after disconnect"
+  },
+  "publishing": {
+    "toutiao": {
+      "videoUploaded": true,
+      "titleSet": true,
+      "coverUploaded": true,
+      "coverVisualCropChecked": true,
+      "aiDisclosureChecked": true,
+      "appreciationChecked": true,
+      "generateArticleChecked": false,
+      "publishClicked": true,
+      "finalReceipt": "NOT VERIFIED; do not blindly repost",
+      "lastObservedState": "Publish button disabled immediately after click",
+      "url": "https://mp.toutiao.com/profile_v4/xigua/upload-video"
+    },
+    "douyin": {
+      "videoUploaded": true,
+      "coverUploaded": false,
+      "aiDisclosureSet": false,
+      "publishClicked": false,
+      "titleFillAttempt": "Execution environment disconnected during attempt; result unknown",
+      "url": "https://creator.douyin.com/creator-micro/content/post/video?enter_from=publish_page"
+    }
+  },
+  "blocker": "Execution/browser environment became unavailable after Toutiao publish click. No browser tools or local file access remain. No completion or public moderation status can be asserted.",
+  "git": {
+    "contentBase": "3b5816ff063d8840cc86cac3acbdf00cf456c323",
+    "preparedBlobs": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "08532913155030dc5b2761b6d9715f2e631e30e4"
+      },
+      {
+        "path": "src/content/catalog.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b0343e594399ba8479088ec81fd4045ad62aaf1c"
+      },
+      {
+        "path": "src/main.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "159360175f38c551ec2d0a436b91a92d518914b4"
+      },
+      {
+        "path": "src/ui/lab.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fe2e47e2d60de1f74e2c653f115dc51c7ae250f1"
+      },
+      {
+        "path": "scripts/verify-media.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bbfbe90437871af1a571e6380fcef24803a16c2a"
+      },
+      {
+        "path": "scripts/illustrate-article-15.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bc28f2962a109838eb4bdcfab28e9e82b5a9ad67"
+      },
+      {
+        "path": "docs/PART4.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a9f61375a5cb00ba4797a8ff67336b071af251e4"
+      },
+      {
+        "path": "docs/handoff/PRODUCTION.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e891fd4042beb49c30d7b5a5381ed915b5f4c6b4"
+      },
+      {
+        "path": "public/articles/15.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74197fd27195b17b3c64210b861eaba8e110102a"
+      },
+      {
+        "path": "public/media/15/cover.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9c65b5b96de6bfe445b2dffed9f72fe185a7c42c"
+      },
+      {
+        "path": "public/media/15/article-course.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "349984b5686299d4e0a88d4ad928707b809323d7"
+      },
+      {
+        "path": "public/media/15/article-chain.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a128fbd67bb49c7800bd0ff0aa8204143a31955"
+      },
+      {
+        "path": "public/media/15/cover_3x4.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e484eb878c23ce5ab20be1491dea508d4c48c67d"
+      },
+      {
+        "path": "public/media/15/cover_4x3.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7048c77eaec97793f4fedf8f98bb8b28c3c6e106"
+      },
+      {
+        "path": "public/media/15/article-questions.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4d8886607999f7e3eb157e72d001069dce33bf45"
+      },
+      {
+        "path": "public/media/15/article-optimization.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ed9326a177b0f045dae5e191ff05519b10e75ef"
+      },
+      {
+        "path": "public/media/15/article-roadmap.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e2f5788e7a631a6e2e2ae92e068649acb3ca9dee"
+      },
+      {
+        "path": "experiments/original/15/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9c4dda123e06915beddb3614da061c860287c441"
+      },
+      {
+        "path": "experiments/original/15/narration.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a939f49b5edc7f3a20200b6cb9bf29a28ca0fc7e"
+      },
+      {
+        "path": "experiments/original/15/comparison.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "59351c71cd2726040911bdb1199a3d03ee7c4f9e"
+      },
+      {
+        "path": "experiments/original/15/run-comparison.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3352905ba9fb7e5eac89b5e7b9d0e5e91ef3be6e"
+      }
+    ],
+    "recoveryBranch": "production/episode15-20261024",
+    "mainSiteDeployed": false
+  },
+  "resumeOrder": [
+    "Restore execution/browser environment; reuse existing connected accounts",
+    "Inspect Toutiao content management for episode15 before submitting anything again",
+    "Inspect Douyin upload/draft, set 4:3 and 3:4 covers, description and AI disclosure; publish and verify receipt",
+    "Recover existing MP4 by matching SHA; do not rerender unless source is truly unavailable",
+    "Upload existing 9 lossless video parts and updated media manifests; verify all 15 chapters",
+    "Merge recovered course source to main with current-head lease; run existing tests/build/media checks",
+    "Run existing luckyPT/luckyPT Publish letsgogo.top workflow, then verify actual lesson15 video/article/lab",
+    "Save production archive and update private Library handoff; refresh small state"
+  ],
+  "scope": "Static environment introduction. New planner diagrams illustrative; actual arm paths are previously validated. No new Toutiao article. User authorized direct publishing; no new permission needed."
+}
