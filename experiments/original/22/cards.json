@@ -1,0 +1,213 @@
+{
+  "hello": {
+    "form": [
+      "\\text{route choice}+\\text{path shape}"
+    ],
+    "notes": [
+      "第22集 · 静态规划补篇",
+      "GCS：Graphs of Convex Sets",
+      "硅宝 · 碳硅共鸣001号员工"
+    ]
+  },
+  "bridge": {
+    "form": [
+      "\\text{discrete}+\\text{continuous}"
+    ],
+    "notes": [
+      "离散选择：经过哪些区域",
+      "连续变量：区域内交接点与路径",
+      "本集用Drake官方GCS组件实际求解"
+    ]
+  },
+  "convex": {
+    "form": [
+      "(1-\\lambda)a+\\lambda b\\in X",
+      "0\\leq\\lambda\\leq1"
+    ],
+    "notes": [
+      "凸性：线段封闭性",
+      "几何保证依赖安全区域的正确性",
+      "安全区域构建本身也需要计算"
+    ]
+  },
+  "regions": {
+    "form": [
+      "X_i\\subseteq X_{free}"
+    ],
+    "notes": [
+      "蓝/青：给定安全区域",
+      "红：静态矩形障碍",
+      "区域覆盖不是完整自由空间"
+    ]
+  },
+  "graph": {
+    "form": [
+      "z_i=(p_i^{in},p_i^{out})",
+      "z_i\\in X_i\\times X_i"
+    ],
+    "notes": [
+      "节点中的连续变量不是固定中心点",
+      "本集：每个区域一条直线段",
+      "图中连边同时约束交接连续性"
+    ]
+  },
+  "choice": {
+    "form": [
+      "\\phi_e\\in\\{0,1\\}",
+      "p_i\\in\\mathbb{R}^2"
+    ],
+    "notes": [
+      "整数：图上路径选择",
+      "连续：入口、出口坐标",
+      "一般GCS问题仍然有组合难度"
+    ]
+  },
+  "objective": {
+    "form": [
+      "\\min\\sum_{i\\in\\pi}\\Vert p_i^{out}-p_i^{in}\\Vert_2"
+    ],
+    "notes": [
+      "本集目标：总折线长度/m",
+      "正权、静态、二维点机器人",
+      "动画按弧长回放，不是求解器迭代"
+    ]
+  },
+  "handover": {
+    "form": [
+      "p_i^{out}=p_j^{in}",
+      "p_i^{out}\\in X_i\\cap X_j"
+    ],
+    "notes": [
+      "选中边必须满足交接点相等",
+      "独立检查区域归属与连续性残差",
+      "不能只连区域中心就认为整段安全"
+    ]
+  },
+  "bezier": {
+    "form": [
+      "q(s)=\\sum_k B_k(s)P_k",
+      "B_k(s)\\geq0,\\quad\\sum_k B_k(s)=1"
+    ],
+    "notes": [
+      "控制点凸包包住整段贝塞尔曲线",
+      "本实验采用一阶特例",
+      "平滑、时间、动力学另加约束"
+    ]
+  },
+  "hand": {
+    "form": [
+      "L_U=2\\sqrt{5}+1\\approx5.4721",
+      "L_D=2(2.5)+1=6"
+    ],
+    "notes": [
+      "坐标及单位见实际场景与讲义",
+      "图只含上/下两条无环候选分支",
+      "解析结果与Drake数值解独立核对"
+    ]
+  },
+  "baseline": {
+    "form": [
+      "L_{center}\\approx6.0861\\,m",
+      "L_{optimized}\\approx5.4721\\,m"
+    ],
+    "notes": [
+      "固定交接中心与优化交接位置",
+      "同场景、同上走廊、同长度目标",
+      "不作跨规划器耗时排名"
+    ]
+  },
+  "relax": {
+    "form": [
+      "0\\leq\\phi_e\\leq1",
+      "L_{relax}\\approx5.0000\\,m"
+    ],
+    "notes": [
+      "真实松弛解：上约0.539，下约0.461",
+      "分数流不是可执行路线",
+      "本例松弛不紧，不能直接当成最优可行解"
+    ]
+  },
+  "round": {
+    "form": [
+      "\\text{relax}\\to\\text{round}\\to\\text{restrict}",
+      "L_{feasible}\\approx5.4721\\,m"
+    ],
+    "notes": [
+      "Drake实际舍入与固定路径凸求解",
+      "三种种子只改变舍入随机数",
+      "同一环境重复核对，不是三张测试地图"
+    ]
+  },
+  "bound": {
+    "form": [
+      "L_{LB}\\leq L^*_{model}\\leq L_{feasible}",
+      "(5.4721-5)/5\\approx9.44\\%"
+    ],
+    "notes": [
+      "数值上下界：保留求解容差",
+      "两分支完整枚举是独立核验",
+      "不能从不紧松弛直接宣称全局最优"
+    ]
+  },
+  "coverage": {
+    "form": [
+      "5.1729<5.4721\\,m"
+    ],
+    "notes": [
+      "真实可行参考折线，解析检碰通过",
+      "参考线超出给定安全区域覆盖",
+      "不把参考线宣称为连续空间全局最短"
+    ]
+  },
+  "failure": {
+    "form": [
+      "\\text{missing cover}\\Rightarrow\\text{no graph path}"
+    ],
+    "notes": [
+      "实际GCS返回图上不可行",
+      "缺区域/缺连边不等于现实无路",
+      "恢复区域，再优化与复检"
+    ]
+  },
+  "body": {
+    "form": [
+      "r_{robot}=0.5\\,m",
+      "0.4<0.5\\,m"
+    ],
+    "notes": [
+      "点机器人路径不自动适用于有体积机器人",
+      "本例用外接方形作保守障碍膨胀",
+      "旧路线与膨胀障碍相交，已独立检查"
+    ]
+  },
+  "recovery": {
+    "form": [
+      "L_{new}\\approx5.8000\\,m"
+    ],
+    "notes": [
+      "按新半径重建区域，非旧结果直接缩放",
+      "保守膨胀提供充分几何条件",
+      "未做真实机器人跟踪、力矩或制动验证"
+    ]
+  },
+  "cost": {
+    "form": [
+      "T=T_{regions}+T_{graph}+T_{solve}+T_{check}"
+    ],
+    "notes": [
+      "区域构建成本与在线求解分开记",
+      "本集区域由教学场景人工给定",
+      "高维机械臂覆盖、非欧几何需另行处理"
+    ]
+  },
+  "close": {
+    "form": [
+      "\\text{regions}\\to\\text{choice+shape}\\to\\text{verify}"
+    ],
+    "notes": [
+      "GCS静态规划补篇 · 第22集",
+      "实际Drake/Clarabel实验、讲义与代码保留",
+      "画面与配音含AI辅助制作"
+    ]
+  }
+}
