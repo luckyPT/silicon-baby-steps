@@ -1,0 +1,42 @@
+{
+  "updated_date": "2026-10-24",
+  "timezone": "Asia/Shanghai",
+  "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
+  "identity": {"name": "硅宝", "account_brand": "碳硅共鸣", "role": "001号员工，规划控制算法", "series": "硅基学步"},
+  "course": {
+    "completed_episodes": 14,
+    "introduction_exists": true,
+    "closed_video_parts": [[1, 5], [6, 11], [12, 14]],
+    "next_episode": 15,
+    "next_topic_confirmed": false,
+    "deliverables": ["文章", "完整视频", "可运行实验", "对比"],
+    "inline_article_figures": {"10": 4, "11": 4, "12": 4, "13": 4, "14": 5}
+  },
+  "repository": {"name": "luckyPT/silicon-baby-steps", "branch": "main"},
+  "site": {
+    "url": "https://letsgogo.top/planning/",
+    "host_repository": "luckyPT/luckyPT",
+    "host_branch": "master",
+    "workflow": ".github/workflows/pages.yml",
+    "workflow_name": "Publish letsgogo.top",
+    "last_verified_content_commit": "51ca9474ea59d6e1ca269c6f5beb5d68979d48f5",
+    "content_commit_note": "This is the deployed article/website baseline, not necessarily the latest documentation commit.",
+    "deployment_run": 40101004506,
+    "deployment_result": "success",
+    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/40101004506",
+    "refresh_schedule_observed": "17 */6 * * * (UTC), in host workflow; manual dispatch available"
+  },
+  "validation": {
+    "course_ci_run": 40100933583,
+    "course_ci_result": "success",
+    "algorithm_tests": 17,
+    "media_chapters_verified": 14,
+    "inline_pngs_live_decoded_and_hash_matched": 21,
+    "browser_checks": ["14-chapter directory", "episode 14 full 1080p video playback", "episode 14 3D comparison playback and stretch parameter", "episode 14 inline figures and captions"],
+    "browser_renderer_observed": "SVGRenderer fallback for the same 3D scene; cloud WebGL unavailable",
+    "not_retested": ["Docker daemon execution", "Windows startup scripts", "current platform moderation outcomes"]
+  },
+  "publishing_policy": {"new_toutiao_companion_articles": false, "keep_git_articles": true, "keep_existing_platform_articles": true},
+  "pending_work": [],
+  "next_action": "Follow the next user request. Do not restart old uploads or create episode 15 from this checkpoint alone."
+}
