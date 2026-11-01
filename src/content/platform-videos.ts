@@ -10,6 +10,7 @@ export const platformVideos: Record<string, readonly PlatformVideo[]> = {
   '15': [{ platform: 'toutiao', url: 'https://www.toutiao.com/video/7700272491863851547/', verifiedAt: '2026-10-25' }],
   '16': [{ platform: 'toutiao', url: 'https://www.toutiao.com/video/7700408520349237796/', verifiedAt: '2026-10-25' }],
   '17': [{ platform: 'toutiao', url: 'https://www.toutiao.com/video/7700442833659937295/', verifiedAt: '2026-10-25' }],
+  '18': [{ platform: 'toutiao', url: 'https://www.toutiao.com/video/7700843119977218579/', verifiedAt: '2026-10-26' }],
 };
 export function validatePlatformVideo(video: PlatformVideo): void {
   const u = new URL(video.url);

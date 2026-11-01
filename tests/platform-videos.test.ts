@@ -18,13 +18,23 @@ test('platform labels match destinations; verified pages get safe links, not unv
     assert.ok(!html.includes('视频待补'));assert.match(html,/平台可能要求登录/);
   }
 });
-test('unpublished episode stays pending; existing 1–14 local media are not replaced',()=>{
-  assert.deepEqual(videosForLesson('18'),[]);
-  assert.match(renderPlatformVideoSection('18'),/尚无已核实的公开作品链接/);
+test('unverified lesson IDs stay pending; existing 1–14 local media are not replaced',()=>{
+  assert.deepEqual(videosForLesson('19'),[]);
+  assert.match(renderPlatformVideoSection('19'),/尚无已核实的公开作品链接/);
   for(const lesson of lessons.filter(l=>Number(l.id)<=14))assert.notEqual(lesson.videoStatus,'pending');
 });
 test('reject foreign hosts, private pages, HTTP, credentials and media-CDN links',()=>{
   for(const url of ['http://www.toutiao.com/video/1/','https://www.toutiao.com.evil.test/video/1/','https://user:pass@www.toutiao.com/video/1/','https://mp.toutiao.com/profile_v4/xigua/content-manage','https://www.toutiao.com/video/file.mp4']) {
     assert.throws(()=>validatePlatformVideo({platform:'toutiao',url,verifiedAt:'2026-10-25'}));
   }
+});
+test('episode 18 uses the verified canonical work page without local video or embed',()=>{
+  assert.deepEqual(videosForLesson('18'), [{platform:'toutiao',url:'https://www.toutiao.com/video/7700843119977218579/',verifiedAt:'2026-10-26'}]);
+  const html=renderPlatformVideoSection('18');
+  assert.match(html,/头条观看/);
+  assert.ok(html.includes('href="https://www.toutiao.com/video/7700843119977218579/"'));
+  assert.ok(!html.includes('视频待补'));
+  assert.ok(!html.includes('video.mp4'));
+  assert.ok(!html.includes('<iframe'));
+  assert.equal(lessons.find(l=>l.id==='18')?.videoStatus,'pending','local MP4 remains unhosted');
 });

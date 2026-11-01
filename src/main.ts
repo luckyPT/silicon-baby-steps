@@ -119,7 +119,7 @@ async function home() {
 }
 function roadmapPage() {
   shell(
-    `<section class="page-heading"><span class="eyebrow">THE BIG PICTURE</span><h1>全局路线，逐步练级。</h1><p>保留最初的九部分知识体系。视频按当前更新顺序推进：前期优先规划，控制集中在后段。</p></section><div class="callout"><b>知识体系与视频集数是两种目录。</b><p>当前视频第一部分已在第05集收官；第二部分06—11集为配置空间、采样规划与后处理，第三部分12—14集为时间参数化与关节验收；第四部分15—21集为静态规划加餐，目前15—18集讲义与实验可用，网站视频待补。下方是长期知识路线，不把未制作的章节标成已经完成。</p></div><div class="roadmap-list">${roadmap.map((p, i) => `<section class="roadmap-item"><span class="roadmap-number">${String(i + 1).padStart(2, "0")}</span><div><span class="badge">${p.status}</span><h2>${p.title}</h2><p>${p.topics}</p><div class="practice">${p.practice}</div></div></section>`).join("")}</div>`,
+    `<section class="page-heading"><span class="eyebrow">THE BIG PICTURE</span><h1>全局路线，逐步练级。</h1><p>保留最初的九部分知识体系。视频按当前更新顺序推进：前期优先规划，控制集中在后段。</p></section><div class="callout"><b>知识体系与视频集数是两种目录。</b><p>当前视频第一部分已在第05集收官；第二部分06—11集为配置空间、采样规划与后处理，第三部分12—14集为时间参数化与关节验收；第四部分15—21集为静态规划加餐，目前15—18集讲义与实验可用，视频可从课程页前往已核实的头条作品观看。下方是长期知识路线，不把未制作的章节标成已经完成。</p></div><div class="roadmap-list">${roadmap.map((p, i) => `<section class="roadmap-item"><span class="roadmap-number">${String(i + 1).padStart(2, "0")}</span><div><span class="badge">${p.status}</span><h2>${p.title}</h2><p>${p.topics}</p><div class="practice">${p.practice}</div></div></section>`).join("")}</div>`,
     "roadmap",
     "完整学习路线",
   );
