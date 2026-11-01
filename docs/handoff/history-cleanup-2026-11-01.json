@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "authorization": "历史仓库体积也通过删减视频 缩减一下",
+  "method": "Preserve root; reconstruct every later commit using filtered trees, identical remaining leaf blobs/modes, original messages and mapped parent topology; force-with-lease each branch",
+  "measurement": {
+    "before_bundle_bytes": 594627637,
+    "after_bundle_bytes": 20072446,
+    "before_mib": 567.0811052322388,
+    "after_mib": 19.142576217651367,
+    "reduction_percent": 96.62436712473222,
+    "removed_history_paths": 47,
+    "video_payload_paths": 46,
+    "current_main": "bc73517ade0559afc3505f4933b823c83c8d9ba1",
+    "all_commits": 38,
+    "all_branches": 4,
+    "tag_count": 1,
+    "unchanged_tag_safe": true,
+    "all_reachable_history_has_no_video": true,
+    "git_fsck": "passed",
+    "ci_run": 41278863156,
+    "ci_result": "success"
+  },
+  "refs": [
+    {
+      "ref": "refs/heads/episode24-dstar-lite",
+      "before": "d21d2eb71f89df0f7019f8db8914eaf88e45fdd6",
+      "after": "665fc92a23eb290ac2c4e7b69f54cffaa800a65f"
+    },
+    {
+      "ref": "refs/heads/fix/staged-course-15-18-20261025",
+      "before": "d10bb6f3123456d28107a6b136aaf8dc6dcc40dc",
+      "after": "e8bdbfe07dbc18b73d3b2a7cdbd59fc1f1b997a0"
+    },
+    {
+      "ref": "refs/heads/main",
+      "before": "1eb015525ef83f41a9dc75de10ef3eef22398155",
+      "after": "bc73517ade0559afc3505f4933b823c83c8d9ba1"
+    },
+    {
+      "ref": "refs/heads/production/episode15-20261024",
+      "before": "23451254dd824e12da2cf55969f2ab54f2173345",
+      "after": "20d16ddeedc5e02a2fbb71e284d008064909b179"
+    },
+    {
+      "ref": "refs/tags/course-source-20261022",
+      "before": "ff1d9b0878adb1e0ba671cfcd940beec2770045b",
+      "after": "ff1d9b0878adb1e0ba671cfcd940beec2770045b"
+    }
+  ],
+  "commit_map": {
+    "ff1d9b0878adb1e0ba671cfcd940beec2770045b": "ff1d9b0878adb1e0ba671cfcd940beec2770045b",
+    "00c302dc664289fdc4f7c7f778bdbcc8445c1141": "a24fea801266bc899821769be00a27a7937e0df6",
+    "7a2a1e696f375f82e756abae9340c4d5729af69c": "df6e690d3d78cbd9e4c7e6acd42fc1e376cffcaa",
+    "0e5b068c103034583c9c912d28ad28267a1c2d6b": "fddae1c68d370425639c79201f7a52f9a90731f2",
+    "36b005af5bee89616f914823d4eeb2a63621ecfb": "3e6464719054a684597559ef1af5884c90b3b956",
+    "dba6b71c157c445e28d6f0f0645e7a14cb6b0e43": "9fa6777fbb793a1f88d995adb231d95bdc4dcc16",
+    "c6231e55c6592d92b90866a0fe3e55051eda1042": "1c7b8942eddb35673ff9766d144ea46dec1ea1c6",
+    "4f0980f5a9b44119b79c1cb823cfd56c4b274000": "fd9c7b98d9206ac113c1b43ea48a220285b0a7b9",
+    "51ca9474ea59d6e1ca269c6f5beb5d68979d48f5": "b4b1eeec4bddfaf17d7fabf0fcc2f333bf79af48",
+    "3b5816ff063d8840cc86cac3acbdf00cf456c323": "c7d5ecc325f37fc87f54d2b989a79945af23c786",
+    "23451254dd824e12da2cf55969f2ab54f2173345": "20d16ddeedc5e02a2fbb71e284d008064909b179",
+    "ab0c0f4660c87be1c07ff717b76c16df1cc5fdad": "67a54b8e1a8ae866aba5790af487ed20b3fed378",
+    "93a6d50bccd4cfb66ab01789b8dd3252c62ab58c": "97885128ff84b3fceee92e9797d1b86b1c9c30e0",
+    "a33d4ec483cecca5a197b6f47cf798e4fb0054d2": "0b67632853207e572df680b85e0d344ee132e4b9",
+    "7026bfddf8626aaa330b1110f4a0c58b6fedbc6c": "f51afb591ef058ebcd42d222374544a35d03fcbb",
+    "7eda8d45ef726417f5658413c3a316b4639e6a5e": "b5f1f7ac4bcece50f6ac580a23df83831509988c",
+    "1135b660e12b1782431bbe0abab2756cce8b527a": "90d797735a483c7e3e10f7f8e012914697edf6a1",
+    "d10bb6f3123456d28107a6b136aaf8dc6dcc40dc": "e8bdbfe07dbc18b73d3b2a7cdbd59fc1f1b997a0",
+    "f572275c2e2c9ad55b3bc950134353160b3573c7": "c9b50cab6b5d20e55df02e6e7d840bda80db8f84",
+    "375f1ad2de1c92afebf804bb4540fedcaa907b5f": "0b86db25bef2b0d9f7b457496580b99e5b91d747",
+    "8fb3dcf7b97f5991459a3ff37e2bd44261a9b0fd": "3b82022fac96ebf2135a2571b03302debef421e8",
+    "c3bd10fb8c397be837e2afbf9bdfb187dc1212d7": "5900f8f90898278f456b16f94ddca52aba16c2a0",
+    "122bf411514e88ec49b194b237026eb224b75dd5": "edb475e3e9964933629fad397cd972e5c5ec29c8",
+    "129c0b537c864e9202e488ee2e3b222389ce842f": "8222769fea00378b1086a4657567baac2d56f2fb",
+    "88da8acdf6629a4a7f627a3bb3f7d1c6285d06e6": "7a2d3f6f5427b0ebd186b7f5cc8fa9dbbf91135e",
+    "c5753bbfa17eb8450ab45347796f9923fcb26db8": "02dcf50505b96e3bed60b972bfb0e6c15603ed2a",
+    "2f3c830c4080b57e0bff766e32c142ce14cd1106": "5ca9f715c37389cb902bcc04948f99e5d83595be",
+    "becb84d05d75a735b5decbd23dca37bc85917b5d": "1d043365f879a2a75999d0dfd2aedbe11479f7c3",
+    "d7404d3923000628b544f0e4ab681942b07069e5": "e5c3ea070ca5af82231fd2935e10f9df3dd06e0a",
+    "3d776be529edbacb2248ebb2fc540ad2a1bc63ec": "704516aa0882a8f0d3fa76c2e01bcfdbc6859b69",
+    "5a5d79bce7414238c22448b84439595f56de45f3": "cacc4bd10d188da5699656bf555aa84e692ac80b",
+    "1e7ec2ec4812122004c4edb6e211a17378d0433f": "a5b4238d990beb53563df9c9a181387a2805acdd",
+    "efda625172709631ef2ab683cc7a2ca8e40113f4": "ea76d289ecb23b588fdf3f734c92ec0464b587be",
+    "5362d0af38999e1697fe317a9a70eeb4963e0c89": "deadb87eacf7cdc619f643abe1c4a8d03de1f7bf",
+    "d21d2eb71f89df0f7019f8db8914eaf88e45fdd6": "665fc92a23eb290ac2c4e7b69f54cffaa800a65f",
+    "ae3dce069507411bfc2af3995f45085bc8d89ddd": "3c98d554b4eca4a8dba94039830522e4b62d272f",
+    "3a5150d99968fc69b61a831beaeca5840bfb60e4": "c29facfea5463f577be520e9cc4dfe5671ec1d87",
+    "1eb015525ef83f41a9dc75de10ef3eef22398155": "bc73517ade0559afc3505f4933b823c83c8d9ba1"
+  },
+  "backup_bundle_sha256": "50b3e99fd53c79e7a28e6678a520b421f20f2e756422bcb11ecbda7cfaec8f4c",
+  "backup_location": "Offline backup outside the repository; no backup refs or video copies pushed back into GitHub",
+  "github_reported_size_kib_after": 581816,
+  "github_storage_note": "Normal full clone verified small. GitHub server-side cached objects and read-only pull-request refs may retain old history; backend size is not claimed to have decreased immediately.",
+  "client_action": "Re-clone, or rebase unpublished work onto new main. Do not merge the old video-bearing history back."
+}
