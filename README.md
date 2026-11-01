@@ -4,7 +4,7 @@
 
 **和硅宝一起，从“别撞上椅子”，走到机械臂规划、时间参数化与关节验收。**
 
-「碳硅共鸣」的规划算法课程与交互实验网站。每节课都包含**结构化文章、头部完整视频、可调参数的算法实验**。算法在浏览器里实际运行，可播放、暂停、单步、固定随机种子做对照，也可直接“计算至预算”查看完整结果。
+「碳硅共鸣」的规划算法课程与交互实验网站。课程提供**结构化讲义与可运行实验**。第01—14集配有完整视频；第15—18集先开放讲义与实验，网站视频明确标注“待补”。算法在浏览器里实际运行，可播放、暂停、单步、固定随机种子做对照，也可直接“计算至预算”查看完整结果。
 
 ![网站首页](docs/screenshots/home.jpg)
 
@@ -42,7 +42,7 @@ docker compose up --build -d
 
 同样访问 [http://localhost:4173/](http://localhost:4173/)。容器使用多阶段构建和 Nginx，视频支持HTTP范围请求，方便拖动播放进度。Docker 配置已提供；本次开发环境没有 Docker 守护进程，验证以本地 Node 安装、构建及浏览器实测为准。
 
-> 完整MP4与文章配图均在仓库内，首次克隆会下载全部课程媒体。没有依赖会过期的临时视频链接。
+> 第01—14集完整MP4与配图保留在仓库内；第10—14集通过无损分段自动还原。第15—18集不提供未就绪或无法播放的视频链接。
 
 ## 课程总目录
 
@@ -67,6 +67,13 @@ docker compose up --build -d
 | 12 | 时间参数化 | [讲义](public/articles/12.md) | [MP4](https://letsgogo.top/planning/media/12/video.mp4) | 匀速、梯形与短任务三角形 |
 | 13 | S曲线与jerk | [讲义](public/articles/13.md) | [MP4](https://letsgogo.top/planning/media/13/video.mp4) | 六秒梯形与七秒S曲线 |
 | 14 | 关节约束验收 | [讲义](public/articles/14.md) | [MP4](https://letsgogo.top/planning/media/14/video.mp4) | 两关节幅值验收、统一时间伸缩 |
+
+| 15 | 静态规划导读 | [讲义](public/articles/15.md) | 待补 | 既有采样规划器同条件比较 |
+| 16 | 人工势场 | [讲义](public/articles/16.md) | 待补 | 势场停滞与临时目标脱困 |
+| 17 | PRM / Lazy PRM | [讲义](public/articles/17.md) | 待补 | 同图比较与延迟边验证 |
+| 18 | CHOMP / STOMP | [讲义](public/articles/18.md) | 待补 | 局部轨迹优化与整段检碰 |
+
+第16—18集当前交互实验明确使用**二维静态点机器人教学视图**；它们不是三维机器人仿真或真机验证。默认实验在浏览器内计算，播放是此次计算的过程回放。原始Python和数值证据保存在 `experiments/original/16…18/`；随机实现不同的地方不宣称逐点一致。
 
 - **当前第一部分**：01—05，移动机器人入门，已收官。
 - **第二部分**：06—11，配置空间、采样规划与路径后处理，已收官。
@@ -128,12 +135,12 @@ docker compose up --build -d
 
 ```text
 public/articles/          每集Markdown讲义与文章原始JSON
-public/media/01…14/       每集完整MP4、封面和正文插图
+public/media/01…18/       每集完整MP4、封面和正文插图
 public/media/manifest.json 影片时长、尺寸与SHA-256
 src/content/catalog.ts   当前章节与长期九部分路线
 src/algorithms/           可独立测试的浏览器算法实现
 src/ui/                  三维场景、关节地图、实验控制面板
-experiments/original/    第07—14集原始Python算法及核验参考
+experiments/original/    第07—18集原始Python算法及核验参考
 scripts/                 一键启动、媒体核验、历史资料导入
 tests/                  算法正确性与回归测试
 .github/workflows/       自动验证与手动GitHub Pages部署
@@ -151,7 +158,7 @@ npm run preview
 
 测试覆盖加权Dijkstra/A\*一致性、无路可达、禁止切角、起终点被膨胀区阻挡、机械臂整段检碰、两种空间中三种采样规划器的确定性与有效路径、RRT\*成本与无环结构、默认10.5秒轨迹、DWA执行步的障碍间距。
 
-`npm run verify:media` 核验全部14集的MP4 SHA-256、文章、封面与图像链接。`experiments/original/README.md` 说明如何重新运行Python视频实验。
+`npm run verify:media` 核验18集的讲义、封面与图像链接；继续核验01—14集完整MP4 SHA-256，并要求15—18集缺失视频明确声明为 pending，不允许将旧视频静默降为待补。`experiments/original/README.md` 说明如何重新运行Python视频实验。
 
 ### GitHub Pages
 
@@ -166,7 +173,7 @@ npm run preview
 ## 增加下一章
 
 1. 在 `src/content/catalog.ts` 登记标题、知识点和实验类型。
-2. 添加 `public/articles/15.md`、`public/media/15/video.mp4`、封面与正文配图。
+2. 添加对应 `public/articles/NN.md`、封面与正文配图。完整视频就绪后再登记地址、大小与SHA-256；尚未就绪时目录与媒体清单都显式设为 pending。
 3. 更新 `public/media/manifest.json` 的时长、字节数和SHA-256；同步媒体核验脚本的章节数量。
 4. 复用或新增实验模块，补必要的算法回归测试，再构建与推送。
 

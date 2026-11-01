@@ -1,0 +1,51 @@
+《硅基学步》第18集：CHOMP / STOMP
+
+1. 本集问题
+沿已有路线修改整条轨迹。静态二维点机器人，障碍已经膨胀；三维画面是教学呈现，不是真机。41个配置点，固定两端，39×2=78个内部变量。初值来自第17集种子17第一查询的最终路线，重采样后再次做解析整段检碰。
+
+2. 目标与变量
+J = Js + 35 Jo。
+Js = 1/2 Σ ||q[i+1] - 2q[i] + q[i-1]||²。
+这是固定网格的二阶差分平滑代理，省略共同步长比例，不能直接当作真实关节加速度。Jo沿路径累计距离场惩罚：Jo=∫c(q(s))||q'(s)||ds。离散实验每段用五点高斯求积；CHOMP梯度对同一个离散目标解析求导，并用中心有限差分核验。
+d为带符号净距，ε=0.30m：d>ε时c=0；0≤d≤ε时c=(d-ε)²/(2ε)；d<0时c=-d+ε/2。积分近似负责引导优化，解析线段圆盘检测负责最终几何验收。
+
+3. CHOMP机制
+内部变量的二阶差分算子D给出度量A=DᵀD；固定两端后本例A正定。
+g=∇J，解A Δ=-ηg，然后更新Q。度量使局部修改在轨迹上协调传播。代码固定端点，最大每点修改0.16m，回溯检查总目标下降；没有可接受步长时记录停滞。
+手算独立例子：A=[[5,-4],[-4,5]]；A逆=(1/9)[[5,4],[4,5]]。g=(9,0)，η=0.1，则欧氏修改(-0.9,0)，协变修改(-0.5,-0.4)。这不是主实验的真实位移。
+本实现是点机器人的有限离散机制，不包括完整机械臂雅可比、身体点、关节约束或论文HMC扩展。
+
+4. STOMP机制
+每轮32份候选，起终点不加噪声。噪声协方差与A逆成比例，按最大对角元素归一化后整体幅度σ=0.30m。每个位置的状态成本由相邻障碍积分段分摊得到。
+同一位置跨候选求最小/最大成本：z=(S-min)/(max-min)，p=exp(-h z)/Σexp(-h z)，h=10；全相同时均匀加权。
+原始修改Δq_i=Σ p[k,i] ε[k,i]，再经M平滑，Q新=Q+MΔQ。M由A逆按列缩放，每列最大元素1/39。
+额外的总成本下降回溯是本教学实现的工程保护，并非声称论文算法表原本包含该步骤。STOMP流程未调用成本解析梯度。
+独立手算取温度λ=1的简单指数式，S=(1,2,3)，权重约(0.665,0.245,0.090)，扰动(-0.2,0.1,0.3)，加权修改约-0.0815。主实验使用前述min-max归一化形式。
+
+5. 真实对照及其边界
+参考图01_cost_history.png：总目标的实际迭代日志。两种方法同初值、同目标、同地图、同140轮；但CHOMP梯度与STOMP每轮32份候选计算量不同，因此不能作通用速度排名。
+参考图02_smoothness_tradeoff.png：STOMP的总目标改善，但平滑项略升；各项必须分别检查。
+初始：{'cost': 3.31617880363692, 'smooth': 0.022650539998122467, 'obstacle': 0.09410080753253708, 'length_m': 6.3457168060943046, 'min_clearance_m': 0.05357247281534466, 'certified': True}
+CHOMP：{'cost': 0.010651466271989131, 'smooth': 0.01065079537904527, 'obstacle': 1.9168369824611123e-08, 'length_m': 6.2578581661818635, 'min_clearance_m': 0.2994208999916608, 'certified': True}
+STOMP种子1：{'cost': 0.03816222783408227, 'smooth': 0.02286495627737564, 'obstacle': 0.00043706490162018934, 'length_m': 6.373431105189852, 'min_clearance_m': 0.2709145415079413, 'certified': True}
+STOMP种子7：{'cost': 0.045981833094637214, 'smooth': 0.022865839611587474, 'obstacle': 0.0006604569566585641, 'length_m': 6.368218055565459, 'min_clearance_m': 0.27017212068435165, 'certified': True}
+STOMP种子17：{'cost': 0.05116538112411327, 'smooth': 0.022857251293961694, 'obstacle': 0.0008088037094329022, 'length_m': 6.373483013411302, 'min_clearance_m': 0.2597780430260756, 'certified': True}
+
+6. 两个失败/边界案例
+图03_average_collision.png：上下两条曲线都通过整段检碰，其对称平均直线穿过圆心。可行域不凸，平均不保可行。
+图04_symmetry_failure.png：单圆盘、对称直线初值，本集纯梯度CHOMP始终y=0，80轮后仍碰撞，不交付。STOMP三个种子在此构造场景打破对称并通过整段复检；其预算160轮、扰动幅度0.55m，与主实验140轮/0.30m不同；这是机制反例，不作等预算性能比较，也不是普遍保证，不能推广到含随机重启的全部CHOMP变体。
+停滞应核对步长、单位、权重、距离场；必要时换初值、多通道，回到PRM/RRT找路。预算内失败就如实失败，保留已有可行路线，不能用未验收结果覆盖它。
+
+7. 复现
+python lesson18/experiment.py，仅依赖numpy；读取同目录assets/initial_route.json，输出qa/experiment.json。
+python lesson18/prepare_notes.py生成四张技术图。
+render_full.py从实际路径和日志取画面；SIBAO_VISUAL_ONLY=1只用于有显著标记的未配音画面测试，不代表真实词时间戳。
+正式版使用实际narration.wav、词时间戳和Rhubarb口型，均已保存，可离线重渲染。完整出场保留5秒，旁白排程从0.12秒开始。
+本集尚未发布，不自动投稿。
+
+原始资料（仅提供链接，不在工程包转发论文PDF）
+Zucker et al., CHOMP: Covariant Hamiltonian Optimization for Motion Planning, IJRR 2013.
+https://publications.ri.cmu.edu/storage/publications/pub_files/2013/5/CHOMP_IJRR.pdf
+https://www.nathanratliff.com/thesis-research/chomp
+Kalakrishnan et al., STOMP: Stochastic Trajectory Optimization for Motion Planning, ICRA 2011.
+https://whiteoak.umd.edu/roswiki/attachments/Papers%282f%29ICRA2011_Kalakrishnan/kalakrishnan_icra2011.pdf

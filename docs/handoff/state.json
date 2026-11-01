@@ -1,5 +1,5 @@
 {
-  "updated_date": "2026-10-24",
+  "updated_date": "2026-10-25",
   "timezone": "Asia/Shanghai",
   "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
   "identity": {
@@ -25,7 +25,7 @@
         14
       ]
     ],
-    "next_episode": 15,
+    "next_episode": 19,
     "next_topic_confirmed": true,
     "deliverables": [
       "文章",
@@ -52,7 +52,15 @@
       ],
       "scope": "静态环境规划与优化；动态环境另设专题",
       "plan": "docs/PART4.md"
-    }
+    },
+    "lecture_and_experiment_episodes": 18,
+    "completed_episodes_note": "完整视频/讲义/实验三者齐备的已发布基线；15—18讲义与实验分阶段补齐，视频明确待补。",
+    "video_pending_episodes": [
+      15,
+      16,
+      17,
+      18
+    ]
   },
   "repository": {
     "name": "luckyPT/silicon-baby-steps",
@@ -88,7 +96,25 @@
       "Docker daemon execution",
       "Windows startup scripts",
       "current platform moderation outcomes"
-    ]
+    ],
+    "staged_release": {
+      "algorithm_and_staging_tests": 38,
+      "test_result": "passed",
+      "typescript": "passed",
+      "build_base": "/planning/",
+      "build": "passed",
+      "media_lecture_chapters": 18,
+      "full_video_chapters": 14,
+      "explicit_pending_video_chapters": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "local_http_resources_checked": 114,
+      "local_http_result": "all HTTP 200",
+      "interactive_browser_qa": "not run locally: Chromium Unix socket restricted; elevated runtime initialization failed without reading or changing protected paths"
+    }
   },
   "publishing_policy": {
     "new_toutiao_companion_articles": false,
@@ -96,13 +122,11 @@
     "keep_existing_platform_articles": true
   },
   "pending_work": [
-    "恢复执行/浏览器环境后先核实头条第15集是否已提交，避免重复投稿",
-    "完成抖音第15集横竖封面、自主声明和发布并核验回执",
-    "恢复已通过QA的完整MP4，上传现有9个无损分段及媒体清单，勿先重做视频",
-    "将恢复分支完整课程更新合入main，完成15章媒体验证与主站部署",
-    "保存第15集制作工程与成片到Library，并更新私人交接"
+    "完成第15—18集分阶段课程源提交与主站部署，并在真实站点核验",
+    "补齐第15—18集网站完整视频；不把分段素材当可播放视频",
+    "平台发布状态仍见STAGE-2026-10-25.md，本次不执行社交平台投稿"
   ],
-  "next_action": "Read episode15 checkpoint. User already authorized publishing. Resume from actual platform and source state; do not duplicate Toutiao upload or treat rendering as public release.",
+  "next_action": "提交已验证的18集讲义/实验版本；保持14集视频原字节，记录新部署回执与线上检查。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,

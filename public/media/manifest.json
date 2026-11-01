@@ -158,6 +158,38 @@
       "width": 1920,
       "height": 1080,
       "frameRate": "30/1"
+    },
+    {
+      "id": "15",
+      "videoStatus": "pending",
+      "video": null,
+      "cover": "media/15/cover.jpg",
+      "article": "articles/15.md",
+      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
+    },
+    {
+      "id": "16",
+      "videoStatus": "pending",
+      "video": null,
+      "cover": "media/16/cover.jpg",
+      "article": "articles/16.md",
+      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
+    },
+    {
+      "id": "17",
+      "videoStatus": "pending",
+      "video": null,
+      "cover": "media/17/cover.jpg",
+      "article": "articles/17.md",
+      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
+    },
+    {
+      "id": "18",
+      "videoStatus": "pending",
+      "video": null,
+      "cover": "media/18/cover.jpg",
+      "article": "articles/18.md",
+      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
     }
   ],
   "content": "Full locally hosted MP4 files; not temporary links",

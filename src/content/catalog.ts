@@ -6,8 +6,9 @@ export interface Lesson {
   part: number;
   duration: string;
   minutes: number;
+  videoStatus?: "ready" | "pending";
   concepts: string[];
-  lab: "grid" | "trajectory" | "dwa" | "system" | "config" | "sampling" | "arm-course";
+  lab: "grid" | "trajectory" | "dwa" | "system" | "config" | "sampling" | "arm-course" | "potential-field" | "roadmap" | "optimization";
 }
 export const lessons: Lesson[] = [
   {
@@ -114,6 +115,10 @@ export const lessons: Lesson[] = [
   {"id": "12", "title": "时间参数化：给路径排时刻表", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "梯形速度", "part": 3, "lab": "arm-course", "concepts": ["路径与轨迹", "梯形与三角形", "任务终点"], "duration": "4:18", "minutes": 8},
   {"id": "13", "title": "S曲线：让加速度也有过渡", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "S曲线与jerk", "part": 3, "lab": "arm-course", "concepts": ["七段积分", "jerk", "曲率接缝"], "duration": "3:48", "minutes": 8},
   {"id": "14", "title": "关节约束验收与统一时间伸缩", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "关节约束验收", "part": 3, "lab": "arm-course", "concepts": ["链式法则", "时间伸缩", "单侧极限"], "duration": "3:57", "minutes": 8},
+  {id:"15",title:"RRT已经会找路了，为什么还要学别的算法？",subtitle:"老板又递来四张需求卡，第四部分先打开静态规划地图。",algorithm:"静态规划导读",part:4,lab:"sampling",concepts:["局部决策","计算复用","轨迹优化","计算预算"],duration:"",minutes:5,videoStatus:"pending"},
+  {id:"16",title:"人工势场：目标拉我，障碍推我，怎么还走不动？",subtitle:"合力接近零，不代表任务已经完成。",algorithm:"人工势场",part:4,lab:"potential-field",concepts:["势能与梯度","局部停滞","临时子目标"],duration:"",minutes:10,videoStatus:"pending"},
+  {id:"17",title:"PRM / Lazy PRM：路网先修，碰撞晚点查？",subtitle:"同一张路网、同一组查询，比较检碰投入与重复搜索。",algorithm:"PRM / Lazy PRM",part:4,lab:"roadmap",concepts:["多查询复用","延迟边验证","同图最短路"],duration:"",minutes:10,videoStatus:"pending"},
+  {id:"18",title:"CHOMP / STOMP：把整条轨迹一起改好",subtitle:"梯度和随机扰动，是两种不同的局部优化工具。",algorithm:"CHOMP / STOMP",part:4,lab:"optimization",concepts:["轨迹代价","协变梯度","关联扰动"],duration:"",minutes:12,videoStatus:"pending"},
 ];
 export const roadmap = [
   {
