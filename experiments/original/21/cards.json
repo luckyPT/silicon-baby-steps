@@ -1,0 +1,219 @@
+{
+  "hello": {
+    "form": [
+      "f=g+\\hat h"
+    ],
+    "notes": [
+      "第21集 · 第四部分收官",
+      "问题：先验证什么？",
+      "静态二维规划 · 三维教学展示"
+    ]
+  },
+  "bridge": {
+    "form": [
+      "\\text{estimate}\\ \\leftrightarrow\\ \\text{search}"
+    ],
+    "notes": [
+      "AIT* / EIT* / Multi-Informed Trees",
+      "教学组件 ≠ 完整论文实现",
+      "论文、代码与实验条件见讲义"
+    ]
+  },
+  "heuristic": {
+    "form": [
+      "f(x)=g(x)+\\hat h(x)",
+      "\\hat h_E(x)=\\Vert x-x_g\\Vert"
+    ],
+    "notes": [
+      "下界：不高估相应最优代价",
+      "便宜、准确常有取舍",
+      "路径长度与计算时间分开"
+    ]
+  },
+  "reverse": {
+    "form": [
+      "\\hat h(v)=\\min_u\\{\\hat c(v,u)+\\hat h(u)\\}",
+      "\\hat h(x_g)=0"
+    ],
+    "notes": [
+      "反向：计算图上的乐观代价",
+      "正向：验证候选边",
+      "两棵树职责不同，不能互换"
+    ]
+  },
+  "repair": {
+    "form": [
+      "\\hat h_{new}\\ \\leftarrow\\ G\\setminus E_{invalid}"
+    ],
+    "notes": [
+      "红虚线：已证实无效的边",
+      "紫线：反向乐观树，未必可行",
+      "教学版全量重算；论文采用增量修复"
+    ]
+  },
+  "aithand": {
+    "form": [
+      "f_A=1+1+1=3",
+      "f_B=1+1.5+2=4.5",
+      "f_{A,new}=1+1+4=6"
+    ],
+    "notes": [
+      "独立手算，不是下方点集实测数值",
+      "删掉已知无效边，再更新估计",
+      "不能随意抬高到超过图上真实最优"
+    ]
+  },
+  "aitrun": {
+    "form": [
+      "N=240,\\quad r=1.05\\,m"
+    ],
+    "notes": [
+      "三种子：1 / 7 / 17",
+      "固定 / 适应：256/96，264/115，236/112",
+      "仅本场景、冻结采样图，不作算法排名"
+    ]
+  },
+  "account": {
+    "form": [
+      "T=T_{sample}+T_{reverse}+T_{forward}+T_{check}"
+    ],
+    "notes": [
+      "边检碰：每条新边一次解析检查",
+      "反向邻接访问另记，不计为检碰",
+      "低维轻量检查不能代表机械臂耗时"
+    ]
+  },
+  "effort": {
+    "form": [
+      "\\hat h:\\ \\text{lower bound}",
+      "\\bar h:\\ \\text{cost estimate}",
+      "\\bar e:\\ \\text{effort estimate}"
+    ],
+    "notes": [
+      "工作量估计不要求是下界",
+      "原方法：AEES式正向边队列",
+      "稀疏检查提供信息，不能替代最终验证"
+    ]
+  },
+  "bounded": {
+    "form": [
+      "L=6,\\quad w=1.2",
+      "c\\leq wL=7.2",
+      "w\\downarrow 1"
+    ],
+    "notes": [
+      "合成目标代价6/7，不是图中几何长度",
+      "教学候选筛选，不是EIT*完整伪代码",
+      "初解速度与最终路径质量分别衡量"
+    ]
+  },
+  "effortrun": {
+    "form": [
+      "12\\ \\to\\ 12+60=72",
+      "7\\ \\to\\ 6"
+    ],
+    "notes": [
+      "状态检查计数 ≠ 边检查计数",
+      "未模拟每次检查的真实耗时",
+      "图上代价单位与几何长度明确分开"
+    ]
+  },
+  "mit": {
+    "form": [
+      "c_{best}\\neq \\tilde s_{est}"
+    ],
+    "notes": [
+      "2025年研究介绍 · 非官方复现",
+      "估计域、自适应采样、稀疏检查",
+      "未验证的懒路径不能当成可行解"
+    ]
+  },
+  "mithand": {
+    "form": [
+      "\\hat s=g_F+\\hat c+\\hat h",
+      "\\gamma=g_F/\\hat s",
+      "e_\\gamma=\\sqrt{1+(1-\\gamma)^2}",
+      "\\tilde s=\\hat s e_\\gamma"
+    ],
+    "notes": [
+      "2+1+2=5；γ=0.4",
+      "e≈1.166；估计阈值≈5.831",
+      "独立手算；不把γ解释为成功率"
+    ]
+  },
+  "ellipse": {
+    "form": [
+      "\\Vert x-x_s\\Vert+\\Vert x-x_g\\Vert<\\tilde s",
+      "a=\\tilde s/2",
+      "b=\\sqrt{\\tilde s^2-25}/2"
+    ],
+    "notes": [
+      "这里只演示采样组件，非完整MIT*",
+      "障碍附近偏置不保证命中窄通道",
+      "采样仍要检查域边界与碰撞"
+    ]
+  },
+  "failure": {
+    "form": [
+      "\\tilde s=5.05\\,m",
+      "b\\approx0.354\\,m<1\\,m"
+    ],
+    "notes": [
+      "真实失败：320样本，未找到路",
+      "中线截面给出几何阻断证据",
+      "局部估计域无解 ≠ 整个环境无解"
+    ]
+  },
+  "recovery": {
+    "form": [
+      "\\tilde s:5.05\\to6.2",
+      "c_{graph}\\approx5.4564\\,m"
+    ],
+    "notes": [
+      "阈值对照是教学控制变量",
+      "两域采样位置不同；不比较速度",
+      "所有返回线段均做解析检碰"
+    ]
+  },
+  "sparse": {
+    "form": [
+      "\\{0,0.5,1\\}:\\ \\text{pass}",
+      "\\text{segment}:\\ \\text{collision}"
+    ],
+    "notes": [
+      "三点通过，101点发现本例障碍",
+      "离散检查依赖分辨率",
+      "反向草稿与最终验证严格分开"
+    ]
+  },
+  "limits": {
+    "form": [
+      "c_G^*\\neq c_{continuous}^*"
+    ],
+    "notes": [
+      "有限预算：允许无解，允许次优",
+      "不从教学组件推导论文性能结论",
+      "静态场景；非真机、非动态重规划"
+    ]
+  },
+  "map": {
+    "form": [
+      "\\text{problem}\\ \\to\\ \\text{mechanism}\\ \\to\\ \\text{validation}"
+    ],
+    "notes": [
+      "16 势场；17 PRM/Lazy PRM",
+      "18 CHOMP/STOMP；19 TrajOpt/GPMP2",
+      "20 FMT*/BIT*；21 AIT*/EIT*/MIT*"
+    ]
+  },
+  "close": {
+    "form": [
+      "\\text{estimate}\\to\\text{check}\\to\\text{repair}"
+    ],
+    "notes": [
+      "第四部分15—21集收官",
+      "代码、公式、日志与适用条件公开",
+      "画面与配音含AI辅助制作"
+    ]
+  }
+}
