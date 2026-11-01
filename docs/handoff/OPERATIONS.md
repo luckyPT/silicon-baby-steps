@@ -35,7 +35,13 @@ npm run build
 npm run dev
 ```
 
-## 完整视频的无损分段
+## 新内容提交规则（2026-10-26）
+
+用户明确要求：以后Git只上传代码和文档，不再上传视频。新集MP4、音频、HLS和其他视频分段、模型与制作工程中的二进制素材单独交付。网站提供经核验的平台观看链接；未公开的视频明确标注状态，不填猜测链接或私人文件入口。
+
+下列分段说明仅供历史10—14集恢复，不能作为新集继续上传媒体的依据。
+
+## 历史完整视频的无损分段
 
 第10—14集原始MP4按不超过10MiB的字节段存于`course-media/NN/video.partXXX`。`course-media/manifest.json`记录每段与完整文件的大小、SHA-256。`scripts/assemble-media.mjs`无损恢复到`public/media/NN/video.mp4`；`predev`、`prebuild`、`preverify:media`会自动执行，亦可手动运行`npm run assemble:media`。
 
