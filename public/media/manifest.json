@@ -165,7 +165,7 @@
       "video": null,
       "cover": "media/15/cover.jpg",
       "article": "articles/15.md",
-      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
+      "note": "本站MP4未托管；已核实平台作品入口见 src/content/platform-videos.ts，课程页可直接跳转观看。"
     },
     {
       "id": "16",
@@ -173,7 +173,7 @@
       "video": null,
       "cover": "media/16/cover.jpg",
       "article": "articles/16.md",
-      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
+      "note": "本站MP4未托管；已核实平台作品入口见 src/content/platform-videos.ts，课程页可直接跳转观看。"
     },
     {
       "id": "17",
@@ -181,7 +181,7 @@
       "video": null,
       "cover": "media/17/cover.jpg",
       "article": "articles/17.md",
-      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
+      "note": "本站MP4未托管；已核实平台作品入口见 src/content/platform-videos.ts，课程页可直接跳转观看。"
     },
     {
       "id": "18",
@@ -189,7 +189,7 @@
       "video": null,
       "cover": "media/18/cover.jpg",
       "article": "articles/18.md",
-      "note": "讲义与实验先上线；完整视频待补，未提供可播放地址。"
+      "note": "讲义与实验可用；尚无已核实公开作品链接，保留视频待补。"
     }
   ],
   "content": "Full locally hosted MP4 files; not temporary links",

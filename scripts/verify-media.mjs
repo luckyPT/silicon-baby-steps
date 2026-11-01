@@ -2,11 +2,13 @@ import { readFile, access } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { lessons } from "../src/content/catalog.ts";
+import { platformVideos, videosForLesson } from "../src/content/platform-videos.ts";
 const root = resolve(import.meta.dirname, "../public");
 const manifest = JSON.parse(await readFile(resolve(root, "media/manifest.json"), "utf8"));
 const ids = manifest.chapters.map(m => m.id);
 if (new Set(ids).size !== ids.length || JSON.stringify(ids) !== JSON.stringify(lessons.map(l => l.id)))
   throw Error("Media manifest must match the course catalog exactly");
+for (const id of Object.keys(platformVideos)) if (!ids.includes(id)) throw Error(`Platform links reference unknown lesson: ${id}`);
 let bytes = 0, ready = 0, pending = 0;
 for (const m of manifest.chapters) {
   const lesson = lessons.find(l => l.id === m.id);
@@ -21,7 +23,7 @@ for (const m of manifest.chapters) {
     if (Number(m.id) <= 14 || lesson.videoStatus !== "pending" || m.video !== null)
       throw Error(`Invalid pending-video declaration: ${m.id}`);
     pending++;
-    console.log(`${m.id}: article, cover and figures verified; video explicitly pending`);
+    console.log(`${m.id}: article, cover and figures verified; local MP4 pending; ${videosForLesson(m.id).length} verified official platform link(s)`);
     continue;
   }
   if (lesson.videoStatus === "pending") throw Error(`Catalog/media readiness mismatch: ${m.id}`);
@@ -32,7 +34,7 @@ for (const m of manifest.chapters) {
   bytes += data.length; ready++;
   console.log(`${m.id}: article, cover, figures and video SHA-256 verified (${m.durationSeconds.toFixed(1)}s)`);
 }
-console.log(`${manifest.chapters.length} lecture chapters verified; ${ready} full videos (${(bytes / 1024 / 1024).toFixed(1)} MiB), ${pending} explicitly pending.`);
+console.log(`${manifest.chapters.length} lecture chapters verified; ${ready} full videos (${(bytes / 1024 / 1024).toFixed(1)} MiB), ${pending} local MP4s explicitly pending.`);
 if (manifest.introduction) {
   const intro = manifest.introduction;
   const data = await readFile(resolve(root, intro.video));
