@@ -1,0 +1,16 @@
+{
+  "episode": 24,
+  "controlled_queries": 9,
+  "mixed_updates": 150,
+  "sensor_queries": 35,
+  "sensor_moves": 34,
+  "all_assertions": "passed",
+  "source": "https://idm-lab.org/bib/abstracts/papers/aaai02b.pdf",
+  "implementation": "Self-authored AAAI 2002 Figure 3, undirected positive-cost four-neighbor grid",
+  "not_claimed": [
+    "Future obstacle prediction",
+    "Continuous dynamics",
+    "Hard real-time execution",
+    "Universal speedup"
+  ]
+}

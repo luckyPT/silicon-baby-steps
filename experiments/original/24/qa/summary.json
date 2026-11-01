@@ -1,0 +1,108 @@
+{
+  "episode": 24,
+  "phases": [
+    {
+      "name": "initial",
+      "start": [
+        1,
+        7
+      ],
+      "cost": 20,
+      "dstar": 21,
+      "astar": 21,
+      "rekeys": 0
+    },
+    {
+      "name": "advance",
+      "start": [
+        8,
+        7
+      ],
+      "cost": 13,
+      "dstar": 0,
+      "astar": 14,
+      "rekeys": 0
+    },
+    {
+      "name": "closure",
+      "start": [
+        8,
+        7
+      ],
+      "cost": 17,
+      "dstar": 64,
+      "astar": 71,
+      "rekeys": 13
+    },
+    {
+      "name": "detour",
+      "start": [
+        8,
+        5
+      ],
+      "cost": 15,
+      "dstar": 0,
+      "astar": 40,
+      "rekeys": 0
+    },
+    {
+      "name": "reopen",
+      "start": [
+        8,
+        5
+      ],
+      "cost": 15,
+      "dstar": 6,
+      "astar": 42,
+      "rekeys": 0
+    },
+    {
+      "name": "no_path",
+      "start": [
+        8,
+        5
+      ],
+      "cost": null,
+      "dstar": 122,
+      "astar": 162,
+      "rekeys": 25
+    },
+    {
+      "name": "recovery",
+      "start": [
+        8,
+        5
+      ],
+      "cost": 15,
+      "dstar": 13,
+      "astar": 22,
+      "rekeys": 0
+    },
+    {
+      "name": "soft_up",
+      "start": [
+        8,
+        5
+      ],
+      "cost": 17,
+      "dstar": 36,
+      "astar": 44,
+      "rekeys": 0
+    },
+    {
+      "name": "soft_down",
+      "start": [
+        8,
+        5
+      ],
+      "cost": 15,
+      "dstar": 20,
+      "astar": 22,
+      "rekeys": 0
+    }
+  ],
+  "mixed_updates": 150,
+  "sensor_moves": 34,
+  "sensor_queries": 35,
+  "all_checks": "passed"
+}

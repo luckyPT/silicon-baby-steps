@@ -1,0 +1,73 @@
+{
+  "episode": 24,
+  "review_only": false,
+  "publication_note": "Technical media QA only; detailed platform receipts accompany separately delivered production project.",
+  "duration_s": 446.033333,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 13381,
+  "audio_channels": 2,
+  "sample_rate": 48000,
+  "full_decode": "passed",
+  "mean_db": -21.9,
+  "peak_db": -4.3,
+  "sha256": "be9c821b375f9476851959b5f9b63c9841c304978138c790113de211a1c1c515",
+  "bytes": 81370683,
+  "narration": {
+    "characters": 2034,
+    "captions": 219,
+    "mouth_cues": 2631,
+    "coverage": "exact",
+    "first_word_s": 0.214625,
+    "intro_s": 5
+  },
+  "boundaries": [
+    "Self-authored basic D* Lite after AAAI 2002 Figure 3; positive-cost four-neighbor grid and moving current start",
+    "Goal-rooted g/rhs, changed directed-edge sources updated, lazy keys and stale heap entries counted separately",
+    "9 controlled phases and 150 mixed update/move tests match independent A* and forward Dijkstra",
+    "Separate ideal radius-2 square sensor navigation: static hidden obstacles, 34 moves, 35 stationary planning queries, no collision",
+    "No continuous dynamics, future obstacle prediction, wall-clock performance ranking or hard real-time guarantee"
+  ],
+  "git_policy": "Only new code/documents, no video/audio/segments/model binaries",
+  "narration_authorization": "Current user explicitly permits online TTS and requests automatic publication after completion",
+  "character_validation": {
+    "original_mesh": true,
+    "transparent_corners": true,
+    "articulated_parts": [
+      "head",
+      "body",
+      "shoulder",
+      "elbow",
+      "hand"
+    ],
+    "mouth_source": "Rhubarb phonetic on actual narration",
+    "all_140_poses_inside_frame": true
+  },
+  "pose_framing": {
+    "samples": 140,
+    "min_margin_px": 12,
+    "all_passed": true
+  },
+  "visual_review": {
+    "final_mp4_frames": 12,
+    "passed": true,
+    "observed": [
+      "particle intro",
+      "full character intro",
+      "reverse rhs",
+      "independent hand example",
+      "km",
+      "key lower bound example",
+      "stop conditions",
+      "moving current start",
+      "actual closure",
+      "no path and recovery",
+      "limited-view navigation",
+      "close"
+    ],
+    "algorithm_name_prominent_on_all_three_covers": true
+  }
+}
