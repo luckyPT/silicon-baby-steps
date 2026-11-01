@@ -1,0 +1,65 @@
+{
+  "episode": 20,
+  "review_only": false,
+  "published": false,
+  "duration_s": 470.133333,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 14104,
+  "audio_channels": 2,
+  "sample_rate": 48000,
+  "full_decode": "passed",
+  "mean_db": -21.8,
+  "peak_db": -4.4,
+  "sha256": "4459238d5a681e269814bf025a6b4559e4ccb90681c8686ae275739574fcb8cc",
+  "bytes": 84528499,
+  "narration": {
+    "characters": 2168,
+    "captions": 230,
+    "mouth_cues": 2723,
+    "coverage": "exact",
+    "first_word_s": 0.214625,
+    "intro_s": 5
+  },
+  "boundaries": [
+    "Self-authored geometric FMT/BIT teaching implementation, not official performance reproduction",
+    "Static 2D point robot and exact segment-circle checking; 3D display only",
+    "Equal generated sample count is not equal graph, radius, CPU time or checking budget",
+    "BIT uses set-based live queues and domain-volume upper-bound radius",
+    "Finite sample success does not prove continuous optimum",
+    "No physical robot execution"
+  ],
+  "git_policy": "Only new code/documents, no video/audio/segments/model binaries",
+  "narration_authorization": "Current user explicitly permits online TTS and requests automatic publication after completion",
+  "character_validation": {
+    "alpha_border_zero": true,
+    "transparent_geometry_silhouette": true,
+    "articulated_head_body_shoulders_elbows_wrists": true,
+    "actual_audio_mouth_cues": 2723
+  },
+  "pose_framing": {
+    "samples": 140,
+    "all_within_frame": true,
+    "min_margin_px": 12
+  },
+  "final_mp4_visual_checks": {
+    "intro_greeting_overlaps": true,
+    "fmthand_readable": true,
+    "actual_bit_batches": true,
+    "sparse_failure_present": true,
+    "alpha_edge_no_black_rectangle": true,
+    "subtitles_readable": true,
+    "inspected_frames": [
+      "intro",
+      "fmthand",
+      "fmtrun",
+      "bitruns",
+      "failure",
+      "close"
+    ]
+  },
+  "status": "complete; publication tracked separately"
+}
