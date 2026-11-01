@@ -13,7 +13,11 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "verify:media": "node scripts/verify-media.mjs"
+    "verify:media": "node scripts/verify-media.mjs",
+    "assemble:media": "node scripts/assemble-media.mjs",
+    "predev": "node scripts/assemble-media.mjs",
+    "prebuild": "node scripts/assemble-media.mjs",
+    "preverify:media": "node scripts/assemble-media.mjs"
   },
   "dependencies": {
     "three": "0.186.1",

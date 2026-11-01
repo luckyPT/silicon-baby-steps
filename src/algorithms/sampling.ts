@@ -9,7 +9,7 @@ import {
   type Environment,
 } from "./core.ts";
 export interface SamplingOptions {
-  algorithm: "rrt" | "connect" | "star";
+  algorithm: "rrt" | "connect" | "star" | "informed";
   env: Environment;
   seed: number;
   iterations: number;
@@ -53,12 +53,14 @@ export function* samplePlan(o: SamplingOptions): Generator<Frame> {
     rng() < o.goalBias
       ? [...biasTarget]
       : env.bounds.map(([a, b]) => a + (b - a) * rng());
+  const proposal = () => o.algorithm === "informed" && Number.isFinite(best) ? informedSample(env,best,rng) : sample();
   const frame = (
     i: number,
     message: string,
     extra: Partial<Frame> = {},
   ): Frame => ({
     kind: "sampling",
+    informedBound: o.algorithm === "informed" && Number.isFinite(best) ? best : undefined,
     stats: {
       iterations: i,
       checks,
@@ -159,7 +161,7 @@ export function* samplePlan(o: SamplingOptions): Generator<Frame> {
       );
       continue;
     }
-    const target = sample(),
+    const target = proposal(),
       near = nearest(nodes, target),
       q = steer(nodes[near], target, o.step);
     if (distance(q, nodes[near]) < 1e-12) continue;
@@ -173,7 +175,7 @@ export function* samplePlan(o: SamplingOptions): Generator<Frame> {
     }
     const ds = nodes.map((p) => distance(p, q)),
       nearby =
-        o.algorithm === "star"
+        (o.algorithm === "star" || o.algorithm === "informed")
           ? ds
               .map((d, i) => ({ d, i }))
               .filter(
@@ -244,7 +246,7 @@ export function* samplePlan(o: SamplingOptions): Generator<Frame> {
     }
     yield frame(
       it,
-      o.algorithm === "star"
+      (o.algorithm === "star" || o.algorithm === "informed")
         ? `新节点接入 #${parent}；本轮重连 ${rewired.length} 个邻居，后代成本随上游同步更新。`
         : "连接有效，新节点加入最近节点下面；记录父节点，满足条件时连接目标。",
       { candidate: q, target, accepted: true, rewired, current: q },
@@ -258,4 +260,16 @@ export function* samplePlan(o: SamplingOptions): Generator<Frame> {
   );
   f.stats.status = best < Infinity ? "预算完成" : "预算内未找到路径";
   yield f;
+}
+
+/** Uniform n-ball mapped directly to an informed hyperspheroid; reject bounds, never clamp. */
+export function informedSample(env:Environment,best:number,rng:()=>number):Point{
+ const n=env.start.length,cmin=distance(env.start,env.goal),a=best/2,b=Math.sqrt(Math.max(0,best*best-cmin*cmin))/2;
+ if(best<cmin-1e-10)throw Error("Invalid informed bound");
+ const axis=env.goal.map((v,i)=>(v-env.start[i])/Math.max(cmin,1e-15)),house=axis.map((v,i)=>(i===0?1:0)-v),hn=house.reduce((s,v)=>s+v*v,0);
+ for(let k=0;k<10000;k++){
+  const z=Array.from({length:n},()=>Math.sqrt(-2*Math.log(Math.max(rng(),1e-15)))*Math.cos(2*Math.PI*rng())),norm=Math.hypot(...z),radius=rng()**(1/n);if(norm<1e-15)continue;
+  const x=z.map((v,i)=>v/norm*radius*(i===0?a:b)),dot=house.reduce((s,v,i)=>s+v*x[i],0),q=x.map((v,i)=>(env.start[i]+env.goal[i])/2+v-(hn>1e-15?2*house[i]*dot/hn:0));
+  if(q.every((v,i)=>v>=env.bounds[i][0]&&v<=env.bounds[i][1]))return q;
+ }throw Error("Informed sampling rejection budget exhausted");
 }

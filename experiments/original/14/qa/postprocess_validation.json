@@ -1,0 +1,365 @@
+{
+  "status": "passed",
+  "source": "episode10 Informed RRT* seed 7 best_path",
+  "source_sha256": "32e058974bf05d9279907d84254e61dcf8af2d2a2f6dbe287d4c4ae86cb843df",
+  "original_vertices_deg": [
+    [
+      -29.999999999999996,
+      90.0
+    ],
+    [
+      -42.01647509501019,
+      115.59295114024664
+    ],
+    [
+      -46.66027103791202,
+      125.6093889949488
+    ],
+    [
+      -35.615325110414396,
+      142.65330099984433
+    ],
+    [
+      -29.999999999999996,
+      150.0
+    ]
+  ],
+  "shortcut_vertices_deg": [
+    [
+      -29.999999999999996,
+      90.0
+    ],
+    [
+      -46.66027103791202,
+      125.6093889949488
+    ],
+    [
+      -29.999999999999996,
+      150.0
+    ]
+  ],
+  "attempts": [
+    {
+      "from_original_vertex": 0,
+      "to_original_vertex": 4,
+      "accepted": false,
+      "validation": {
+        "sample_count": 122,
+        "sampled_min_clearance_m": -0.19628319284832382,
+        "continuous_clearance_lower_bound_m": -0.20493771806482464,
+        "critical_q_degrees": [
+          -29.999999999999996,
+          118.26446280991736
+        ],
+        "endpoint_clearance_m": 0.32942286340599497,
+        "reason": "collision"
+      }
+    },
+    {
+      "from_original_vertex": 0,
+      "to_original_vertex": 3,
+      "accepted": false,
+      "validation": {
+        "sample_count": 107,
+        "sampled_min_clearance_m": -0.151135230107454,
+        "continuous_clearance_lower_bound_m": -0.1616539592393804,
+        "critical_q_degrees": [
+          -33.12551114636273,
+          119.30702602821523
+        ],
+        "endpoint_clearance_m": 0.20047456681054637,
+        "reason": "collision"
+      }
+    },
+    {
+      "from_original_vertex": 0,
+      "to_original_vertex": 2,
+      "accepted": true,
+      "validation": {
+        "sample_count": 73,
+        "sampled_min_clearance_m": 0.03315191974488435,
+        "continuous_clearance_lower_bound_m": 0.01644283293436037,
+        "critical_q_degrees": [
+          -44.11495185156435,
+          120.16906567627605
+        ],
+        "endpoint_clearance_m": 0.04682179612158838,
+        "reason": "certified_clear"
+      }
+    },
+    {
+      "from_original_vertex": 2,
+      "to_original_vertex": 4,
+      "accepted": true,
+      "validation": {
+        "sample_count": 50,
+        "sampled_min_clearance_m": 0.022629174098810212,
+        "continuous_clearance_lower_bound_m": 0.0020730590705705654,
+        "critical_q_degrees": [
+          -43.94022678682434,
+          129.59152956720206
+        ],
+        "endpoint_clearance_m": 0.32942286340599497,
+        "reason": "certified_clear"
+      }
+    }
+  ],
+  "paths": {
+    "original": [
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -29.999999999999996,
+            90.0
+          ],
+          [
+            -42.01647509501019,
+            115.59295114024664
+          ]
+        ]
+      },
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -42.01647509501019,
+            115.59295114024664
+          ],
+          [
+            -46.66027103791202,
+            125.6093889949488
+          ]
+        ]
+      },
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -46.66027103791202,
+            125.6093889949488
+          ],
+          [
+            -35.615325110414396,
+            142.65330099984433
+          ]
+        ]
+      },
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -35.615325110414396,
+            142.65330099984433
+          ],
+          [
+            -29.999999999999996,
+            150.0
+          ]
+        ]
+      }
+    ],
+    "shortcut": [
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -29.999999999999996,
+            90.0
+          ],
+          [
+            -46.66027103791202,
+            125.6093889949488
+          ]
+        ]
+      },
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -46.66027103791202,
+            125.6093889949488
+          ],
+          [
+            -29.999999999999996,
+            150.0
+          ]
+        ]
+      }
+    ],
+    "aggressive_blend_alpha_0_5": [
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -29.999999999999996,
+            90.0
+          ],
+          [
+            -38.330135518956006,
+            107.8046944974744
+          ]
+        ]
+      },
+      {
+        "kind": "quadratic_bezier",
+        "controls_deg": [
+          [
+            -38.330135518956006,
+            107.8046944974744
+          ],
+          [
+            -46.66027103791202,
+            125.6093889949488
+          ],
+          [
+            -38.330135518956006,
+            137.8046944974744
+          ]
+        ]
+      },
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -38.330135518956006,
+            137.8046944974744
+          ],
+          [
+            -29.999999999999996,
+            150.0
+          ]
+        ]
+      }
+    ],
+    "accepted_blend_alpha_0_25": [
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -29.999999999999996,
+            90.0
+          ],
+          [
+            -42.49520327843401,
+            116.7070417462116
+          ]
+        ]
+      },
+      {
+        "kind": "quadratic_bezier",
+        "controls_deg": [
+          [
+            -42.49520327843401,
+            116.7070417462116
+          ],
+          [
+            -46.66027103791202,
+            125.6093889949488
+          ],
+          [
+            -42.49520327843401,
+            131.7070417462116
+          ]
+        ]
+      },
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -42.49520327843401,
+            131.7070417462116
+          ],
+          [
+            -29.999999999999996,
+            150.0
+          ]
+        ]
+      }
+    ],
+    "unsafe_direct": [
+      {
+        "kind": "line",
+        "controls_deg": [
+          [
+            -29.999999999999996,
+            90.0
+          ],
+          [
+            -29.999999999999996,
+            150.0
+          ]
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "original": {
+      "length_deg": 68.87081029859299,
+      "sampled_min_clearance_m": 0.023978999112852922,
+      "model_clearance_lower_bound_m": 0.023944848426543684,
+      "critical_q_deg": [
+        -44.16190426911206,
+        129.4647218904562
+      ],
+      "joint_limits_valid": true,
+      "collision_free_in_model": true,
+      "meets_episode_10mm_margin": true
+    },
+    "shortcut": {
+      "length_deg": 68.85157783675449,
+      "sampled_min_clearance_m": 0.022617837506884064,
+      "model_clearance_lower_bound_m": 0.022567475025064877,
+      "critical_q_deg": [
+        -43.997126712501775,
+        129.50822816410624
+      ],
+      "joint_limits_valid": true,
+      "collision_free_in_model": true,
+      "meets_episode_10mm_margin": true
+    },
+    "aggressive_blend_alpha_0_5": {
+      "length_deg": 65.92783569059758,
+      "sampled_min_clearance_m": -0.013331485755819522,
+      "model_clearance_lower_bound_m": -0.013391638468337408,
+      "critical_q_deg": [
+        -42.489346151897244,
+        124.76756969539306
+      ],
+      "joint_limits_valid": true,
+      "collision_free_in_model": false,
+      "meets_episode_10mm_margin": false
+    },
+    "accepted_blend_alpha_0_25": {
+      "length_deg": 67.38970676367603,
+      "sampled_min_clearance_m": 0.015650695376966728,
+      "model_clearance_lower_bound_m": 0.015620619020707785,
+      "critical_q_deg": [
+        -44.44475218827969,
+        126.75869032310854
+      ],
+      "joint_limits_valid": true,
+      "collision_free_in_model": true,
+      "meets_episode_10mm_margin": true
+    },
+    "unsafe_direct": {
+      "length_deg": 60.00000000000001,
+      "sampled_min_clearance_m": -0.19942268217339143,
+      "model_clearance_lower_bound_m": -0.19947504205095126,
+      "critical_q_deg": [
+        -29.999999999999996,
+        118.053
+      ],
+      "joint_limits_valid": true,
+      "collision_free_in_model": false,
+      "meets_episode_10mm_margin": false
+    }
+  },
+  "length_reduction_percent": 2.1505533744928362,
+  "notes": [
+    "No time parameterization or dynamics simulation.",
+    "10 mm margin is an episode teaching threshold, not a universal engineering safety standard.",
+    "Clearance lower bound is specific to this planar 2R capsule-disc model.",
+    "Curve joins preserve tangent direction, not a supplied time law or acceleration continuity."
+  ]
+}

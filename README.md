@@ -1,6 +1,6 @@
 # 硅基学步 · Silicon Baby Steps
 
-**和硅宝一起，从“别撞上椅子”，走到机械臂采样规划。**
+**和硅宝一起，从“别撞上椅子”，走到机械臂规划、时间参数化与关节验收。**
 
 「碳硅共鸣」的规划算法课程与交互实验网站。每节课都包含**结构化文章、头部完整视频、可调参数的算法实验**。算法在浏览器里实际运行，可播放、暂停、单步、固定随机种子做对照，也可直接“计算至预算”查看完整结果。
 
@@ -46,7 +46,7 @@ docker compose up --build -d
 
 另附 [硅宝自我介绍视频](public/media/00/video.mp4)，网站提供“认识硅宝”入口。
 
-当前视频按两个部分更新。知识路线保留原先九部分体系，控制相关内容集中在后段。
+当前视频按三个部分更新。知识路线保留原先九部分体系，控制相关内容集中在后段。
 
 | 集数 | 本节内容                             | 文章                          | 完整视频                         | 对应交互实验 / 源码                                                                         |
 | ---- | ------------------------------------ | ----------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -60,9 +60,15 @@ docker compose up --build -d
 | 08   | RRT-Connect：两棵树，怎样接上头？    | [讲义](public/articles/08.md) | [MP4](public/media/08/video.mp4) | 双树、Connect与回溯；[sampling.ts](src/algorithms/sampling.ts)                              |
 | 09   | RRT\*：路找到了，能不能少绕一点？    | [讲义](public/articles/09.md) | [MP4](public/media/09/video.mp4) | 选父、重连、后代更新与成本曲线；[sampling.ts](src/algorithms/sampling.ts)                   |
 
+| 10 | Informed RRT* | [讲义](public/articles/10.md) | [MP4](https://letsgogo.top/planning/media/10/video.mp4) | 椭圆采样与RRT*对照 |
+| 11 | 路径后处理 | [讲义](public/articles/11.md) | [MP4](https://letsgogo.top/planning/media/11/video.mp4) | 快捷连接、圆角与复检 |
+| 12 | 时间参数化 | [讲义](public/articles/12.md) | [MP4](https://letsgogo.top/planning/media/12/video.mp4) | 匀速、梯形与短任务三角形 |
+| 13 | S曲线与jerk | [讲义](public/articles/13.md) | [MP4](https://letsgogo.top/planning/media/13/video.mp4) | 六秒梯形与七秒S曲线 |
+| 14 | 关节约束验收 | [讲义](public/articles/14.md) | [MP4](https://letsgogo.top/planning/media/14/video.mp4) | 两关节幅值验收、统一时间伸缩 |
+
 - **当前第一部分**：01—05，移动机器人入门，已收官。
-- **当前第二部分**：06起，机械臂配置空间与采样规划，09讲至RRT\*。
-- **下一集计划**：Informed RRT\*，尚未制作，不作为已完成章节展示。
+- **第二部分**：06—11，配置空间、采样规划与路径后处理，已收官。
+- **第三部分**：12—14，梯形速度、S曲线与关节约束验收，已收官。
 - 浏览器内可按算法搜索、筛选课程、记录本机学习进度；文章具有段落、分节、图片与本节内容索引。
 
 ## 长期九部分知识路线
@@ -110,7 +116,7 @@ docker compose up --build -d
 
 1. 栅格搜索的立体画面只是三维展示，状态仍是二维格子。机械臂也只有两个规划自由度；三维空间场景则是三维状态。
 2. 机械臂内部用弧度计算，界面路径长度换算为角度；它不是末端移动米数。空间绕障使用米，栅格使用转移成本。
-3. 视频第09集的原始Python实验采用**整段运动验证预算**；网站采用**采样迭代预算**，并另外显示运动验证次数。它们不是同一预算口径，也不是相同计算时间。
+3. 视频第09—10集的原始Python实验采用**整段运动验证预算**；网站采用**采样迭代预算**，并另外显示运动验证次数。它们不是同一预算口径，也不是相同计算时间。
 4. 同种子保证同配置、同算法可复现；不同算法消耗随机数与检碰预算不同，不保证样本逐个对应。播放速度改变的是回放速率，不是算法性能。
 5. RRT\*比较累计成本，重新连接后向全部后代传播成本，并排除祖先形成环。保留原始路径，不把平滑结果当原始输出。
 6. 第05集实验的引导线是明确给定的参考途经点，用于演示模块交接；它不冒充在该界面运行出的A\*路径。
@@ -120,12 +126,12 @@ docker compose up --build -d
 
 ```text
 public/articles/          每集Markdown讲义与文章原始JSON
-public/media/01…09/       每集完整MP4、封面和正文插图
+public/media/01…14/       每集完整MP4、封面和正文插图
 public/media/manifest.json 影片时长、尺寸与SHA-256
 src/content/catalog.ts   当前章节与长期九部分路线
 src/algorithms/           可独立测试的浏览器算法实现
 src/ui/                  三维场景、关节地图、实验控制面板
-experiments/original/    第07—09集原始Python算法及核验参考
+experiments/original/    第07—14集原始Python算法及核验参考
 scripts/                 一键启动、媒体核验、历史资料导入
 tests/                  算法正确性与回归测试
 .github/workflows/       自动验证与手动GitHub Pages部署
@@ -143,7 +149,7 @@ npm run preview
 
 测试覆盖加权Dijkstra/A\*一致性、无路可达、禁止切角、起终点被膨胀区阻挡、机械臂整段检碰、两种空间中三种采样规划器的确定性与有效路径、RRT\*成本与无环结构、默认10.5秒轨迹、DWA执行步的障碍间距。
 
-`npm run verify:media` 核验全部9集的MP4 SHA-256、文章、封面与图像链接。`experiments/original/README.md` 说明如何重新运行Python视频实验。
+`npm run verify:media` 核验全部14集的MP4 SHA-256、文章、封面与图像链接。`experiments/original/README.md` 说明如何重新运行Python视频实验。
 
 ### GitHub Pages
 
@@ -158,7 +164,7 @@ npm run preview
 ## 增加下一章
 
 1. 在 `src/content/catalog.ts` 登记标题、知识点和实验类型。
-2. 添加 `public/articles/10.md`、`public/media/10/video.mp4`、封面与正文配图。
+2. 添加 `public/articles/15.md`、`public/media/15/video.mp4`、封面与正文配图。
 3. 更新 `public/media/manifest.json` 的时长、字节数和SHA-256；同步媒体核验脚本的章节数量。
 4. 复用或新增实验模块，补必要的算法回归测试，再构建与推送。
 
@@ -168,3 +174,14 @@ npm run preview
 - [RRT原始资料（LaValle）](https://lavalle.pl/rrt/)；[RRT-Connect论文](https://www.kuffner.org/james/papers/kuffner_icra2000.pdf)。
 - [RRT\*原始论文](https://arxiv.org/abs/1105.1186)；[OMPL RRTstar实现](https://ompl.kavrakilab.org/RRTstar_8cpp_source.html)。
 - [Vite静态部署](https://vite.dev/guide/static-deploy.html)。
+
+
+## 第10—14集完整视频与同步
+
+新增视频原片全部无损保留：`course-media/` 存储每段不超过10MiB的原始字节，`manifest.json`记录每段及完整MP4的字节数与SHA-256。运行 `npm run dev`、`npm run build` 或 `npm run verify:media` 会先自动拼回 `public/media/10…14/video.mp4`。也可单独运行 `npm run assemble:media`。网站仍播放与下载完整MP4；分段仅用于适配上传接口，不切分观看，不改变清晰度、帧率、音轨或时长。
+
+每章继续保留独立结构化文章、完整视频、可调参数实验和有条件说明的对比。后续头条号不再新发配套文章，Git讲义仍持续更新，既有文章保留。
+
+第10集网页按采样迭代计预算，Python视频按6000次整段验证计预算。第11集圆角切向连续但曲率跳变；第12—14集标量S曲线不证明关节jerk有限，统一放慢只让本例速度与分段加速度幅值满足教学限值。不是力矩、负载、跟踪或真机安全认证。
+
+主站由 `luckyPT/luckyPT` 的 `Publish letsgogo.top` 工作流联合构建，读取本仓库main并发布到 `/planning/`。课程提交与主站部署分别核验，不能把其中一步当作全部完成。制作规范见 [WORKFLOW.md](docs/WORKFLOW.md)。

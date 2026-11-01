@@ -7,7 +7,7 @@ export interface Lesson {
   duration: string;
   minutes: number;
   concepts: string[];
-  lab: "grid" | "trajectory" | "dwa" | "system" | "config" | "sampling";
+  lab: "grid" | "trajectory" | "dwa" | "system" | "config" | "sampling" | "arm-course";
 }
 export const lessons: Lesson[] = [
   {
@@ -109,6 +109,11 @@ export const lessons: Lesson[] = [
     concepts: ["选择父节点", "重新连接", "后代成本更新"],
     lab: "sampling",
   },
+  {"id": "10", "title": "Informed RRT*：把采样花在有希望的地方", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "Informed RRT*", "part": 2, "lab": "sampling", "concepts": ["成本下界", "椭圆采样", "同条件对比"], "duration": "6:50", "minutes": 8},
+  {"id": "11", "title": "路径后处理：删点、圆角与碰撞复检", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "路径后处理", "part": 2, "lab": "arm-course", "concepts": ["快捷连接", "Bezier圆角", "整段复检"], "duration": "5:50", "minutes": 8},
+  {"id": "12", "title": "时间参数化：给路径排时刻表", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "梯形速度", "part": 3, "lab": "arm-course", "concepts": ["路径与轨迹", "梯形与三角形", "任务终点"], "duration": "4:18", "minutes": 8},
+  {"id": "13", "title": "S曲线：让加速度也有过渡", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "S曲线与jerk", "part": 3, "lab": "arm-course", "concepts": ["七段积分", "jerk", "曲率接缝"], "duration": "3:48", "minutes": 8},
+  {"id": "14", "title": "关节约束验收与统一时间伸缩", "subtitle": "从真实路径出发，把每一步验收跑明白。", "algorithm": "关节约束验收", "part": 3, "lab": "arm-course", "concepts": ["链式法则", "时间伸缩", "单侧极限"], "duration": "3:57", "minutes": 8},
 ];
 export const roadmap = [
   {
@@ -128,13 +133,13 @@ export const roadmap = [
     title: "先找到一条路",
     topics: "地图、碰撞检测、Dijkstra、A*、Hybrid A*、RRT系列",
     practice: "主线：迷宫、窄通道、倒车入库；工业案例：有车身约束的避障。",
-    status: "01—02、06—09 持续展开",
+    status: "01—02、06—11 持续展开",
   },
   {
     title: "有路了，为什么还是走不了",
     topics: "路径与轨迹、样条、多项式、速度规划、加速度与jerk、DWA / TEB",
     practice: "主线：急弯减速、突然来人；工业案例：带动态障碍的重规划。",
-    status: "03—05 已入门，后续深化",
+    status: "03—05 入门，11—14 已展开后处理与时间参数化",
   },
   {
     title: "把车开稳",
@@ -159,7 +164,7 @@ export const roadmap = [
     title: "从轮子升级到机械臂",
     topics: "正逆运动学、雅可比、奇异位形、自碰撞、时间参数化与执行接口",
     practice: "主线：从二连杆到多关节；工业案例：机械臂路径、工艺姿态与约束。",
-    status: "06—09 提前进入采样规划",
+    status: "06—11 提前进入采样规划",
   },
   {
     title: "从能演示到能交付",

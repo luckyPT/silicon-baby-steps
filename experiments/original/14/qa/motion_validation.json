@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "limits_are_hypothetical_teaching_values_not_manufacturer_data": true,
+  "joint_velocity_limits_deg_s": [
+    12.0,
+    12.0
+  ],
+  "joint_acceleration_limits_deg_s2": [
+    20.0,
+    20.0
+  ],
+  "original_duration": 7.0,
+  "adjusted_duration": 10.5,
+  "stretch_factor": 1.5,
+  "required_factor_by_numerical_extrema": 1.4039522242339164,
+  "original_peaks": {
+    "velocity": [
+      {
+        "abs_peak": 9.420735120572115,
+        "time_seconds": 4.185604509721078,
+        "side": "left",
+        "signed_peak": 9.420735120572115
+      },
+      {
+        "abs_peak": 16.847426690806998,
+        "time_seconds": 3.7563916511728577,
+        "side": "right",
+        "signed_peak": 16.847426690806998
+      }
+    ],
+    "acceleration": [
+      {
+        "abs_peak": 23.72521654518771,
+        "time_seconds": 3.934077902957517,
+        "side": "right",
+        "signed_peak": 23.72521654518771
+      },
+      {
+        "abs_peak": 13.49784838648065,
+        "time_seconds": 4.185604509721078,
+        "side": "left",
+        "signed_peak": -13.49784838648065
+      }
+    ]
+  },
+  "adjusted_peak_velocity_deg_s": [
+    6.280490080381409,
+    11.231617793871331
+  ],
+  "adjusted_peak_acceleration_deg_s2": [
+    10.544540686750093,
+    5.999043727324733
+  ],
+  "original_velocity_pass": [
+    true,
+    false
+  ],
+  "original_acceleration_pass": [
+    false,
+    true
+  ],
+  "adjusted_velocity_pass": [
+    true,
+    true
+  ],
+  "adjusted_piecewise_acceleration_amplitude_pass": [
+    true,
+    true
+  ],
+  "all_path_joins_checked_on_both_sides": [
+    {
+      "progress": 0.4375375172849845,
+      "base_time": 3.250150069139938,
+      "base_accel_left_deg_s2": [
+        0.0,
+        0.0
+      ],
+      "base_accel_right_deg_s2": [
+        8.458718563173093,
+        3.957510866470406
+      ],
+      "slow_accel_left_deg_s2": [
+        0.0,
+        0.0
+      ],
+      "slow_accel_right_deg_s2": [
+        3.759430472521375,
+        1.7588937184312916
+      ],
+      "slow_jump_norm": 4.150545095581946
+    },
+    {
+      "progress": 0.671267921262118,
+      "base_time": 4.185604509721078,
+      "base_accel_left_deg_s2": [
+        16.98888527732689,
+        -13.497848386480648
+      ],
+      "base_accel_right_deg_s2": [
+        -0.8818602702475653,
+        -1.2910420702923555
+      ],
+      "slow_accel_left_deg_s2": [
+        7.550615678811951,
+        -5.999043727324732
+      ],
+      "slow_accel_right_deg_s2": [
+        -0.3919378978878068,
+        -0.5737964756854913
+      ],
+      "slow_jump_norm": 9.618599953224235
+    }
+  ],
+  "path_length_deg": 67.38970676322799,
+  "min_sampled_clearance_m": 0.015650695385105245,
+  "same_geometric_path": true,
+  "same_positions_at_same_normalized_progress": true,
+  "independent_arclength_reference": "scipy quadrature + root inversion, 37 sample points",
+  "dense_validation_samples": 200005,
+  "scope": [
+    "Only joint speed and PIECEWISE acceleration amplitudes pass the teaching limits.",
+    "Acceleration is discontinuous at original path curvature joins; classical acceleration there is not defined, both one-sided limits are checked.",
+    "Global slowing reduces jump magnitude but never removes it.",
+    "Joint jerk, torques, load, tracking, hardware safety and liquid stability are not certified.",
+    "No claim of time optimality."
+  ],
+  "path_source_sha256": "d1837bda10a631f971b0bd6c9ee37bd67058c809865d70928f6bcb101eda74ba"
+}

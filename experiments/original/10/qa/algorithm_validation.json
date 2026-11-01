@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "runs": 6,
+  "budget_each": 6000,
+  "seeds": [
+    1,
+    7,
+    42
+  ],
+  "budget_unit": "whole-edge motion validation calls including extension, parent, rewire, goal; excludes sampler proposals",
+  "equal_prefix_until_first_solution": true,
+  "informed_samples_inside_ellipse_and_bounds": true,
+  "parent_chain_costs_verified": true,
+  "acyclic": true,
+  "all_history_paths_densely_verified": true,
+  "best_cost_monotone": true,
+  "uniform_disk_radial_second_moment": 0.49400673526084865,
+  "stats": [
+    {
+      "algorithm": "RRT*",
+      "seed": 1,
+      "found": true,
+      "first_solution_checks": 1751,
+      "motion_checks": 6000,
+      "best_cost_degrees": 77.59564148132792,
+      "iterations": 2805,
+      "sample_proposals": 2805,
+      "informed_samples": 0,
+      "bounds_rejections": 0
+    },
+    {
+      "algorithm": "Informed RRT*",
+      "seed": 1,
+      "found": true,
+      "first_solution_checks": 1751,
+      "motion_checks": 6000,
+      "best_cost_degrees": 67.87492189438423,
+      "iterations": 1212,
+      "sample_proposals": 1219,
+      "informed_samples": 342,
+      "bounds_rejections": 7
+    },
+    {
+      "algorithm": "RRT*",
+      "seed": 7,
+      "found": true,
+      "first_solution_checks": 1192,
+      "motion_checks": 6000,
+      "best_cost_degrees": 69.33244146521804,
+      "iterations": 2722,
+      "sample_proposals": 2722,
+      "informed_samples": 0,
+      "bounds_rejections": 0
+    },
+    {
+      "algorithm": "Informed RRT*",
+      "seed": 7,
+      "found": true,
+      "first_solution_checks": 1192,
+      "motion_checks": 6000,
+      "best_cost_degrees": 68.87081029859299,
+      "iterations": 981,
+      "sample_proposals": 991,
+      "informed_samples": 369,
+      "bounds_rejections": 10
+    },
+    {
+      "algorithm": "RRT*",
+      "seed": 42,
+      "found": true,
+      "first_solution_checks": 1220,
+      "motion_checks": 6000,
+      "best_cost_degrees": 69.03437692021016,
+      "iterations": 2640,
+      "sample_proposals": 2640,
+      "informed_samples": 0,
+      "bounds_rejections": 0
+    },
+    {
+      "algorithm": "Informed RRT*",
+      "seed": 42,
+      "found": true,
+      "first_solution_checks": 1220,
+      "motion_checks": 6000,
+      "best_cost_degrees": 67.35174919058538,
+      "iterations": 982,
+      "sample_proposals": 992,
+      "informed_samples": 388,
+      "bounds_rejections": 10
+    }
+  ]
+}

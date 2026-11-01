@@ -1,3 +1,4 @@
+import {mountArmCourseLab} from "./arm-course-lab.ts";
 import { World, type SceneKind } from "./scene.ts";
 import { ConfigurationMap } from "./cspace.ts";
 import {
@@ -54,6 +55,7 @@ interface Session {
   history: { x: number; y: number }[];
 }
 export function mountLab(root: HTMLElement, lesson: Lesson) {
+  if(lesson.lab === "arm-course")return mountArmCourseLab(root,lesson);
   const config = lesson.lab === "config",
     sampling = lesson.lab === "sampling",
     trajectory = lesson.lab === "trajectory",
@@ -75,9 +77,10 @@ export function mountLab(root: HTMLElement, lesson: Lesson) {
             ["rrt", "RRT"],
             ["connect", "RRT-Connect"],
             ["star", "RRT*"],
+            ["informed", "Informed RRT*"],
           ]
         : [["dwa", "DWA"]];
-  const defaultAlg = trajectory
+  const defaultAlg = lesson.id === "10" ? "informed" : trajectory
     ? "limited"
     : lesson.id === "02"
       ? "astar"
@@ -181,7 +184,7 @@ export function mountLab(root: HTMLElement, lesson: Lesson) {
      : ""
  }
  ${config ? "" : range("speed", "播放速度", 1, 20, 6, 1, "×")}
- ${config ? "" : `<label class="check"><input type="checkbox" name="compare"> 开启算法对比</label>${select("second", "对比算法", algos.length > 1 ? algos : [["dwa", "DWA（另一组预测参数）"]], trajectory ? "instant" : grid ? (defaultAlg === "astar" ? "dijkstra" : "astar") : sampling ? (defaultAlg === "connect" ? "rrt" : "connect") : "dwa")}`}
+ ${config ? "" : `<label class="check"><input type="checkbox" name="compare" ${lesson.id === "10" ? "checked" : ""}> 开启算法对比</label>${select("second", "对比算法", algos.length > 1 ? algos : [["dwa", "DWA（另一组预测参数）"]], trajectory ? "instant" : grid ? (defaultAlg === "astar" ? "dijkstra" : "astar") : sampling ? (defaultAlg === "informed" ? "star" : defaultAlg === "connect" ? "rrt" : "connect") : "dwa")}`}
  </form><div class="parameter-note" id="parameter-note">${trajectory ? "路径固定为先向右2米，再向上2米；默认限速限加速度方案总时长10.5秒。对比算法可切换理想化的瞬间拐弯。" : sampling ? "机械臂默认步长10°；三维场景按0.035 m/度换算。近邻半径独立于生成步长。" : grid ? "启发权重为1时，A*使用可采纳的曼哈顿 / 八方向距离。权重大于1不保证最优。" : config ? "红色仅表示当前配置发生碰撞；两端安全并不保证中间安全。" : "对比模式第二组预测时域增加1秒，最高4秒；其余设置相同。"}</div></aside></div>
  <section class="lab-notes"><h3>怎么做一组有意义的实验？</h3><p>${trajectory ? "同一路径，比较瞬间拐弯、停车转向与限加速度方案。默认限制下，第三种方案用时10.5秒。改变速度或加速度，观察时间如何变化；路径没有变化，执行条件却不同。" : sampling ? "固定场景和种子，先比较RRT与RRT-Connect的首次可行解，再观察RRT*最佳成本能否继续下降。这里按采样迭代预算比较，同时列出运动验证次数；它们不是相同耗时的性能基准。" : grid ? "先固定地图、邻接规则和地面成本，对照Dijkstra与启发权重1的A*。比较路径成本和展开节点，而不是只看动画跑得快不快。" : config ? "把θ1固定为−30°，将θ2从90°调到150°。两端均安全，中间约120°发生碰撞。再改变θ1，观察是否能绕开红色区域。" : "先只放固定障碍，再加入移动障碍。增减预测时域和速度，观察候选轨迹、安全筛选与局部停滞。参考途经点用于演示模块交接，不冒充由本实验自动生成的A*输出。"}</p><a href="https://github.com/luckyPT/silicon-baby-steps/tree/main/src/algorithms" target="_blank" rel="noopener">查看实验算法源码 ↗</a></section>`;
   const form = $<HTMLFormElement>(root, "#params");
@@ -326,7 +329,7 @@ export function mountLab(root: HTMLElement, lesson: Lesson) {
     const env = environment(),
       factor = env.kind === "arm" ? Math.PI / 180 : 0.035;
     return samplePlan({
-      algorithm: algorithm as "rrt" | "connect" | "star",
+      algorithm: algorithm as "rrt" | "connect" | "star" | "informed",
       env,
       seed: number("seed") >>> 0,
       iterations: number("iterations"),

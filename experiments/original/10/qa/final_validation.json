@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "episode": 10,
+  "narration": "complete; established voice; each normalized spoken character verified",
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "+12%",
+  "pitch": "+8Hz",
+  "chapters": 10,
+  "duration_seconds": 409.722,
+  "captions": 206,
+  "rhubarb_cues": 2401,
+  "visemes": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "X"
+  ],
+  "timing": "actual audio word timestamps, not estimated reading timing",
+  "algorithm": "six previously validated real runs; no algorithm changes in narration completion",
+  "original_path_waypoints_preserved": true,
+  "video": {
+    "sha256": "67d5e10f98cd50ad1cdbbac556e63127fdcc3b00fe0ca66fe9fdd7e351949b2c",
+    "size_bytes": 22909841,
+    "duration": 409.733333,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "full_decode": "passed",
+    "audio_levels": [
+      "mean_volume: -19.3 dB",
+      "max_volume: -3.5 dB"
+    ],
+    "faststart": true,
+    "image_assets_verified": 357
+  }
+}

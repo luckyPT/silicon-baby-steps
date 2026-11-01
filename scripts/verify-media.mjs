@@ -5,8 +5,8 @@ const root = resolve(import.meta.dirname, "../public");
 const manifest = JSON.parse(
   await readFile(resolve(root, "media/manifest.json"), "utf8"),
 );
-if (manifest.chapters.length !== 9)
-  throw Error("Expected nine completed course chapters");
+if (manifest.chapters.length !== 14)
+  throw Error("Expected fourteen completed course chapters");
 let bytes = 0;
 for (const m of manifest.chapters) {
   const file = resolve(root, m.video);

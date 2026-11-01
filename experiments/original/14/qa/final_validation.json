@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "duration_seconds": 237.166667,
+  "video_sha256": "7603b58a9881eb796d23c75863ffb79ae7f06cf3bf1767c723eb91ca361a5d69",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "audio_channels": 2,
+  "sample_rate": 48000,
+  "voice": "zh-CN-YunxiNeural +12% +8Hz",
+  "narration_all_characters_verified": true,
+  "whole_video_decode": "passed",
+  "captions": 121,
+  "individually_finalized_segments": 20,
+  "geometry_experiment": "qa/motion_validation.json"
+}
