@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "runs": 6,
+  "seeds": [
+    1,
+    7,
+    42
+  ],
+  "budget_each": 6000,
+  "budget_unit": "whole-edge motion validations including parent, rewire, and goal tests",
+  "parent_example_iteration": 2,
+  "rewire_example_iteration": 208,
+  "rewire_example_node": 11,
+  "parent_costs_verified_against_all_chains": true,
+  "acyclic": true,
+  "all_history_paths_densely_verified": true,
+  "best_cost_monotone": true,
+  "stats": [
+    {
+      "algorithm": "RRT",
+      "seed": 1,
+      "found": true,
+      "first_solution_checks": 871,
+      "motion_checks": 6000,
+      "best_cost_degrees": 135.46657477220634
+    },
+    {
+      "algorithm": "RRT*",
+      "seed": 1,
+      "found": true,
+      "first_solution_checks": 1751,
+      "motion_checks": 6000,
+      "best_cost_degrees": 77.59564148132792
+    },
+    {
+      "algorithm": "RRT",
+      "seed": 7,
+      "found": true,
+      "first_solution_checks": 613,
+      "motion_checks": 6000,
+      "best_cost_degrees": 143.56559023475813
+    },
+    {
+      "algorithm": "RRT*",
+      "seed": 7,
+      "found": true,
+      "first_solution_checks": 1192,
+      "motion_checks": 6000,
+      "best_cost_degrees": 69.33244146521804
+    },
+    {
+      "algorithm": "RRT",
+      "seed": 42,
+      "found": true,
+      "first_solution_checks": 595,
+      "motion_checks": 6000,
+      "best_cost_degrees": 91.07274366333334
+    },
+    {
+      "algorithm": "RRT*",
+      "seed": 42,
+      "found": true,
+      "first_solution_checks": 1220,
+      "motion_checks": 6000,
+      "best_cost_degrees": 69.03437692021016
+    }
+  ],
+  "rendered_paths": {
+    "first_samples": 71,
+    "final_samples": 64,
+    "all_original_waypoints_preserved": true,
+    "certified_clearance_lower_bounds_m": {
+      "first": 0.07723330867661898,
+      "path": 0.006664581280292578
+    }
+  }
+}
