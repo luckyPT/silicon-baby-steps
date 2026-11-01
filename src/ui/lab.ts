@@ -56,6 +56,7 @@ interface Session {
 }
 export function mountLab(root: HTMLElement, lesson: Lesson) {
   if(lesson.lab === "arm-course")return mountArmCourseLab(root,lesson);
+  const atlas = lesson.id === "15";
   const config = lesson.lab === "config",
     sampling = lesson.lab === "sampling",
     trajectory = lesson.lab === "trajectory",
@@ -80,7 +81,7 @@ export function mountLab(root: HTMLElement, lesson: Lesson) {
             ["informed", "Informed RRT*"],
           ]
         : [["dwa", "DWA"]];
-  const defaultAlg = lesson.id === "10" ? "informed" : trajectory
+  const defaultAlg = ["10","15"].includes(lesson.id) ? "informed" : trajectory
     ? "limited"
     : lesson.id === "02"
       ? "astar"
@@ -100,7 +101,7 @@ export function mountLab(root: HTMLElement, lesson: Lesson) {
     playing = false,
     timer = 0,
     closed = false;
-  root.innerHTML = `<section class="lab-intro"><div><span class="eyebrow">INTERACTIVE LAB / ${lesson.id}</span><h2>${config ? "动一动关节，看一看整条胳膊" : "让算法跑给你看"}</h2><p>${trajectory ? "同一条两米加两米的折线，对照三种时间安排，观察位姿、速度与完成时间。" : config ? "关节角改变的是整条机械臂的配置。拖动滑块，同时观察红色碰撞禁区。" : grid ? "三维展示二维栅格搜索：调参数、编辑地图，比较实际展开过程。" : sampling ? "同一套算法可切换二维关节空间和真正的三维位置空间。" : "在速度动态窗口里生成候选轨迹，预测、筛选、打分，只执行第一小段。"}</p></div><span class="badge live">● ${config ? "三维运动学" : "浏览器内实时计算"}</span></section>
+  root.innerHTML = `${atlas ? `<section class="callout"><b>第15集导读实验：先把对比口径跑明白</b><p>复用已实现的RRT系列，观察有限迭代预算下的首解、路径成本与检碰次数。PRM、势场和轨迹优化将在后续各集实现，本页不把机制示意当作新算法运行结果。</p><p>固定场景和种子比较，再更换种子；同迭代数不等于同耗时或同检碰预算。</p></section>` : ""}<section class="lab-intro"><div><span class="eyebrow">INTERACTIVE LAB / ${lesson.id}</span><h2>${config ? "动一动关节，看一看整条胳膊" : "让算法跑给你看"}</h2><p>${trajectory ? "同一条两米加两米的折线，对照三种时间安排，观察位姿、速度与完成时间。" : config ? "关节角改变的是整条机械臂的配置。拖动滑块，同时观察红色碰撞禁区。" : grid ? "三维展示二维栅格搜索：调参数、编辑地图，比较实际展开过程。" : sampling ? "同一套算法可切换二维关节空间和真正的三维位置空间。" : "在速度动态窗口里生成候选轨迹，预测、筛选、打分，只执行第一小段。"}</p></div><span class="badge live">● ${config ? "三维运动学" : "浏览器内实时计算"}</span></section>
  <div class="lab-toolbar"><button class="button primary" id="run">${config ? "检查整段连接" : "▶ 运行"}</button>${config ? "" : '<button class="button" id="step">单步</button><button class="button" id="finish">计算至预算</button>'}<button class="button" id="reset">↺ 重置实验</button><span class="toolbar-spacer"></span><button class="button quiet" id="pan" aria-pressed="false">拖动平移</button><button class="button quiet" id="camera">重置视角</button><button class="button quiet" id="top">俯视</button><button class="button quiet" id="export">导出结果 ↓</button></div>
  <div class="lab-layout"><div class="lab-main"><div class="worlds" id="worlds"></div><div class="legend"><span><i style="background:#6cdddc"></i>${grid ? "已展开 / 起点" : sampling ? "起点树" : "实际路线"}</span><span><i style="background:#ffb766"></i>${grid ? "待展开 / 终点" : sampling ? "目标 / 目标树" : "障碍 / 引导路线"}</span><span><i style="background:#b9f79f"></i>当前最佳路径</span><span><i style="background:#bc7268"></i>碰撞禁区 / 无效候选</span></div><div class="lab-footnote"><strong>视角操作</strong> 左键旋转 · <b>右键按住拖动平移</b> · 滚轮缩放 · 触屏双指缩放和平移。${trajectory ? "差速小车的参考轨迹回放；姿态与时间同步，不代表真实闭环执行。" : sampling || config ? "机械臂为三维模型，规划变量为两个关节角；空间绕障使用(x,y,z)三个规划变量。" : grid ? "立体画面用于观察，搜索状态仍是(x,y)栅格。" : "仅教学仿真；安全停车不代表通用避障保证。"}</div></div>
  <aside class="parameters"><div class="parameters-heading"><h3>实验参数</h3><span>修改后重新运行</span></div><form id="params" autocomplete="off">
@@ -184,7 +185,7 @@ export function mountLab(root: HTMLElement, lesson: Lesson) {
      : ""
  }
  ${config ? "" : range("speed", "播放速度", 1, 20, 6, 1, "×")}
- ${config ? "" : `<label class="check"><input type="checkbox" name="compare" ${lesson.id === "10" ? "checked" : ""}> 开启算法对比</label>${select("second", "对比算法", algos.length > 1 ? algos : [["dwa", "DWA（另一组预测参数）"]], trajectory ? "instant" : grid ? (defaultAlg === "astar" ? "dijkstra" : "astar") : sampling ? (defaultAlg === "informed" ? "star" : defaultAlg === "connect" ? "rrt" : "connect") : "dwa")}`}
+ ${config ? "" : `<label class="check"><input type="checkbox" name="compare" ${["10","15"].includes(lesson.id) ? "checked" : ""}> 开启算法对比</label>${select("second", "对比算法", algos.length > 1 ? algos : [["dwa", "DWA（另一组预测参数）"]], trajectory ? "instant" : grid ? (defaultAlg === "astar" ? "dijkstra" : "astar") : sampling ? (defaultAlg === "informed" ? "star" : defaultAlg === "connect" ? "rrt" : "connect") : "dwa")}`}
  </form><div class="parameter-note" id="parameter-note">${trajectory ? "路径固定为先向右2米，再向上2米；默认限速限加速度方案总时长10.5秒。对比算法可切换理想化的瞬间拐弯。" : sampling ? "机械臂默认步长10°；三维场景按0.035 m/度换算。近邻半径独立于生成步长。" : grid ? "启发权重为1时，A*使用可采纳的曼哈顿 / 八方向距离。权重大于1不保证最优。" : config ? "红色仅表示当前配置发生碰撞；两端安全并不保证中间安全。" : "对比模式第二组预测时域增加1秒，最高4秒；其余设置相同。"}</div></aside></div>
  <section class="lab-notes"><h3>怎么做一组有意义的实验？</h3><p>${trajectory ? "同一路径，比较瞬间拐弯、停车转向与限加速度方案。默认限制下，第三种方案用时10.5秒。改变速度或加速度，观察时间如何变化；路径没有变化，执行条件却不同。" : sampling ? "固定场景和种子，先比较RRT与RRT-Connect的首次可行解，再观察RRT*最佳成本能否继续下降。这里按采样迭代预算比较，同时列出运动验证次数；它们不是相同耗时的性能基准。" : grid ? "先固定地图、邻接规则和地面成本，对照Dijkstra与启发权重1的A*。比较路径成本和展开节点，而不是只看动画跑得快不快。" : config ? "把θ1固定为−30°，将θ2从90°调到150°。两端均安全，中间约120°发生碰撞。再改变θ1，观察是否能绕开红色区域。" : "先只放固定障碍，再加入移动障碍。增减预测时域和速度，观察候选轨迹、安全筛选与局部停滞。参考途经点用于演示模块交接，不冒充由本实验自动生成的A*输出。"}</p><a href="https://github.com/luckyPT/silicon-baby-steps/tree/main/src/algorithms" target="_blank" rel="noopener">查看实验算法源码 ↗</a></section>`;
   const form = $<HTMLFormElement>(root, "#params");
