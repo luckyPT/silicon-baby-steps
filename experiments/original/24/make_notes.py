@@ -7,10 +7,10 @@ def svg(name,title,body):
 def text(x,y,s,cls=''):return f'<text x="{x}" y="{y}" class="{cls}">{html.escape(s)}</text>'
 svg('01_reverse_rhs.svg','D* Lite：从目标反向维护，机器人正向移动',text(65,135,'g(u)：当前保存的u到目标T的代价估计')+text(65,190,'rhs(T)=0；其他节点 rhs(u)=min[c(u,v)+g(v)]')+text(65,245,'v遍历u的后继；一条有向边u→v改变，先更新rhs(u)')+text(65,325,'g>rhs：接受较低报价，再更新前驱')+text(65,385,'g<rhs：先令g=∞，再更新自身和前驱')+text(65,480,'独立例：V→A花1，g(A)=2；V→B花2，g(B)=3')+text(65,535,'rhs(V)=3；V→A涨价到5后，rhs(V)=min(5+2,2+3)=5')+text(65,635,'与LPA*的起点代价、前驱递推区分；本例为正权图。','small'))
 svg('02_key_km.svg','当前位置移动：km与延迟关键字更新',text(65,140,'m(u)=min[g(u),rhs(u)]；K(u)=[m(u)+h(S,u)+km, m(u)]')+text(65,200,'每次重新规划：km ← km+h(Slast,S)，再记录Slast ← S')+text(65,260,'取出节点后：若Kold<Knew，按新关键字重新入队')+text(65,345,'独立手算：S=(1,7)→(5,7)，km=0→4，设节点m=10')+text(65,410,'u=(10,7)：第一项 10+9+0=19 → 10+5+4=19')+text(65,470,'u=(0,7)：第一项 10+1+0=11 → 10+5+4=19')+text(65,560,'一致启发保证旧关键字可作下界；不保证关键字都不变')+text(65,635,'km不是路径代价、行驶时间；地图变化仍需修复g/rhs。','small'))
-body=text(60,130,'阶段                         当前位置     剩余代价      D* Lite扩展 / 重跑A*')
+body=text(60,130,'阶段')+text(405,130,'当前位置')+text(630,130,'剩余代价')+text(820,130,'D* Lite / A*扩展')
 labels=['初始','前进7步','前方封三格','沿绕行线前进2步','通道重开','整列封闭','只开一扇门','软代价升至4','软代价降回1']
 for i,(p,l)in enumerate(zip(PH,labels)):
- c='无路'if p['dstar']['cost']is None else str(p['dstar']['cost']);body+=text(60,183+i*46,f'{l:<16} {str(tuple(p["graph"]["start"])):<12} {c:<10} {p["dstar"]["expansions"]} / {p["astar"]["expansions"]}')
+ c='无路'if p['dstar']['cost']is None else str(p['dstar']['cost']);y=183+i*46;body+=text(60,y,l)+text(405,y,str(tuple(p['graph']['start'])))+text(630,y,c)+text(820,y,str(p['dstar']['expansions'])+' / '+str(p['astar']['expansions']))
 body+=text(60,650,'有效扩展不含延迟关键字重入队；封三格另有13次重入队。不是墙钟速度排名。','small');svg('03_controlled_work.svg','真实受控序列：复用有收益，也有额外工作',body)
 nav=D['navigation'];body=text(60,135,'已知地图：周围2格方形范围观察；未知先假设可通行')+text(60,190,'真实地图障碍静止，理想传感无噪声、无遮挡；逐格先观察再走')+text(60,260,f'种子7：实际{len(nav["travel"])-1}步到达，{len(nav["queries"])}次查询，执行格子未撞障碍')+text(60,330,'3个种子各50次混合更新：移动、封路、重开、软代价变化')+text(60,390,'每次与重跑A*、独立前向Dijkstra核对当前图最短代价')+text(60,475,'当前图最短路 ≠ 未知真实地图的全程最短路')+text(60,535,'当前地图修复 ≠ 行人未来预测或连续时间避碰')+text(60,635,'有限测试不是通用证明；硬实时还需预算、尾部耗时与超时处理。','small');svg('04_navigation_bounds.svg','有限视野导航与验收边界',body)
 rows='\n'.join(f'| {l} | {tuple(p["graph"]["start"])} | {"无路" if p["dstar"]["cost"] is None else p["dstar"]["cost"]} | {p["dstar"]["expansions"]} | {p["astar"]["expansions"]} | {p["dstar"]["lazy_key_updates"]} |'for p,l in zip(PH,labels))
