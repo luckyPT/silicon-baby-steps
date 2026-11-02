@@ -18,7 +18,7 @@ for(const m of manifest.chapters){
  await access(resolve(root,m.cover));
  const article=await readFile(resolve(root,m.article),'utf8');
  if(!article.startsWith('# ')||!article.includes('## '))throw Error(`Missing structured article: ${m.id}`);
- for(const match of article.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g))await access(resolve(root,'articles',match[1]));
+ for(const match of article.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)){if(!match[1].startsWith('../media/'))throw Error(`Article image URL is not supported by the runtime media resolver: ${m.id}`);await access(resolve(root,'articles',match[1]));}
  if(Number(m.id)>=19){const d=JSON.parse(await readFile(resolve(root,`experiments/${m.id}.json`),'utf8'));if(d.episode!==Number(m.id)||d.mode!=='recorded-experiment'||!d.views.length)throw Error(`Missing real replay: ${m.id}`);}
  console.log(`${m.id}: article, cover, figures and exact published/pending platform states verified`);
 }
