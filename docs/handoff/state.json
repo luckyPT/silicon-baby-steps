@@ -114,13 +114,13 @@
     "host_branch": "master",
     "workflow": ".github/workflows/pages.yml",
     "workflow_name": "Publish letsgogo.top",
-    "last_verified_content_commit": "3a5150d99968fc69b61a831beaeca5840bfb60e4",
+    "last_verified_content_commit": "0d7a80f13bfc1edd8c49cde2a51d2fc415bdc46d",
     "content_commit_note": "This is the deployed article/website baseline, not necessarily the latest documentation commit.",
-    "deployment_run": 41269725231,
+    "deployment_run": 41515546371,
     "deployment_result": "success",
-    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/41269725231",
+    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/41515546371",
     "refresh_schedule_observed": "17 */6 * * * (UTC), in host workflow; manual dispatch available",
-    "host_commit": "e602487f9950fe1b1c9514b1919675def00a3714"
+    "host_commit": "e744b394256ae583b4b7e69e27889c56b4c9a926"
   },
   "validation": {
     "algorithm_and_migration_tests": 48,
@@ -137,7 +137,19 @@
       "fps": 30,
       "encoded_frames_reviewed": 21
     },
-    "live_site": "pending current deployment"
+    "live_site": "27 chapters, Toutiao work link, Douyin pending, all4 inline images decoded, readable equations, temporal fixtures verified",
+    "course_ci_run": 41515437256,
+    "course_ci_result": "success",
+    "new_static_assets_live_hash_matched": 8,
+    "browser_checks": [
+      "directory27",
+      "episode27 Toutiao button and explicit Douyin pending",
+      "all4 article SVG naturalWidth1152",
+      "readable A* and nearest-distance formulas",
+      "swap t=.5 baseline collision; plan absent",
+      "crossing t=3.5 planned robot waits at(4,3)",
+      "H=10 gate keeps finite-horizon no solution"
+    ]
   },
   "publishing_policy": {
     "new_toutiao_companion_articles": false,
@@ -147,7 +159,7 @@
   "pending_work": [
     "Episode27 Douyin login and publication incomplete"
   ],
-  "next_action": "完成27头条公开视频链接的主站部署核验；抖音登录恢复后发布。下一集28 SIPP尚未制作。",
+  "next_action": "第27集头条、Git与网站已完成；用户恢复抖音登录后继续发布同一验收成片，先查重。下一集28 SIPP尚未制作。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -656,12 +668,14 @@
       "toutiao": "published; public title and author verified",
       "douyin": "not_submitted"
     },
-    "site": "local build passed; deployment not yet verified",
-    "git": "ad12ea4960d71bc6d4e18738756840e03ddaa878 initial chapter sync; current link update pending",
+    "site": "deployed and browser verified",
+    "git": "0d7a80f13bfc1edd8c49cde2a51d2fc415bdc46d content; later documentation checkpoint does not change the deployed app",
     "npm_tests": 48,
     "public_url": "https://www.toutiao.com/video/7703661645309936164/?enter_from=mp_group_management",
-    "course_ci_run": 41512950042,
-    "course_ci_result": "success"
+    "course_ci_run": 41515437256,
+    "course_ci_result": "success",
+    "deployment_run": 41515546371,
+    "video_sha256": "ef2b83ae268ca2ac69e0bef63267bd95d194041af69b39d02bd3c4904a04c307"
   },
   "prior_validation_before_episode27": {
     "course_ci_run": 41269615502,

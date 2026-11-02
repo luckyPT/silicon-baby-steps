@@ -14,7 +14,7 @@
 
 课程：luckyPT/silicon-baby-steps/main。主站：luckyPT/luckyPT/master的Publish letsgogo.top联合构建，发布到https://letsgogo.top/planning/。课程提交与主站部署分别核验，结果写docs/handoff/state.json。
 
-本地48项npm测试、verify:media、build -- --base=/planning/通过；27集原始Python120次查询及交换边、途中横穿、驻留、短时域和预测更新夹具通过。主站工作流需检查最新章节，而不再固定26集；本轮主站首轮部署与最终视频链接更新的部署结果分别核验，见state.json。
+本地48项npm测试、verify:media、build -- --base=/planning/通过；27集原始Python120次查询及交换边、途中横穿、驻留、短时域和预测更新夹具通过。主站工作流需检查最新章节，而不再固定26集；内容提交0d7a80f、课程CI41515437256通过；主站提交e744b39、最终部署41515546371成功。线上27集、头条入口和抖音待发布提示正确，四图解码宽1152px、8个静态文件与源字节一致，公式和时序夹具已验收。打开讲义时重新校验缓存，避免部署后继续读旧正文。
 
 ## 视频存储约定
 
