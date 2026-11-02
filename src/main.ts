@@ -215,7 +215,7 @@ async function lessonPage(id: string, tab: string, token: number) {
     document.querySelector("#learned")!.textContent = "✓ 已完成本节";
   };
   try {
-    const response = await fetch(asset(`articles/${id}.md`));
+    const response = await fetch(asset(`articles/${id}.md`), { cache: "no-cache" });
     if (!response.ok) throw Error("讲义文件未找到");
     const source = await response.text();
     if (routeToken !== token) return;
