@@ -514,15 +514,20 @@
       "cover": "media/27/cover.svg",
       "video": null,
       "videoStatus": "external",
-      "platformVideos": [],
+      "platformVideos": [
+        {
+          "platform": "toutiao",
+          "url": "https://www.toutiao.com/video/7703661645309936164/?enter_from=mp_group_management",
+          "verifiedAt": "2026-11-03"
+        }
+      ],
       "pendingPlatforms": [
-        "toutiao",
         "douyin"
       ]
     }
   ],
   "content": "Official Toutiao and Douyin work-page links only; no repository video payloads",
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "introduction": {
     "video": null,
     "videoStatus": "external",

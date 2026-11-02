@@ -1,5 +1,5 @@
 {
-  "updated_date": "2026-11-02",
+  "updated_date": "2026-11-03",
   "timezone": "Asia/Shanghai",
   "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
   "identity": {
@@ -57,7 +57,7 @@
       "production_complete": true
     },
     "lecture_and_experiment_episodes": 27,
-    "completed_episodes_note": "27集成片与讲义实验完成；01—26双平台已发布；27头条审核中、抖音待发布。",
+    "completed_episodes_note": "27集成片与讲义实验完成；01—26双平台已发布；27头条已发布、抖音待发布。",
     "video_pending_episodes": [],
     "verified_platform_video_episodes": [
       1,
@@ -90,7 +90,7 @@
     "public_video_link_pending_episodes": [
       27
     ],
-    "video_pending_note": "27头条已提交审核，当前公开页404；抖音未登录未提交。没有猜测链接。",
+    "video_pending_note": "27头条已发布并核对公开页面；抖音未提交。",
     "latest_produced_episode": 27,
     "part5": {
       "episodes": [
@@ -145,10 +145,9 @@
     "keep_existing_platform_articles": true
   },
   "pending_work": [
-    "Confirm episode27 Toutiao moderation; publish work link only after public page works",
     "Episode27 Douyin login and publication incomplete"
   ],
-  "next_action": "完成27集Git与主站部署核验；核对头条审核结果；抖音登录恢复后发布。下一集28 SIPP尚未制作。",
+  "next_action": "完成27头条公开视频链接的主站部署核验；抖音登录恢复后发布。下一集28 SIPP尚未制作。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -654,12 +653,15 @@
     ],
     "python_oracle_queries": 120,
     "platforms": {
-      "toutiao": "under_review",
+      "toutiao": "published; public title and author verified",
       "douyin": "not_submitted"
     },
     "site": "local build passed; deployment not yet verified",
-    "git": "pending current task commit",
-    "npm_tests": 48
+    "git": "ad12ea4960d71bc6d4e18738756840e03ddaa878 initial chapter sync; current link update pending",
+    "npm_tests": 48,
+    "public_url": "https://www.toutiao.com/video/7703661645309936164/?enter_from=mp_group_management",
+    "course_ci_run": 41512950042,
+    "course_ci_result": "success"
   },
   "prior_validation_before_episode27": {
     "course_ci_run": 41269615502,
