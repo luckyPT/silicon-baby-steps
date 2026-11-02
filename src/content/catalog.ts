@@ -128,6 +128,7 @@ export const lessons: Lesson[] = [
 {"id": "24", "title": "D* Lite：走到一半，前面封路怎么办？", "subtitle": "目标不动，当前位置在动，旧队列还能用。", "algorithm": "D* Lite", "part": 5, "lab": "recorded", "concepts": ["反向搜索", "km", "有限视野"], "duration": "7:26", "minutes": 8, "videoStatus": "external", "cover": "media/24/cover.svg"},
 {"id": "25", "title": "ARA* → AD*：怎样边找边改？", "subtitle": "先完成有质量界限的路线，再逐步改善与修复。", "algorithm": "ARA* / AD*", "part": 5, "lab": "recorded", "concepts": ["加权启发", "OPEN与INCONS", "预算中断"], "duration": "7:11", "minutes": 8, "videoStatus": "external", "cover": "media/25/cover.svg"},
 {"id": "26", "title": "RRTX：封路后整棵树要重长吗？", "subtitle": "保留采样点，撤销失效依赖，再沿已有邻接重连。", "algorithm": "RRTX", "part": 5, "lab": "recorded", "concepts": ["采样图复用", "g与lmc", "重连级联"], "duration": "6:48", "minutes": 8, "videoStatus": "external", "cover": "media/26/cover.svg"},
+{"id": "27", "title": "时空A*：路没堵，为什么还会撞？", "subtitle": "把到达时刻放进状态，等待错峰，对整段运动检碰。", "algorithm": "时空A*", "part": 5, "lab": "recorded", "concepts": ["时空状态", "等待动作", "整段检碰"], "duration": "6:07", "minutes": 8, "videoStatus": "external", "cover": "media/27/cover.svg"},
 ];
 export const roadmap = [
   {

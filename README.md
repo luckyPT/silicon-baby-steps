@@ -202,3 +202,7 @@ npm run preview
 主站由 `luckyPT/luckyPT` 的 `Publish letsgogo.top` 联合构建，读取本仓库main并发布到 `/planning/`。课程提交、主站部署、线上章节分别核验。原论文与算法边界见各集讲义，制作规范见[WORKFLOW.md](docs/WORKFLOW.md)。
 
 第19—26集网页回放读取实际Python输出，切换阶段与路线对照，不宣称在浏览器运行了原求解器。重新计算：进入对应 `experiments/original/NN`，安装其 `requirements.txt` 后运行 `python experiment.py`。第23—26集重算后可用 `python scripts/export-recorded-labs.py` 刷新网页记录；其他集读取随源代码保留的简表。第22集需要其声明的Drake/Clarabel依赖。
+
+## 第27集：时空A*
+
+把时间加入状态，用等待与绕行避免未来冲突；连续段检碰拒绝端点检查的假成功。含有限时域、目标驻留、预测修订失败与120次独立最早到达验收。[讲义](public/articles/27.md) · [可运行Python](experiments/original/27) · [线上时序回放](https://letsgogo.top/planning/#/lesson/27/lab)。平台作品仅在实际发布核验后加入观看入口。

@@ -1,3 +1,4 @@
+import { mountTemporalLab } from './temporal-lab.ts';
 import { asset, type Lesson } from '../content/catalog.ts';
 type Point = [number, number];
 interface View {
@@ -12,6 +13,7 @@ const names:Record<string,string>={cost:'路线代价',length:'长度 / m',oracl
 const value = (v:unknown) => v===null?'无路径 / ∞':typeof v==='boolean'?(v?'是':'否'):typeof v==='number'?(Number.isInteger(v)?String(v):Math.abs(v)<1e-5?v.toExponential(3):v.toFixed(6)):esc(v);
 /** A recorded experiment viewer, deliberately not presented as a live solver. */
 export function mountRecordedLab(root:HTMLElement, lesson:Lesson):()=>void {
+ if(lesson.id==='27')return mountTemporalLab(root);
  let disposed=false, timer:ReturnType<typeof setInterval>|undefined, index=0;
  const stop=()=>{if(timer)clearInterval(timer);timer=undefined;};
  root.innerHTML='<p>正在读取原始实验记录…</p>';

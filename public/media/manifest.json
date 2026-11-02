@@ -507,10 +507,22 @@
           "verifiedAt": "2026-11-01"
         }
       ]
+    },
+    {
+      "id": "27",
+      "article": "articles/27.md",
+      "cover": "media/27/cover.svg",
+      "video": null,
+      "videoStatus": "external",
+      "platformVideos": [],
+      "pendingPlatforms": [
+        "toutiao",
+        "douyin"
+      ]
     }
   ],
   "content": "Official Toutiao and Douyin work-page links only; no repository video payloads",
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "introduction": {
     "video": null,
     "videoStatus": "external",

@@ -22,3 +22,13 @@ for (const [id, videos] of Object.entries(platformVideos)) {
   videos.forEach(validatePlatformVideo);
 }
 export const videosForLesson = (id: string): readonly PlatformVideo[] => platformVideos[id] ?? [];
+
+import pendingLinks from './platform-pending.json' with { type: 'json' };
+interface PendingPlatform {platform:VideoPlatform;status:'under_review'|'not_submitted';}
+export const pendingPlatforms = pendingLinks as Record<string, readonly PendingPlatform[]>;
+export const pendingForLesson = (id: string): readonly VideoPlatform[] => (pendingPlatforms[id]??[]).map(p=>p.platform);
+export const pendingMessage = (id:string):string => (pendingPlatforms[id]??[]).map(p=>platformLabels[p.platform]+'：'+(p.status==='under_review'?'审核中':'待发布')).join('；');
+for(const [id,states] of Object.entries(pendingPlatforms)){
+ const platforms=states.map(p=>p.platform);
+ if(!/^\d{2}$/.test(id)||new Set(platforms).size!==platforms.length||platforms.some(p=>!['toutiao','douyin'].includes(p)||videosForLesson(id).some(v=>v.platform===p))||states.some(s=>!['under_review','not_submitted'].includes(s.status)))throw Error('Invalid pending platform state');
+}

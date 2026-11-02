@@ -1,5 +1,5 @@
 {
-  "updated_date": "2026-11-01",
+  "updated_date": "2026-11-02",
   "timezone": "Asia/Shanghai",
   "purpose": "Small factual checkpoint; read HANDOFF.md first and verify mutable remote state when acting.",
   "identity": {
@@ -9,7 +9,7 @@
     "series": "硅基学步"
   },
   "course": {
-    "completed_episodes": 26,
+    "completed_episodes": 27,
     "introduction_exists": true,
     "closed_video_parts": [
       [
@@ -25,7 +25,7 @@
         14
       ]
     ],
-    "next_episode": 27,
+    "next_episode": 28,
     "next_topic_confirmed": true,
     "deliverables": [
       "文章",
@@ -38,7 +38,8 @@
       "11": 4,
       "12": 4,
       "13": 4,
-      "14": 5
+      "14": 5,
+      "27": 4
     },
     "part4": {
       "episodes": [
@@ -55,8 +56,8 @@
       "plan": "docs/PART4.md",
       "production_complete": true
     },
-    "lecture_and_experiment_episodes": 26,
-    "completed_episodes_note": "26集讲义、实验和双平台作品链接；视频统一外链，不托管MP4。",
+    "lecture_and_experiment_episodes": 27,
+    "completed_episodes_note": "27集成片与讲义实验完成；01—26双平台已发布；27头条审核中、抖音待发布。",
     "video_pending_episodes": [],
     "verified_platform_video_episodes": [
       1,
@@ -86,18 +87,21 @@
       25,
       26
     ],
-    "public_video_link_pending_episodes": [],
-    "video_pending_note": "当前26集均已取得头条及抖音具体作品链接。",
-    "latest_produced_episode": 26,
+    "public_video_link_pending_episodes": [
+      27
+    ],
+    "video_pending_note": "27头条已提交审核，当前公开页404；抖音未登录未提交。没有猜测链接。",
+    "latest_produced_episode": 27,
     "part5": {
       "episodes": [
         23,
         24,
         25,
-        26
+        26,
+        27
       ],
-      "production_complete_through": 26,
-      "next_topic": "时空A*，未制作"
+      "production_complete_through": 27,
+      "next_topic": "SIPP：安全时间区间，未制作"
     }
   },
   "repository": {
@@ -119,42 +123,32 @@
     "host_commit": "e602487f9950fe1b1c9514b1919675def00a3714"
   },
   "validation": {
-    "course_ci_run": 41269615502,
-    "course_ci_result": "success",
-    "algorithm_and_migration_tests": 45,
-    "media_chapters_verified": 26,
-    "video_platforms": [
-      "toutiao",
-      "douyin"
-    ],
-    "external_links_per_episode": 2,
-    "new_static_assets_live_hash_matched": 56,
-    "old_mp4_head_checks": {
-      "media/00/video.mp4": 404,
-      "media/01/video.mp4": 404,
-      "media/14/video.mp4": 404
+    "algorithm_and_migration_tests": 48,
+    "local_test_result": "passed",
+    "media_chapters_verified": 27,
+    "media_result": "passed; known links or explicit pending platform states",
+    "build": "passed --base=/planning/",
+    "python_episode27_queries": 120,
+    "python_episode27_result": "all passed",
+    "episode27_video": {
+      "duration_s": 367,
+      "frames": 11010,
+      "full_decode": "passed",
+      "fps": 30,
+      "encoded_frames_reviewed": 21
     },
-    "browser_checks": [
-      "live directory shows 26 lessons",
-      "episode26 article and two platform buttons",
-      "episode26 all four inline SVGs loaded",
-      "RRTX no_path keeps an empty route",
-      "budget_partial shows 104 queued nodes, one valid pop, no route, incomplete",
-      "closure shows 602 nodes, cost8.638516, 287 valid pops"
-    ],
-    "not_retested": [
-      "Docker daemon execution",
-      "Windows startup scripts",
-      "physical robot execution"
-    ]
+    "live_site": "pending current deployment"
   },
   "publishing_policy": {
     "new_toutiao_companion_articles": false,
     "keep_git_articles": true,
     "keep_existing_platform_articles": true
   },
-  "pending_work": [],
-  "next_action": "用户要求的26集同步、视频外链迁移、4分支历史减重均完成；旧克隆需重新克隆或迁移未发布改动，不能合并旧历史。下一集27时空A*尚未制作。",
+  "pending_work": [
+    "Confirm episode27 Toutiao moderation; publish work link only after public page works",
+    "Episode27 Douyin login and publication incomplete"
+  ],
+  "next_action": "完成27集Git与主站部署核验；核对头条审核结果；抖音登录恢复后发布。下一集28 SIPP尚未制作。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -650,5 +644,51 @@
     "github_reported_size_kib_after": 581816,
     "github_storage_note": "Normal full clone verified small. GitHub server-side cached objects and read-only pull-request refs may retain old history; backend size is not claimed to have decreased immediately.",
     "client_action": "Re-clone, or rebase unpublished work onto new main. Do not merge the old video-bearing history back."
+  },
+  "episode27": {
+    "duration_s": 367,
+    "fps": 30,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "python_oracle_queries": 120,
+    "platforms": {
+      "toutiao": "under_review",
+      "douyin": "not_submitted"
+    },
+    "site": "local build passed; deployment not yet verified",
+    "git": "pending current task commit",
+    "npm_tests": 48
+  },
+  "prior_validation_before_episode27": {
+    "course_ci_run": 41269615502,
+    "course_ci_result": "success",
+    "algorithm_and_migration_tests": 45,
+    "media_chapters_verified": 26,
+    "video_platforms": [
+      "toutiao",
+      "douyin"
+    ],
+    "external_links_per_episode": 2,
+    "new_static_assets_live_hash_matched": 56,
+    "old_mp4_head_checks": {
+      "media/00/video.mp4": 404,
+      "media/01/video.mp4": 404,
+      "media/14/video.mp4": 404
+    },
+    "browser_checks": [
+      "live directory shows 26 lessons",
+      "episode26 article and two platform buttons",
+      "episode26 all four inline SVGs loaded",
+      "RRTX no_path keeps an empty route",
+      "budget_partial shows 104 queued nodes, one valid pop, no route, incomplete",
+      "closure shows 602 nodes, cost8.638516, 287 valid pops"
+    ],
+    "not_retested": [
+      "Docker daemon execution",
+      "Windows startup scripts",
+      "physical robot execution"
+    ]
   }
 }

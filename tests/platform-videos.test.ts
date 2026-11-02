@@ -38,3 +38,10 @@ test('episode 18 keeps its actual work IDs after the migration',()=>{
   assert.ok(videos.some(v=>v.url.includes('7700843660887346483')));
   const html=renderPlatformVideoSection('18');assert.match(html,/头条观看/);assert.match(html,/抖音观看/);assert.doesNotMatch(html,/<video|<iframe|video.mp4/);
 });
+
+test('episode27 pending states never imply a published video or invented work link',()=>{
+ const html=renderPlatformVideoSection('27');
+ assert.match(html,/头条：审核中/);assert.match(html,/抖音：待发布/);
+ assert.doesNotMatch(html,/本节视频已发布|头条观看|抖音观看/);
+ assert.deepEqual(videosForLesson('27'),[]);
+});
