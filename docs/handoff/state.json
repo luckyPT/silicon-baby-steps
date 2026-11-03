@@ -57,7 +57,7 @@
       "production_complete": true
     },
     "lecture_and_experiment_episodes": 27,
-    "completed_episodes_note": "27集成片与讲义实验完成；01—26双平台已发布；27头条已发布、抖音待发布。",
+    "completed_episodes_note": "27集成片与讲义实验完成；01—26双平台已发布；27头条已发布、抖音已提交审核。",
     "video_pending_episodes": [],
     "verified_platform_video_episodes": [
       1,
@@ -90,7 +90,7 @@
     "public_video_link_pending_episodes": [
       27
     ],
-    "video_pending_note": "27头条已发布并核对公开页面；抖音未提交。",
+    "video_pending_note": "27头条已发布并核对公开页面；抖音11-03 08:45提交，管理端审核中。",
     "latest_produced_episode": 27,
     "part5": {
       "episodes": [
@@ -157,9 +157,9 @@
     "keep_existing_platform_articles": true
   },
   "pending_work": [
-    "Episode27 Douyin login and publication incomplete"
+    "Episode27 Douyin moderation and public work URL verification"
   ],
-  "next_action": "第27集头条、Git与网站已完成；用户恢复抖音登录后继续发布同一验收成片，先查重。下一集28 SIPP尚未制作。",
+  "next_action": "第27集抖音已提交，等待审核；仅核验公开作品链接，不重复投稿。下一集28 SIPP尚未制作。",
   "episode15": {
     "rendered_and_decode_verified": true,
     "duration_seconds": 268.533333,
@@ -666,7 +666,7 @@
     "python_oracle_queries": 120,
     "platforms": {
       "toutiao": "published; public title and author verified",
-      "douyin": "not_submitted"
+      "douyin": "under_review; management title, author and 06:07 verified"
     },
     "site": "deployed and browser verified",
     "git": "0d7a80f13bfc1edd8c49cde2a51d2fc415bdc46d content; later documentation checkpoint does not change the deployed app",
@@ -675,7 +675,18 @@
     "course_ci_run": 41515437256,
     "course_ci_result": "success",
     "deployment_run": 41515546371,
-    "video_sha256": "ef2b83ae268ca2ac69e0bef63267bd95d194041af69b39d02bd3c4904a04c307"
+    "video_sha256": "ef2b83ae268ca2ac69e0bef63267bd95d194041af69b39d02bd3c4904a04c307",
+    "douyin": {
+      "status": "under_review",
+      "submitted_at_display": "2026年11月03日 08:45",
+      "duration_display": "06:07",
+      "ai_generated": true,
+      "covers": "4:3 and 3:4; detection passed",
+      "visibility": "public",
+      "publish_time": "immediate",
+      "duplicate_check": "No 时空 result before upload; one matching work after submission",
+      "public_url": null
+    }
   },
   "prior_validation_before_episode27": {
     "course_ci_run": 41269615502,

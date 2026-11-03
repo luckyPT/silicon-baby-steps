@@ -39,9 +39,9 @@ test('episode 18 keeps its actual work IDs after the migration',()=>{
   const html=renderPlatformVideoSection('18');assert.match(html,/头条观看/);assert.match(html,/抖音观看/);assert.doesNotMatch(html,/<video|<iframe|video.mp4/);
 });
 
-test('episode27 published Toutiao link coexists with explicit pending Douyin state',()=>{
+test('episode27 published Toutiao link coexists with explicit under-review Douyin state',()=>{
  const html=renderPlatformVideoSection('27');
- assert.match(html,/头条观看/);assert.match(html,/抖音：待发布/);
+ assert.match(html,/头条观看/);assert.match(html,/抖音：审核中/);
  assert.doesNotMatch(html,/抖音观看|头条：审核中/);
  assert.equal(videosForLesson('27').length,1);assert.match(videosForLesson('27')[0].url,/7703661645309936164/);
 });
