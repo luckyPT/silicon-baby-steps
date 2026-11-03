@@ -39,9 +39,11 @@ test('episode 18 keeps its actual work IDs after the migration',()=>{
   const html=renderPlatformVideoSection('18');assert.match(html,/头条观看/);assert.match(html,/抖音观看/);assert.doesNotMatch(html,/<video|<iframe|video.mp4/);
 });
 
-test('episode27 published Toutiao link coexists with explicit under-review Douyin state',()=>{
+test('episode27 keeps both verified public work links',()=>{
  const html=renderPlatformVideoSection('27');
- assert.match(html,/头条观看/);assert.match(html,/抖音：审核中/);
- assert.doesNotMatch(html,/抖音观看|头条：审核中/);
- assert.equal(videosForLesson('27').length,1);assert.match(videosForLesson('27')[0].url,/7703661645309936164/);
+ assert.match(html,/头条观看/);assert.match(html,/抖音观看/);
+ assert.doesNotMatch(html,/待发布|审核中/);
+ assert.equal(videosForLesson('27').length,2);
+ assert.ok(videosForLesson('27').some(v=>v.url.includes('7703661645309936164')));
+ assert.ok(videosForLesson('27').some(v=>v.url==='https://www.douyin.com/video/7703739938931510543'));
 });

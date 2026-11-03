@@ -323,6 +323,11 @@
       "platform": "toutiao",
       "url": "https://www.toutiao.com/video/7703661645309936164/?enter_from=mp_group_management",
       "verifiedAt": "2026-11-03"
+    },
+    {
+      "platform": "douyin",
+      "url": "https://www.douyin.com/video/7703739938931510543",
+      "verifiedAt": "2026-11-03"
     }
   ]
 }
