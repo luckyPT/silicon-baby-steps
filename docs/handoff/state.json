@@ -113,11 +113,11 @@
     "host_branch": "master",
     "workflow": ".github/workflows/pages.yml",
     "workflow_name": "Publish letsgogo.top",
-    "last_verified_content_commit": "0d7a80f13bfc1edd8c49cde2a51d2fc415bdc46d",
+    "last_verified_content_commit": "efcaa1d34fa1776ae7b427d0633fb0bf57394ac4",
     "content_commit_note": "This is the deployed article/website baseline, not necessarily the latest documentation commit.",
-    "deployment_run": 41515546371,
+    "deployment_run": 41555620939,
     "deployment_result": "success",
-    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/41515546371",
+    "deployment_evidence": "https://github.com/luckyPT/luckyPT/actions/runs/41555620939",
     "refresh_schedule_observed": "17 */6 * * * (UTC), in host workflow; manual dispatch available",
     "host_commit": "e744b394256ae583b4b7e69e27889c56b4c9a926"
   },
@@ -136,19 +136,22 @@
       "fps": 30,
       "encoded_frames_reviewed": 21
     },
-    "live_site": "27 chapters, Toutiao work link, Douyin pending, all4 inline images decoded, readable equations, temporal fixtures verified",
+    "live_site": "Episode27 exact Toutiao and Douyin public work buttons verified; no pending/review notice",
     "course_ci_run": 41515437256,
     "course_ci_result": "success",
     "new_static_assets_live_hash_matched": 8,
     "browser_checks": [
       "directory27",
-      "episode27 Toutiao button and explicit Douyin pending",
       "all4 article SVG naturalWidth1152",
       "readable A* and nearest-distance formulas",
       "swap t=.5 baseline collision; plan absent",
       "crossing t=3.5 planned robot waits at(4,3)",
-      "H=10 gate keeps finite-horizon no solution"
-    ]
+      "H=10 gate keeps finite-horizon no solution",
+      "episode27 both exact public work links; no pending or under-review text"
+    ],
+    "host_build_and_deploy_run": 41555620939,
+    "host_build_and_deploy_result": "success; 48 tests, verify:media and production build passed in host workflow",
+    "course_ci_baseline_note": "course_ci_run 41515437256 is prior episode27 baseline; this publication link update is validated by local checks and host run41555620939"
   },
   "publishing_policy": {
     "new_toutiao_companion_articles": false,
@@ -665,13 +668,13 @@
       "toutiao": "published; public title and author verified",
       "douyin": "published; management and public work page verified"
     },
-    "site": "deployed and browser verified",
-    "git": "0d7a80f13bfc1edd8c49cde2a51d2fc415bdc46d content; later documentation checkpoint does not change the deployed app",
+    "site": "deployed; both exact platform links verified",
+    "git": "efcaa1d34fa1776ae7b427d0633fb0bf57394ac4 content; subsequent documentation only",
     "npm_tests": 48,
     "public_url": "https://www.toutiao.com/video/7703661645309936164/?enter_from=mp_group_management",
     "course_ci_run": 41515437256,
     "course_ci_result": "success",
-    "deployment_run": 41515546371,
+    "deployment_run": 41555620939,
     "video_sha256": "ef2b83ae268ca2ac69e0bef63267bd95d194041af69b39d02bd3c4904a04c307",
     "douyin": {
       "status": "published",
@@ -684,7 +687,8 @@
       "duplicate_check": "No 时空 result before upload; one matching work after submission",
       "public_url": "https://www.douyin.com/video/7703739938931510543",
       "work_id": "7703739938931510543"
-    }
+    },
+    "host_build_and_deploy_result": "success"
   },
   "prior_validation_before_episode27": {
     "course_ci_run": 41269615502,
