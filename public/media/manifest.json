@@ -546,6 +546,26 @@
           "verifiedAt": "2026-11-23"
         }
       ]
+    },
+    {
+      "id": "29",
+      "article": "articles/29.md",
+      "video": null,
+      "cover": "media/29/cover.svg",
+      "durationSeconds": 161.056,
+      "videoStatus": "external",
+      "platformVideos": [
+        {
+          "platform": "toutiao",
+          "url": "https://www.toutiao.com/video/7711380431924560384/?enter_from=mp_group_management",
+          "verifiedAt": "2026-11-23"
+        },
+        {
+          "platform": "douyin",
+          "url": "https://www.douyin.com/video/7711380350051667200",
+          "verifiedAt": "2026-11-23"
+        }
+      ]
     }
   ],
   "content": "Official Toutiao and Douyin work-page links only; no repository video payloads",

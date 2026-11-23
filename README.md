@@ -4,7 +4,7 @@
 
 **和硅宝一起，从“别撞上椅子”，走到机械臂规划、时间参数化与关节验收。**
 
-「碳硅共鸣」的规划算法课程与实验网站，已同步第01—26集。每章保留结构化讲义、头条与抖音观看入口、可运行实验和有条件的对比。第01—18集保留浏览器实时实验；第19—26集新增真实日志阶段回放，并提供可重新计算的Python源代码。
+「碳硅共鸣」的规划算法课程与实验网站，已同步第01—29集。每章保留结构化讲义、头条与抖音观看入口、可运行实验和有条件的对比。第01—18集保留浏览器实时实验；第19—29集提供按阶段或时间的实验回放，并提供可重新计算的Python源代码。
 
 ![网站首页](docs/screenshots/home.jpg)
 
@@ -210,3 +210,7 @@ npm run preview
 ## 第28集：MPC · 机械臂推车
 
 用同一条 S 弯对照两种跟线规则、正常 MPC 与受扰重规划。[讲义](public/articles/28.md) · [可运行 Python](experiments/original/28) · [带预测轨迹的回放](https://letsgogo.top/planning/#/lesson/28/lab)。[抖音完整版](https://www.douyin.com/video/7711151069698608394) · [头条完整版](https://www.toutiao.com/video/7711150928564322856/?enter_from=mp_group_management)。
+
+## 第29集：MPC / MPPI · 倒车脱困
+
+同一辆车、同一个死胡同，对照四种初值与采样配置。[讲义](public/articles/29.md) · [可运行 Python](experiments/original/29) · [滚动预测回放](https://letsgogo.top/planning/#/lesson/29/lab)。[头条完整版](https://www.toutiao.com/video/7711380431924560384/?enter_from=mp_group_management) · [抖音完整版](https://www.douyin.com/video/7711380350051667200)。

@@ -4,8 +4,8 @@ import {readFileSync,readdirSync} from 'node:fs';
 import {lessons} from '../src/content/catalog.ts';
 import {renderPlatformVideoSection} from '../src/ui/platform-video.ts';
 const manifest=JSON.parse(readFileSync(new URL('../public/media/manifest.json',import.meta.url),'utf8'));
-test('28 contiguous lectures have structured articles and honest platform states',()=>{
- assert.deepEqual(lessons.map(x=>x.id),Array.from({length:28},(_,i)=>String(i+1).padStart(2,'0')));
+test('29 contiguous lectures have structured articles and honest platform states',()=>{
+ assert.deepEqual(lessons.map(x=>x.id),Array.from({length:29},(_,i)=>String(i+1).padStart(2,'0')));
  assert.deepEqual(manifest.chapters.map((x:any)=>x.id),lessons.map(x=>x.id));
  for(const lesson of lessons){const media=manifest.chapters.find((x:any)=>x.id===lesson.id);assert.match(readFileSync(new URL('../public/'+media.article,import.meta.url),'utf8'),/^# /);assert.equal(lesson.videoStatus,'external');assert.equal(media.videoStatus,'external');assert.equal(media.video,null);assert.deepEqual([...media.platformVideos.map((v:any)=>v.platform),...(media.pendingPlatforms??[])].sort(),['douyin','toutiao']);}
 });
@@ -49,4 +49,24 @@ test('episode 28 preserves the computed horizon, track margins and stopped resul
   }
  }
  assert.equal(data.views[3].perturbationTime,2.6);
+});
+
+test('episode 29 replay preserves all four setups and their rolling forecasts', () => {
+ const data=JSON.parse(readFileSync(new URL('../public/experiments/29.json',import.meta.url),'utf8'));
+ assert.equal(data.mode,'recorded-experiment');
+ assert.equal(data.dt*data.horizonSteps,7.04);
+ assert.deepEqual(data.views.map((run:any)=>run.id),['cold','warm','mppi','plain']);
+ assert.deepEqual(data.results.map((group:any)=>[
+  group.runs.filter((run:any)=>run.success).length,group.runs.length
+ ]),[[0,1],[1,1],[5,5],[0,3]]);
+ for(const run of data.views){
+  assert.equal(run.states.length,run.controls.length+1);
+  assert.equal(run.controls.length,run.predictions.length);
+  assert.ok(run.predictions.every((path:number[][])=>
+   path.length===data.horizonSteps+1 && path.every(point=>point.length===2&&point.every(Number.isFinite))));
+  assert.ok(run.metrics.clearance>0);
+ }
+ assert.ok(data.views[0].controls[0][0]>0);
+ assert.ok(data.views[1].controls[0][0]<0);
+ assert.ok(data.views[2].controls[0][0]<0);
 });

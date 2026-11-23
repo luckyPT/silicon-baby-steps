@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title">
+  <title id="title">想出去，先倒车！MPC 与 MPPI</title>
+  <defs>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#20384a" stroke-width="1"/></pattern>
+    <linearGradient id="bg"><stop stop-color="#0a1621"/><stop offset="1" stop-color="#142f3e"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="590" y="58" width="560" height="559" rx="26" fill="#0c202d" stroke="#325163" stroke-width="2"/>
+  <rect x="590" y="58" width="560" height="559" rx="26" fill="url(#grid)"/>
+  <path d="M780 281H1000V500H655" fill="none" stroke="#d16c54" stroke-width="24" stroke-linejoin="round"/>
+  <path d="M902 390C780 390 717 402 707 350S751 210 813 198 1030 186 1060 230 1091 330 1091 390" fill="none" stroke="#59ded0" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 13"/>
+  <circle cx="1091" cy="390" r="28" fill="#374e3c" stroke="#cae794" stroke-width="3"/>
+  <circle cx="902" cy="390" r="30" fill="#f49362" stroke="#ffe1a6" stroke-width="3"/>
+  <path d="M887 390H914l-8-8m8 8-8 8" fill="none" stroke="#251b16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="77" y="111" fill="#6be4d7" font-family="system-ui,sans-serif" font-size="26" letter-spacing="4">硅基学步 · 第29集</text>
+  <g font-family="system-ui,'Noto Sans CJK SC','Microsoft YaHei',sans-serif" font-weight="900" font-size="96">
+    <text x="71" y="272" fill="#f2f7f9">想出去，</text>
+    <text x="71" y="391" fill="#ffd081">先倒车！</text>
+  </g>
+  <text x="77" y="480" fill="#b6cbd7" font-family="system-ui,sans-serif" font-weight="700" font-size="44">MPC 与 MPPI</text>
+  <text x="77" y="543" fill="#9bb6c5" font-family="system-ui,sans-serif" font-size="27">同一个死胡同，两种求解思路</text>
+</svg>
