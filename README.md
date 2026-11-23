@@ -197,7 +197,7 @@ npm run preview
 
 ## 视频链接与部署
 
-26集的头条和抖音具体作品地址集中维护在 `src/content/platform-links.json`，UI与校验使用 `platform-videos.ts`。已移除旧MP4、所有字节分段、分段清单与拼接脚本；自我介绍也改为平台入口。保留封面、正文插图和数值记录。随后按用户要求，已重写4个分支的全部历史，移除旧视频、分段和分段清单；保留38次提交的说明、非媒体文件与父子关系。完整历史包从567.1MiB降至19.1MiB，约减少96.6%。旧克隆建议重新克隆；不要把旧历史重新合并回来。GitHub只读PR引用及缓存的后台存储另计，不能把新克隆体积等同于平台后台已完成回收。
+已核验的头条和抖音作品地址集中维护在 `src/content/platform-links.json`，UI与校验使用 `platform-videos.ts`。已移除旧MP4、所有字节分段、分段清单与拼接脚本；自我介绍也改为平台入口。保留封面、正文插图和数值记录。随后按用户要求，已重写4个分支的全部历史，移除旧视频、分段和分段清单；保留38次提交的说明、非媒体文件与父子关系。完整历史包从567.1MiB降至19.1MiB，约减少96.6%。旧克隆建议重新克隆；不要把旧历史重新合并回来。GitHub只读PR引用及缓存的后台存储另计，不能把新克隆体积等同于平台后台已完成回收。
 
 主站由 `luckyPT/luckyPT` 的 `Publish letsgogo.top` 联合构建，读取本仓库main并发布到 `/planning/`。课程提交、主站部署、线上章节分别核验。原论文与算法边界见各集讲义，制作规范见[WORKFLOW.md](docs/WORKFLOW.md)。
 
@@ -206,3 +206,7 @@ npm run preview
 ## 第27集：时空A*
 
 把时间加入状态，用等待与绕行避免未来冲突；连续段检碰拒绝端点检查的假成功。含有限时域、目标驻留、预测修订失败与120次独立最早到达验收。[讲义](public/articles/27.md) · [可运行Python](experiments/original/27) · [线上时序回放](https://letsgogo.top/planning/#/lesson/27/lab)。平台作品仅在实际发布核验后加入观看入口。
+
+## 第28集：MPC · 机械臂推车
+
+用同一条 S 弯对照两种跟线规则、正常 MPC 与受扰重规划。[讲义](public/articles/28.md) · [可运行 Python](experiments/original/28) · [带预测轨迹的回放](https://letsgogo.top/planning/#/lesson/28/lab)。[抖音完整版](https://www.douyin.com/video/7711151069698608394) · [头条完整版](https://www.toutiao.com/video/7711150928564322856/?enter_from=mp_group_management)。

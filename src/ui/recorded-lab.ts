@@ -1,3 +1,4 @@
+import { mountMpcReplay } from './mpc-replay.ts';
 import { mountTemporalLab } from './temporal-lab.ts';
 import { asset, type Lesson } from '../content/catalog.ts';
 type Point = [number, number];
@@ -14,6 +15,7 @@ const value = (v:unknown) => v===null?'无路径 / ∞':typeof v==='boolean'?(v?
 /** A recorded experiment viewer, deliberately not presented as a live solver. */
 export function mountRecordedLab(root:HTMLElement, lesson:Lesson):()=>void {
  if(lesson.id==='27')return mountTemporalLab(root);
+ if(lesson.id==='28')return mountMpcReplay(root);
  let disposed=false, timer:ReturnType<typeof setInterval>|undefined, index=0;
  const stop=()=>{if(timer)clearInterval(timer);timer=undefined;};
  root.innerHTML='<p>正在读取原始实验记录…</p>';

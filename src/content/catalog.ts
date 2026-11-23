@@ -129,6 +129,7 @@ export const lessons: Lesson[] = [
 {"id": "25", "title": "ARA* → AD*：怎样边找边改？", "subtitle": "先完成有质量界限的路线，再逐步改善与修复。", "algorithm": "ARA* / AD*", "part": 5, "lab": "recorded", "concepts": ["加权启发", "OPEN与INCONS", "预算中断"], "duration": "7:11", "minutes": 8, "videoStatus": "external", "cover": "media/25/cover.svg"},
 {"id": "26", "title": "RRTX：封路后整棵树要重长吗？", "subtitle": "保留采样点，撤销失效依赖，再沿已有邻接重连。", "algorithm": "RRTX", "part": 5, "lab": "recorded", "concepts": ["采样图复用", "g与lmc", "重连级联"], "duration": "6:48", "minutes": 8, "videoStatus": "external", "cover": "media/26/cover.svg"},
 {"id": "27", "title": "时空A*：路没堵，为什么还会撞？", "subtitle": "把到达时刻放进状态，等待错峰，对整段运动检碰。", "algorithm": "时空A*", "part": 5, "lab": "recorded", "concepts": ["时空状态", "等待动作", "整段检碰"], "duration": "6:07", "minutes": 8, "videoStatus": "external", "cover": "media/27/cover.svg"},
+{"id": "28", "title": "MPC：老板只让我推辆车，我把它推下了跑道", "subtitle": "预测未来两秒，联合优化速度与转向，每次只执行第一步。", "algorithm": "MPC / 模型预测控制", "part": 5, "lab": "recorded", "concepts": ["自行车模型", "硬约束", "滚动优化"], "duration": "8:42", "minutes": 9, "videoStatus": "external", "cover": "media/28/cover.svg"},
 ];
 export const roadmap = [
   {
@@ -166,7 +167,7 @@ export const roadmap = [
     title: "提前想几步再行动",
     topics: "状态空间、线性化、QP、LQR、线性与非线性MPC、软硬约束",
     practice: "主线：控制器对照；工业案例：转角与加速度限制、求解无解和超时。",
-    status: "后续课程",
+    status: "第28集已演示非线性MPC",
   },
   {
     title: "给硅宝制造麻烦",
